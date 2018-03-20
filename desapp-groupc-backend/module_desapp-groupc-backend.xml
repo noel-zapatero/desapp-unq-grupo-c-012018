@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_desapp-groupc-backend" default="compile.module.desapp-groupc-backend">
+  <dirname property="module.desapp-groupc-backend.basedir" file="${ant.file.module_desapp-groupc-backend}"/>
+  
+  <property name="module.jdk.home.desapp-groupc-backend" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.desapp-groupc-backend" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.desapp-groupc-backend" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.desapp-groupc-backend" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="desapp-groupc-backend.output.dir" value="${module.desapp-groupc-backend.basedir}/target/classes"/>
+  <property name="desapp-groupc-backend.testoutput.dir" value="${module.desapp-groupc-backend.basedir}/target/test-classes"/>
+  
+  <path id="desapp-groupc-backend.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="desapp-groupc-backend.module.production.classpath">
+    <path refid="${module.jdk.classpath.desapp-groupc-backend}"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.runtime.production.module.classpath">
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.module.classpath">
+    <path refid="${module.jdk.classpath.desapp-groupc-backend}"/>
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.runtime.module.classpath">
+    <pathelement location="${desapp-groupc-backend.testoutput.dir}"/>
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.desapp-groupc-backend">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.desapp-groupc-backend">
+    <patternset refid="excluded.from.module.desapp-groupc-backend"/>
+  </patternset>
+  
+  <path id="desapp-groupc-backend.module.sourcepath">
+    <dirset dir="${module.desapp-groupc-backend.basedir}">
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.desapp-groupc-backend" depends="compile.module.desapp-groupc-backend.production,compile.module.desapp-groupc-backend.tests" description="Compile module desapp-groupc-backend"/>
+  
+  <target name="compile.module.desapp-groupc-backend.production" depends="register.custom.compilers" description="Compile module desapp-groupc-backend; production classes">
+    <mkdir dir="${desapp-groupc-backend.output.dir}"/>
+    <javac2 destdir="${desapp-groupc-backend.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.desapp-groupc-backend}/javac">
+      <compilerarg line="${compiler.args.desapp-groupc-backend}"/>
+      <bootclasspath refid="desapp-groupc-backend.module.bootclasspath"/>
+      <classpath refid="desapp-groupc-backend.module.production.classpath"/>
+      <src refid="desapp-groupc-backend.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.desapp-groupc-backend"/>
+    </javac2>
+    
+    <copy todir="${desapp-groupc-backend.output.dir}">
+      <fileset dir="${module.desapp-groupc-backend.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.desapp-groupc-backend.tests" depends="register.custom.compilers,compile.module.desapp-groupc-backend.production" description="compile module desapp-groupc-backend; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.desapp-groupc-backend" description="cleanup module">
+    <delete dir="${desapp-groupc-backend.output.dir}"/>
+    <delete dir="${desapp-groupc-backend.testoutput.dir}"/>
+  </target>
+</project>
