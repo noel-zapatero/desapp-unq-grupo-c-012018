@@ -1,284 +1,293 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="desapp-groupc-backend" default="all">
-
-
-    <property file="desapp-groupc-backend.properties"/>
-    <!-- Uncomment the following property if no tests compilation is needed -->
-    <!--
-    <property name="skip.tests" value="true"/>
-     -->
-
-    <!-- Compiler options -->
-
-    <property name="compiler.debug" value="on"/>
-    <property name="compiler.generate.no.warnings" value="off"/>
-    <property name="compiler.args" value=""/>
-    <property name="compiler.max.memory" value="700m"/>
-    <patternset id="ignored.files">
-        <exclude name="**/*.hprof/**"/>
-        <exclude name="**/*.pyc/**"/>
-        <exclude name="**/*.pyo/**"/>
-        <exclude name="**/*.rbc/**"/>
-        <exclude name="**/*.yarb/**"/>
-        <exclude name="**/*~/**"/>
-        <exclude name="**/.DS_Store/**"/>
-        <exclude name="**/.git/**"/>
-        <exclude name="**/.hg/**"/>
-        <exclude name="**/.svn/**"/>
-        <exclude name="**/CVS/**"/>
-        <exclude name="**/__pycache__/**"/>
-        <exclude name="**/_svn/**"/>
-        <exclude name="**/vssver.scc/**"/>
-        <exclude name="**/vssver2.scc/**"/>
-    </patternset>
-    <patternset id="library.patterns">
-        <include name="*.egg"/>
-        <include name="*.jar"/>
-        <include name="*.ear"/>
-        <include name="*.swc"/>
-        <include name="*.war"/>
-        <include name="*.ane"/>
-        <include name="*.zip"/>
-    </patternset>
-    <patternset id="compiler.resources">
-        <exclude name="**/?*.java"/>
-        <exclude name="**/?*.form"/>
-        <exclude name="**/?*.class"/>
-        <exclude name="**/?*.groovy"/>
-        <exclude name="**/?*.scala"/>
-        <exclude name="**/?*.flex"/>
-        <exclude name="**/?*.kt"/>
-        <exclude name="**/?*.clj"/>
-        <exclude name="**/?*.aj"/>
-    </patternset>
-
-    <!-- JDK definitions -->
-
-    <property name="jdk.bin.9.0" value="${jdk.home.9.0}/bin"/>
-    <path id="jdk.classpath.9.0">
-        <fileset dir="${jdk.home.9.0}">
-            <include name="../jdk-9.0.1!/java.activation"/>
-            <include name="../jdk-9.0.1!/java.base"/>
-            <include name="../jdk-9.0.1!/java.compiler"/>
-            <include name="../jdk-9.0.1!/java.corba"/>
-            <include name="../jdk-9.0.1!/java.datatransfer"/>
-            <include name="../jdk-9.0.1!/java.desktop"/>
-            <include name="../jdk-9.0.1!/java.instrument"/>
-            <include name="../jdk-9.0.1!/java.jnlp"/>
-            <include name="../jdk-9.0.1!/java.logging"/>
-            <include name="../jdk-9.0.1!/java.management"/>
-            <include name="../jdk-9.0.1!/java.management.rmi"/>
-            <include name="../jdk-9.0.1!/java.naming"/>
-            <include name="../jdk-9.0.1!/java.prefs"/>
-            <include name="../jdk-9.0.1!/java.rmi"/>
-            <include name="../jdk-9.0.1!/java.scripting"/>
-            <include name="../jdk-9.0.1!/java.se"/>
-            <include name="../jdk-9.0.1!/java.se.ee"/>
-            <include name="../jdk-9.0.1!/java.security.jgss"/>
-            <include name="../jdk-9.0.1!/java.security.sasl"/>
-            <include name="../jdk-9.0.1!/java.smartcardio"/>
-            <include name="../jdk-9.0.1!/java.sql"/>
-            <include name="../jdk-9.0.1!/java.sql.rowset"/>
-            <include name="../jdk-9.0.1!/java.transaction"/>
-            <include name="../jdk-9.0.1!/java.xml"/>
-            <include name="../jdk-9.0.1!/java.xml.bind"/>
-            <include name="../jdk-9.0.1!/java.xml.crypto"/>
-            <include name="../jdk-9.0.1!/java.xml.ws"/>
-            <include name="../jdk-9.0.1!/java.xml.ws.annotation"/>
-            <include name="../jdk-9.0.1!/javafx.base"/>
-            <include name="../jdk-9.0.1!/javafx.controls"/>
-            <include name="../jdk-9.0.1!/javafx.deploy"/>
-            <include name="../jdk-9.0.1!/javafx.fxml"/>
-            <include name="../jdk-9.0.1!/javafx.graphics"/>
-            <include name="../jdk-9.0.1!/javafx.media"/>
-            <include name="../jdk-9.0.1!/javafx.swing"/>
-            <include name="../jdk-9.0.1!/javafx.web"/>
-            <include name="../jdk-9.0.1!/jdk.accessibility"/>
-            <include name="../jdk-9.0.1!/jdk.attach"/>
-            <include name="../jdk-9.0.1!/jdk.charsets"/>
-            <include name="../jdk-9.0.1!/jdk.compiler"/>
-            <include name="../jdk-9.0.1!/jdk.crypto.cryptoki"/>
-            <include name="../jdk-9.0.1!/jdk.crypto.ec"/>
-            <include name="../jdk-9.0.1!/jdk.crypto.mscapi"/>
-            <include name="../jdk-9.0.1!/jdk.deploy"/>
-            <include name="../jdk-9.0.1!/jdk.deploy.controlpanel"/>
-            <include name="../jdk-9.0.1!/jdk.dynalink"/>
-            <include name="../jdk-9.0.1!/jdk.editpad"/>
-            <include name="../jdk-9.0.1!/jdk.hotspot.agent"/>
-            <include name="../jdk-9.0.1!/jdk.httpserver"/>
-            <include name="../jdk-9.0.1!/jdk.incubator.httpclient"/>
-            <include name="../jdk-9.0.1!/jdk.internal.ed"/>
-            <include name="../jdk-9.0.1!/jdk.internal.jvmstat"/>
-            <include name="../jdk-9.0.1!/jdk.internal.le"/>
-            <include name="../jdk-9.0.1!/jdk.internal.opt"/>
-            <include name="../jdk-9.0.1!/jdk.internal.vm.ci"/>
-            <include name="../jdk-9.0.1!/jdk.jartool"/>
-            <include name="../jdk-9.0.1!/jdk.javadoc"/>
-            <include name="../jdk-9.0.1!/jdk.javaws"/>
-            <include name="../jdk-9.0.1!/jdk.jcmd"/>
-            <include name="../jdk-9.0.1!/jdk.jconsole"/>
-            <include name="../jdk-9.0.1!/jdk.jdeps"/>
-            <include name="../jdk-9.0.1!/jdk.jdi"/>
-            <include name="../jdk-9.0.1!/jdk.jdwp.agent"/>
-            <include name="../jdk-9.0.1!/jdk.jfr"/>
-            <include name="../jdk-9.0.1!/jdk.jlink"/>
-            <include name="../jdk-9.0.1!/jdk.jshell"/>
-            <include name="../jdk-9.0.1!/jdk.jsobject"/>
-            <include name="../jdk-9.0.1!/jdk.jstatd"/>
-            <include name="../jdk-9.0.1!/jdk.localedata"/>
-            <include name="../jdk-9.0.1!/jdk.management"/>
-            <include name="../jdk-9.0.1!/jdk.management.agent"/>
-            <include name="../jdk-9.0.1!/jdk.management.cmm"/>
-            <include name="../jdk-9.0.1!/jdk.management.jfr"/>
-            <include name="../jdk-9.0.1!/jdk.management.resource"/>
-            <include name="../jdk-9.0.1!/jdk.naming.dns"/>
-            <include name="../jdk-9.0.1!/jdk.naming.rmi"/>
-            <include name="../jdk-9.0.1!/jdk.net"/>
-            <include name="../jdk-9.0.1!/jdk.pack"/>
-            <include name="../jdk-9.0.1!/jdk.packager"/>
-            <include name="../jdk-9.0.1!/jdk.packager.services"/>
-            <include name="../jdk-9.0.1!/jdk.plugin"/>
-            <include name="../jdk-9.0.1!/jdk.plugin.dom"/>
-            <include name="../jdk-9.0.1!/jdk.plugin.server"/>
-            <include name="../jdk-9.0.1!/jdk.policytool"/>
-            <include name="../jdk-9.0.1!/jdk.rmic"/>
-            <include name="../jdk-9.0.1!/jdk.scripting.nashorn"/>
-            <include name="../jdk-9.0.1!/jdk.scripting.nashorn.shell"/>
-            <include name="../jdk-9.0.1!/jdk.sctp"/>
-            <include name="../jdk-9.0.1!/jdk.security.auth"/>
-            <include name="../jdk-9.0.1!/jdk.security.jgss"/>
-            <include name="../jdk-9.0.1!/jdk.snmp"/>
-            <include name="../jdk-9.0.1!/jdk.unsupported"/>
-            <include name="../jdk-9.0.1!/jdk.xml.bind"/>
-            <include name="../jdk-9.0.1!/jdk.xml.dom"/>
-            <include name="../jdk-9.0.1!/jdk.xml.ws"/>
-            <include name="../jdk-9.0.1!/jdk.zipfs"/>
-            <include name="../jdk-9.0.1!/oracle.desktop"/>
-            <include name="../jdk-9.0.1!/oracle.net"/>
-        </fileset>
-    </path>
-
-    <property name="project.jdk.home" value="${jdk.home.9.0}"/>
-    <property name="project.jdk.bin" value="${jdk.bin.9.0}"/>
-    <property name="project.jdk.classpath" value="jdk.classpath.9.0"/>
-
-
-    <!-- Project Libraries -->
-
-    <path id="library.maven:_junit:junit:3.8.1.classpath">
-        <pathelement location="${path.variable.maven_repository}/junit/junit/3.8.1/junit-3.8.1.jar"/>
-    </path>
-
-
-    <!-- Global Libraries -->
-    <!-- Register Custom Compiler Taskdefs -->
-    <property name="javac2.home" value="${idea.home}/lib"/>
-    <path id="javac2.classpath">
-        <pathelement location="${javac2.home}/javac2.jar"/>
-        <pathelement location="${javac2.home}/jdom.jar"/>
-        <pathelement location="${javac2.home}/asm-all.jar"/>
-        <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
-    </path>
-    <target name="register.custom.compilers">
-        <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
-        <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
-    </target>
-
-    <!-- Modules -->
-
-    <import file="${basedir}/module_desapp-groupc-backend.xml"/>
-
-    <target name="init" description="Build initialization">
-        <!-- Perform any build initialization in this target -->
-    </target>
-
-    <target name="clean" depends="clean.module.desapp-groupc-backend, clean.artifact.desapp-groupc-backend:war_exploded, clean.artifact.desappgroupcbackend:war_exploded" description="cleanup all"/>
-
-    <target name="build.modules" depends="init, clean, compile.module.desapp-groupc-backend" description="build all modules"/>
-
-    <target name="init.artifacts">
-        <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
-        <property name="artifact.output.desapp-groupc-backend:war" value="${basedir}/target"/>
-        <property name="artifact.output.desapp-groupc-backend:war_exploded" value="${basedir}/target/desapp-groupc-backend"/>
-        <property name="artifact.output.desappgroupcbackend:war" value="${basedir}/target"/>
-        <property name="artifact.output.desappgroupcbackend:war_exploded" value="${basedir}/target/desapp-groupc-backend"/>
-        <mkdir dir="${artifacts.temp.dir}"/>
-        <property name="temp.jar.path.desapp-groupc-backend.war" value="${artifacts.temp.dir}/desapp-groupc-backend.war"/>
-        <property name="temp.jar.path.desapp-groupc-backend.war2" value="${artifacts.temp.dir}/1/desapp-groupc-backend.war"/>
-        <mkdir dir="${artifacts.temp.dir}/1"/>
-    </target>
-
-    <target name="clean.artifact.desapp-groupc-backend:war_exploded" description="clean desapp-groupc-backend:war exploded artifact output">
-        <delete dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
-    </target>
-
-    <target name="clean.artifact.desappgroupcbackend:war_exploded" description="clean desappgroupcbackend:war exploded artifact output">
-        <delete dir="${artifact.output.desappgroupcbackend:war_exploded}"/>
-    </target>
-
-    <target name="artifact.desapp-groupc-backend:war" depends="init.artifacts, artifact.desapp-groupc-backend:war_exploded" description="Build &#39;desapp-groupc-backend:war&#39; artifact">
-        <property name="artifact.temp.output.desapp-groupc-backend:war" value="${artifacts.temp.dir}/desapp_groupc_backend_war"/>
-        <mkdir dir="${artifact.temp.output.desapp-groupc-backend:war}"/>
-        <zip destfile="${temp.jar.path.desapp-groupc-backend.war}">
-            <zipfileset dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
-        </zip>
-        <copy file="${temp.jar.path.desapp-groupc-backend.war}" tofile="${artifact.temp.output.desapp-groupc-backend:war}/desapp-groupc-backend.war"/>
-    </target>
-
-    <target name="artifact.desapp-groupc-backend:war_exploded" depends="init.artifacts, compile.module.desapp-groupc-backend" description="Build &#39;desapp-groupc-backend:war exploded&#39; artifact">
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF"/>
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/classes"/>
-        <copy todir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/classes">
-            <fileset dir="${desapp-groupc-backend.output.dir}"/>
-        </copy>
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/META-INF"/>
-        <copy file="${basedir}/target/desapp-groupc-backend/META-INF/MANIFEST.MF" tofile="${artifact.output.desapp-groupc-backend:war_exploded}/META-INF/MANIFEST.MF"/>
-        <copy todir="${artifact.output.desapp-groupc-backend:war_exploded}">
-            <fileset dir="${basedir}/src/main/webapp"/>
-        </copy>
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF"/>
-        <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/web.xml"/>
-    </target>
-
-    <target name="artifact.desappgroupcbackend:war" depends="init.artifacts, artifact.desappgroupcbackend:war_exploded" description="Build &#39;desappgroupcbackend:war&#39; artifact">
-        <property name="artifact.temp.output.desappgroupcbackend:war" value="${artifacts.temp.dir}/desappgroupcbackend_war"/>
-        <mkdir dir="${artifact.temp.output.desappgroupcbackend:war}"/>
-        <zip destfile="${temp.jar.path.desapp-groupc-backend.war2}">
-            <zipfileset dir="${artifact.output.desappgroupcbackend:war_exploded}"/>
-        </zip>
-        <copy file="${temp.jar.path.desapp-groupc-backend.war2}" tofile="${artifact.temp.output.desappgroupcbackend:war}/desapp-groupc-backend.war"/>
-    </target>
-
-    <target name="artifact.desappgroupcbackend:war_exploded" depends="init.artifacts, compile.module.desapp-groupc-backend" description="Build &#39;desappgroupcbackend:war exploded&#39; artifact">
-        <mkdir dir="${artifact.output.desappgroupcbackend:war_exploded}"/>
-        <mkdir dir="${artifact.output.desappgroupcbackend:war_exploded}/WEB-INF"/>
-        <mkdir dir="${artifact.output.desappgroupcbackend:war_exploded}/WEB-INF/classes"/>
-        <copy todir="${artifact.output.desappgroupcbackend:war_exploded}/WEB-INF/classes">
-            <fileset dir="${desapp-groupc-backend.output.dir}"/>
-        </copy>
-        <mkdir dir="${artifact.output.desappgroupcbackend:war_exploded}/META-INF"/>
-        <copy file="${basedir}/target/desapp-groupc-backend/META-INF/MANIFEST.MF" tofile="${artifact.output.desappgroupcbackend:war_exploded}/META-INF/MANIFEST.MF"/>
-        <copy todir="${artifact.output.desappgroupcbackend:war_exploded}">
-            <fileset dir="${basedir}/src/main/webapp"/>
-        </copy>
-        <mkdir dir="${artifact.output.desappgroupcbackend:war_exploded}/WEB-INF"/>
-        <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.desappgroupcbackend:war_exploded}/WEB-INF/web.xml"/>
-    </target>
-
-    <target name="build.all.artifacts" depends="artifact.desapp-groupc-backend:war, artifact.desapp-groupc-backend:war_exploded, artifact.desappgroupcbackend:war, artifact.desappgroupcbackend:war_exploded" description="Build all artifacts">
-        <mkdir dir="${artifact.output.desapp-groupc-backend:war}"/>
-        <copy todir="${artifact.output.desapp-groupc-backend:war}">
-            <fileset dir="${artifact.temp.output.desapp-groupc-backend:war}"/>
-        </copy>
-        <mkdir dir="${artifact.output.desappgroupcbackend:war}"/>
-        <copy todir="${artifact.output.desappgroupcbackend:war}">
-            <fileset dir="${artifact.temp.output.desappgroupcbackend:war}"/>
-        </copy>
-
-        <!-- Delete temporary files -->
-        <delete dir="${artifacts.temp.dir}"/>
-    </target>
-
-    <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+  
+  
+  <property file="build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+    <include name="*.swc"/>
+    <include name="*.war"/>
+    <include name="*.ane"/>
+    <include name="*.zip"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.9.0" value="${jdk.home.9.0}/bin"/>
+  <path id="jdk.classpath.9.0">
+    <fileset dir="${jdk.home.9.0}">
+      <include name="../jdk-9.0.1!/java.activation"/>
+      <include name="../jdk-9.0.1!/java.base"/>
+      <include name="../jdk-9.0.1!/java.compiler"/>
+      <include name="../jdk-9.0.1!/java.corba"/>
+      <include name="../jdk-9.0.1!/java.datatransfer"/>
+      <include name="../jdk-9.0.1!/java.desktop"/>
+      <include name="../jdk-9.0.1!/java.instrument"/>
+      <include name="../jdk-9.0.1!/java.jnlp"/>
+      <include name="../jdk-9.0.1!/java.logging"/>
+      <include name="../jdk-9.0.1!/java.management"/>
+      <include name="../jdk-9.0.1!/java.management.rmi"/>
+      <include name="../jdk-9.0.1!/java.naming"/>
+      <include name="../jdk-9.0.1!/java.prefs"/>
+      <include name="../jdk-9.0.1!/java.rmi"/>
+      <include name="../jdk-9.0.1!/java.scripting"/>
+      <include name="../jdk-9.0.1!/java.se"/>
+      <include name="../jdk-9.0.1!/java.se.ee"/>
+      <include name="../jdk-9.0.1!/java.security.jgss"/>
+      <include name="../jdk-9.0.1!/java.security.sasl"/>
+      <include name="../jdk-9.0.1!/java.smartcardio"/>
+      <include name="../jdk-9.0.1!/java.sql"/>
+      <include name="../jdk-9.0.1!/java.sql.rowset"/>
+      <include name="../jdk-9.0.1!/java.transaction"/>
+      <include name="../jdk-9.0.1!/java.xml"/>
+      <include name="../jdk-9.0.1!/java.xml.bind"/>
+      <include name="../jdk-9.0.1!/java.xml.crypto"/>
+      <include name="../jdk-9.0.1!/java.xml.ws"/>
+      <include name="../jdk-9.0.1!/java.xml.ws.annotation"/>
+      <include name="../jdk-9.0.1!/javafx.base"/>
+      <include name="../jdk-9.0.1!/javafx.controls"/>
+      <include name="../jdk-9.0.1!/javafx.deploy"/>
+      <include name="../jdk-9.0.1!/javafx.fxml"/>
+      <include name="../jdk-9.0.1!/javafx.graphics"/>
+      <include name="../jdk-9.0.1!/javafx.media"/>
+      <include name="../jdk-9.0.1!/javafx.swing"/>
+      <include name="../jdk-9.0.1!/javafx.web"/>
+      <include name="../jdk-9.0.1!/jdk.accessibility"/>
+      <include name="../jdk-9.0.1!/jdk.attach"/>
+      <include name="../jdk-9.0.1!/jdk.charsets"/>
+      <include name="../jdk-9.0.1!/jdk.compiler"/>
+      <include name="../jdk-9.0.1!/jdk.crypto.cryptoki"/>
+      <include name="../jdk-9.0.1!/jdk.crypto.ec"/>
+      <include name="../jdk-9.0.1!/jdk.crypto.mscapi"/>
+      <include name="../jdk-9.0.1!/jdk.deploy"/>
+      <include name="../jdk-9.0.1!/jdk.deploy.controlpanel"/>
+      <include name="../jdk-9.0.1!/jdk.dynalink"/>
+      <include name="../jdk-9.0.1!/jdk.editpad"/>
+      <include name="../jdk-9.0.1!/jdk.hotspot.agent"/>
+      <include name="../jdk-9.0.1!/jdk.httpserver"/>
+      <include name="../jdk-9.0.1!/jdk.incubator.httpclient"/>
+      <include name="../jdk-9.0.1!/jdk.internal.ed"/>
+      <include name="../jdk-9.0.1!/jdk.internal.jvmstat"/>
+      <include name="../jdk-9.0.1!/jdk.internal.le"/>
+      <include name="../jdk-9.0.1!/jdk.internal.opt"/>
+      <include name="../jdk-9.0.1!/jdk.internal.vm.ci"/>
+      <include name="../jdk-9.0.1!/jdk.jartool"/>
+      <include name="../jdk-9.0.1!/jdk.javadoc"/>
+      <include name="../jdk-9.0.1!/jdk.javaws"/>
+      <include name="../jdk-9.0.1!/jdk.jcmd"/>
+      <include name="../jdk-9.0.1!/jdk.jconsole"/>
+      <include name="../jdk-9.0.1!/jdk.jdeps"/>
+      <include name="../jdk-9.0.1!/jdk.jdi"/>
+      <include name="../jdk-9.0.1!/jdk.jdwp.agent"/>
+      <include name="../jdk-9.0.1!/jdk.jfr"/>
+      <include name="../jdk-9.0.1!/jdk.jlink"/>
+      <include name="../jdk-9.0.1!/jdk.jshell"/>
+      <include name="../jdk-9.0.1!/jdk.jsobject"/>
+      <include name="../jdk-9.0.1!/jdk.jstatd"/>
+      <include name="../jdk-9.0.1!/jdk.localedata"/>
+      <include name="../jdk-9.0.1!/jdk.management"/>
+      <include name="../jdk-9.0.1!/jdk.management.agent"/>
+      <include name="../jdk-9.0.1!/jdk.management.cmm"/>
+      <include name="../jdk-9.0.1!/jdk.management.jfr"/>
+      <include name="../jdk-9.0.1!/jdk.management.resource"/>
+      <include name="../jdk-9.0.1!/jdk.naming.dns"/>
+      <include name="../jdk-9.0.1!/jdk.naming.rmi"/>
+      <include name="../jdk-9.0.1!/jdk.net"/>
+      <include name="../jdk-9.0.1!/jdk.pack"/>
+      <include name="../jdk-9.0.1!/jdk.packager"/>
+      <include name="../jdk-9.0.1!/jdk.packager.services"/>
+      <include name="../jdk-9.0.1!/jdk.plugin"/>
+      <include name="../jdk-9.0.1!/jdk.plugin.dom"/>
+      <include name="../jdk-9.0.1!/jdk.plugin.server"/>
+      <include name="../jdk-9.0.1!/jdk.policytool"/>
+      <include name="../jdk-9.0.1!/jdk.rmic"/>
+      <include name="../jdk-9.0.1!/jdk.scripting.nashorn"/>
+      <include name="../jdk-9.0.1!/jdk.scripting.nashorn.shell"/>
+      <include name="../jdk-9.0.1!/jdk.sctp"/>
+      <include name="../jdk-9.0.1!/jdk.security.auth"/>
+      <include name="../jdk-9.0.1!/jdk.security.jgss"/>
+      <include name="../jdk-9.0.1!/jdk.snmp"/>
+      <include name="../jdk-9.0.1!/jdk.unsupported"/>
+      <include name="../jdk-9.0.1!/jdk.xml.bind"/>
+      <include name="../jdk-9.0.1!/jdk.xml.dom"/>
+      <include name="../jdk-9.0.1!/jdk.xml.ws"/>
+      <include name="../jdk-9.0.1!/jdk.zipfs"/>
+      <include name="../jdk-9.0.1!/oracle.desktop"/>
+      <include name="../jdk-9.0.1!/oracle.net"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.9.0}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.9.0}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.9.0"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_junit:junit:3.8.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  </path>
+  
+  
+  <!-- Global Libraries -->
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module desapp-groupc-backend -->
+  
+  <dirname property="module.desapp-groupc-backend.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.desapp-groupc-backend" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.desapp-groupc-backend" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.desapp-groupc-backend" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.desapp-groupc-backend" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="desapp-groupc-backend.output.dir" value="${module.desapp-groupc-backend.basedir}/target/classes"/>
+  <property name="desapp-groupc-backend.testoutput.dir" value="${module.desapp-groupc-backend.basedir}/target/test-classes"/>
+  
+  <path id="desapp-groupc-backend.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="desapp-groupc-backend.module.production.classpath">
+    <path refid="${module.jdk.classpath.desapp-groupc-backend}"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.runtime.production.module.classpath">
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.module.classpath">
+    <path refid="${module.jdk.classpath.desapp-groupc-backend}"/>
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+  </path>
+  
+  <path id="desapp-groupc-backend.runtime.module.classpath">
+    <pathelement location="${desapp-groupc-backend.testoutput.dir}"/>
+    <pathelement location="${desapp-groupc-backend.output.dir}"/>
+    <path refid="library.maven:_junit:junit:3.8.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.desapp-groupc-backend">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.desapp-groupc-backend">
+    <patternset refid="excluded.from.module.desapp-groupc-backend"/>
+  </patternset>
+  
+  
+  <target name="compile.module.desapp-groupc-backend" depends="compile.module.desapp-groupc-backend.production,compile.module.desapp-groupc-backend.tests" description="Compile module desapp-groupc-backend"/>
+  
+  <target name="compile.module.desapp-groupc-backend.production" description="Compile module desapp-groupc-backend; production classes"/>
+  
+  <target name="compile.module.desapp-groupc-backend.tests" depends="compile.module.desapp-groupc-backend.production" description="compile module desapp-groupc-backend; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.desapp-groupc-backend" description="cleanup module">
+    <delete dir="${desapp-groupc-backend.output.dir}"/>
+    <delete dir="${desapp-groupc-backend.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.desapp-groupc-backend, clean.artifact.desapp-groupc-backend:war_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.desapp-groupc-backend" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.desapp-groupc-backend:war" value="${basedir}/target"/>
+    <property name="artifact.output.desapp-groupc-backend:war_exploded" value="${basedir}/target/desapp-groupc-backend"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.desapp-groupc-backend.war" value="${artifacts.temp.dir}/desapp-groupc-backend.war"/>
+  </target>
+  
+  <target name="clean.artifact.desapp-groupc-backend:war_exploded" description="clean desapp-groupc-backend:war exploded artifact output">
+    <delete dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
+  </target>
+  
+  <target name="artifact.desapp-groupc-backend:war" depends="init.artifacts, artifact.desapp-groupc-backend:war_exploded" description="Build &#39;desapp-groupc-backend:war&#39; artifact">
+    <property name="artifact.temp.output.desapp-groupc-backend:war" value="${artifacts.temp.dir}/desapp_groupc_backend_war"/>
+    <mkdir dir="${artifact.temp.output.desapp-groupc-backend:war}"/>
+    <zip destfile="${temp.jar.path.desapp-groupc-backend.war}">
+      <zipfileset dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.desapp-groupc-backend.war}" tofile="${artifact.temp.output.desapp-groupc-backend:war}/desapp-groupc-backend.war"/>
+  </target>
+  
+  <target name="artifact.desapp-groupc-backend:war_exploded" depends="init.artifacts, compile.module.desapp-groupc-backend" description="Build &#39;desapp-groupc-backend:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}"/>
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/classes">
+      <fileset dir="${desapp-groupc-backend.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/desapp-groupc-backend/META-INF/MANIFEST.MF" tofile="${artifact.output.desapp-groupc-backend:war_exploded}/META-INF/MANIFEST.MF"/>
+    <copy todir="${artifact.output.desapp-groupc-backend:war_exploded}">
+      <fileset dir="${basedir}/src/main/webapp"/>
+    </copy>
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF"/>
+    <copy file="${basedir}/src/main/webapp/WEB-INF/web.xml" tofile="${artifact.output.desapp-groupc-backend:war_exploded}/WEB-INF/web.xml"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.desapp-groupc-backend:war, artifact.desapp-groupc-backend:war_exploded" description="Build all artifacts">
+    <mkdir dir="${artifact.output.desapp-groupc-backend:war}"/>
+    <copy todir="${artifact.output.desapp-groupc-backend:war}">
+      <fileset dir="${artifact.temp.output.desapp-groupc-backend:war}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
 </project>
