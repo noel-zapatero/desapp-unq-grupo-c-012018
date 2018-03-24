@@ -16,6 +16,7 @@ public class User {
     public float credits;
     public List<Vehicle> myVehicles;
     public List<Vehicle> vehiclesRented;
+    public List<Publication> myOffers;
 
     public User(int cuil, String lastName, String firstName, String address, String email){
         this.cuil = cuil;
@@ -28,6 +29,7 @@ public class User {
         this.amountOfRatings = 0;
         myVehicles = new ArrayList<Vehicle>();
         vehiclesRented = new ArrayList<Vehicle>();
+        myOffers = new ArrayList<Publication>();
     }
 
     public void addVehicle (Vehicle newVehicle){
@@ -40,6 +42,11 @@ public class User {
 
     public void whitdrawCredits(float creds){
         this.credits -= creds;
+    }
+
+    public void makeNewOffer (Vehicle myVehicle){
+        //check that myVehicle is already added to "myVehicles" list
+        myOffers.add(new Publication(myVehicle));
     }
 
     public void bookVehicle(){}
