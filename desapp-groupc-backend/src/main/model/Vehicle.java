@@ -1,5 +1,6 @@
 package main.model;
 
+<<<<<<< HEAD
 import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
@@ -61,4 +62,7 @@ public class Vehicle {
     public boolean isAvailable(DateTime dateTime) {
         return availability.isAvailable(dateTime);
     }
+=======
+public class Vehicle {
+>>>>>>> 0831b0833e4ddd5b211a1c9ad30d4ae9a0c741ee
 }
