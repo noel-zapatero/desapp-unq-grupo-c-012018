@@ -1,6 +1,5 @@
 package main.model;
 
-<<<<<<< HEAD
 import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
@@ -11,8 +10,8 @@ public class Vehicle {
     private VehicleType type;
     private int passengerCapacity;
     private String zone;
-    private Adress withdrawAdress;
-    private List<Adress> returnAdress;
+    private Address withdrawAddress;
+    private List<Address> returnAddresses;
     private String description;
     private Phone contactPhone;
     private Availability availability;
@@ -31,12 +30,12 @@ public class Vehicle {
         this.zone = zone;
     }
 
-    public void setWithdrawAdress(Adress withdrawAdress) {
-        this.withdrawAdress = withdrawAdress;
+    public void setWithdrawAddress(Address withdrawAddress) {
+        this.withdrawAddress = withdrawAddress;
     }
 
-    public void setReturnAdress(List<Adress> returnAdress) {
-        this.returnAdress = returnAdress;
+    public void setReturnAddresses(List<Address> returnAddresses) {
+        this.returnAddresses = returnAddresses;
     }
 
     public void setDescription(String description) {
@@ -62,7 +61,4 @@ public class Vehicle {
     public boolean isAvailable(DateTime dateTime) {
         return availability.isAvailable(dateTime);
     }
-=======
-public class Vehicle {
->>>>>>> 0831b0833e4ddd5b211a1c9ad30d4ae9a0c741ee
 }

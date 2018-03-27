@@ -68,4 +68,7 @@ public class User {
         this.rating = (this.rating+=rating) / this.amountOfRatings;
     }
 
+    public String getName() {
+        return firstName;
+    }
 }

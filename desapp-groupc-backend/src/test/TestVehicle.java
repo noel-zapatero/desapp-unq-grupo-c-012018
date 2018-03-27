@@ -9,7 +9,7 @@ import org.joda.time.DateTime;
 
 public class TestVehicle extends TestCase {
 
-    public void test_createAVehicleThatIsAvailableAllTheTime() {
+    public void testCreateAVehicleThatIsAvailableAllTheTime() {
         Vehicle v = new VehicleBuilder()
                 .withAvailability(new AllwaysAvailable())
                 .build();
@@ -17,7 +17,7 @@ public class TestVehicle extends TestCase {
         assertTrue(v.isAvailable(DateTime.now()));
     }
 
-    public void test_createAVehicleThatIsAvailable5DaysStartingTomorrow() {
+    public void testCreateAVehicleThatIsAvailable5DaysStartingTomorrow() {
         Vehicle v = new VehicleBuilder()
                 .withAvailability(new RangeAvailability(
                         DateTime.now().plusDays(1),
