@@ -17,6 +17,7 @@ public class User {
     public List<Vehicle> myVehicles;
     public List<Vehicle> vehiclesRented;
     public List<Publication> myOffers;
+    private Carpnd page;
 
     public User(int cuil, String lastName, String firstName, String address, String email){
         this.cuil = cuil;
@@ -32,8 +33,18 @@ public class User {
         myOffers = new ArrayList<Publication>();
     }
 
-    public void addVehicle (Vehicle newVehicle){
+    public void createVehicle(){
+        //check vehicle constructor
+        Vehicle newVehicle = new Vehicle();
         this.myVehicles.add(newVehicle);
+        this.page.createVehicle(newVehicle);
+    }
+
+    public void makeNewOffer (Vehicle myVehicle){
+        //check that myVehicle is already added to "myVehicles" list
+        Publication newPub = new Publication(myVehicle);
+        myOffers.add(newPub);
+        page.publish(newPub);
     }
 
     public void chargeCredits(float moreCred){
@@ -44,17 +55,13 @@ public class User {
         this.credits -= creds;
     }
 
-    public void makeNewOffer (Vehicle myVehicle){
-        //check that myVehicle is already added to "myVehicles" list
-        myOffers.add(new Publication(myVehicle));
-    }
-
     public void bookVehicle(){}
     public void acceptReservation(){}
 
     public void pickUpDone(){}
     public void acceptPickUp(){}
 
+    //On the return, rating must be done from both sides
     public void returnDone(){}
     public void acceptReturn(){}
 
@@ -70,5 +77,17 @@ public class User {
 
     public String getName() {
         return firstName;
+    }
+
+    public void setPage(Carpnd page) {
+        this.page = page;
+    }
+
+    public float getCredits() {
+        return credits;
+    }
+
+    public float getRating() {
+        return rating;
     }
 }

@@ -1,10 +1,6 @@
 package main.model.builders;
 
-import main.model.Publication;
 import main.model.User;
-import main.model.Vehicle;
-
-import java.util.List;
 
 public class UserBuilder {
 

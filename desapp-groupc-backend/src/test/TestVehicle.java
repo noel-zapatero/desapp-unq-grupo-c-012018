@@ -2,7 +2,7 @@ package test;
 
 import junit.framework.TestCase;
 import main.model.availability.RangeAvailability;
-import main.model.availability.AllwaysAvailable;
+import main.model.availability.AlwaysAvailable;
 import main.model.Vehicle;
 import main.model.builders.VehicleBuilder;
 import org.joda.time.DateTime;
@@ -11,7 +11,7 @@ public class TestVehicle extends TestCase {
 
     public void testCreateAVehicleThatIsAvailableAllTheTime() {
         Vehicle v = new VehicleBuilder()
-                .withAvailability(new AllwaysAvailable())
+                .withAvailability(new AlwaysAvailable())
                 .build();
 
         assertTrue(v.isAvailable(DateTime.now()));
