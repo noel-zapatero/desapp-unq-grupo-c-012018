@@ -5,7 +5,7 @@ import java.util.List;
 
 public class User {
 
-    public int cuil;
+    public long cuil;
     public String lastName;
     public String firstName;
     public String address;
@@ -19,7 +19,7 @@ public class User {
     public List<Publication> myOffers;
     private Carpnd page;
 
-    public User(int cuil, String lastName, String firstName, String address, String email){
+    public User(long cuil, String lastName, String firstName, String address, String email){
         this.cuil = cuil;
         this.lastName = lastName;
         this.firstName = firstName;

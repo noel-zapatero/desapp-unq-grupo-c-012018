@@ -8,7 +8,7 @@ public class TestUser extends TestCase {
 
     public void testCreateUser(){
         User burns = new UserBuilder()
-                .withCuil(000000011)
+                .withCuil(30000000011L)
                 .withNameAndLastName("Montgomery", "Burns")
                 .withAddress("Fake Street 123")
                 .withEmail("mburns@springfield.com")

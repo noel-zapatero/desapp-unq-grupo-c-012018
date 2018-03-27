@@ -4,7 +4,7 @@ import main.model.User;
 
 public class UserBuilder {
 
-    private int cuil = 00000000000;
+    private long cuil = 00000000000;
     private String lastName = "No name";
     private String firstName = "No lastname";
     private String address = "No address";
@@ -31,7 +31,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder withCuil(int cuil){
+    public UserBuilder withCuil(long cuil){
         this.cuil = cuil;
         return this;
     }
