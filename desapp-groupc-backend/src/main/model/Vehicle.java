@@ -58,7 +58,11 @@ public class Vehicle {
         this.rentFeeHour = rentFeeHour;
     }
 
-    public boolean isAvailable(DateTime dateTime) {
-        return availability.isAvailable(dateTime);
+  public boolean isAvailable(DateTime dateTime) {
+    return availability.isAvailable(dateTime);
+  }
+
+    public boolean isAvailable(DateTime from, DateTime to) {
+        return availability.isAvailable(from, to);
     }
 }
