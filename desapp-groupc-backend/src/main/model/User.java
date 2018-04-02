@@ -42,7 +42,7 @@ public class User {
 
     public void makeNewOffer (Vehicle myVehicle){
         //check that myVehicle is already added to "myVehicles" list
-        Publication newPub = new Publication(myVehicle);
+        Publication newPub = new Publication(myVehicle, this);
         myOffers.add(newPub);
         page.publish(newPub);
     }
@@ -55,18 +55,34 @@ public class User {
         this.credits -= creds;
     }
 
-    public void bookVehicle(){}
-    public void acceptReservation(){}
+    public void bookVehicle(Publication pub){
+      EmailSender.SendBookMessage(this.firstName, pub.getOwnerEmail());
+    }
 
-    public void pickUpDone(){}
-    public void acceptPickUp(){}
+    //TODO: Check credit discount
+    public void acceptReservation(String receiptEmail){
+      EmailSender.AcceptReservation(receiptEmail);
+    }
+
+    public void pickUpDone(Publication pub){
+      EmailSender.SendPickUpMessage(pub.getOwnerEmail());
+    }
+    public void acceptPickUp(String receiptEmail){
+      EmailSender.AcceptPickUp(receiptEmail);
+    }
 
     //On the return, rating must be done from both sides
-    public void returnDone(){}
-    public void acceptReturn(){}
+    public void returnDone(Publication pub, float rate){
+      EmailSender.SendReturnMessage(pub.getOwnerEmail());
+      rateCounterPart(pub.getOwner(), rate, " ");
+    }
+    public void acceptReturn(String receiptEmail, User bidder, float rate){
+      EmailSender.AcceptReturn(receiptEmail);
+      rateCounterPart(bidder, rate, "");
+    }
 
     public void rateCounterPart(User otherUser, float rating, String comments){
-        //check comments
+        //TODO: check comments, may not be
         otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
     }
 
@@ -89,5 +105,9 @@ public class User {
 
     public float getRating() {
         return rating;
+    }
+
+    public String getEmail() {
+      return email;
     }
 }

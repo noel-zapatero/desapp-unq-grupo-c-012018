@@ -5,8 +5,8 @@ import main.model.User;
 public class UserBuilder {
 
     private long cuil = 00000000000;
-    private String lastName = "No name";
-    private String firstName = "No lastname";
+    private String lastName = "No lastname";
+    private String firstName = "No name";
     private String address = "No address";
     private String email = "No email";
 

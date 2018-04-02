@@ -1,7 +1,9 @@
 package test;
 
 import junit.framework.TestCase;
+import main.model.Publication;
 import main.model.User;
+import main.model.Vehicle;
 import main.model.builders.UserBuilder;
 
 public class TestUser extends TestCase {
@@ -35,4 +37,15 @@ public class TestUser extends TestCase {
         newUser.receiveRating(3);
         assertTrue(newUser.getRating() == 4);
     }
+
+    public void testBookingVehicle(){
+      User newUser = new UserBuilder()
+        .withEmail("witherwings77@gmail.com")
+        .withNameAndLastName("Noel", "Zapatero")
+        .build();
+      Publication pub = new Publication(new Vehicle(),newUser);
+
+      newUser.bookVehicle(pub);
+    }
+
 }

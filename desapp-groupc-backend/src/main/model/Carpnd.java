@@ -21,4 +21,9 @@ public class Carpnd {
     public void publish(Publication pub){
         this.offers.add(pub);
     }
+
+    //TODO: Search
+    //TODO: Auto-ban rating
+    //TODO: Account states at the end of the month
+    //TODO: AFIP validation
 }
