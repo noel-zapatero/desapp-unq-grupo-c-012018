@@ -1,6 +1,5 @@
 package main.model;
 
-import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
 import java.util.List;
@@ -14,7 +13,6 @@ public class Vehicle {
     private List<Address> returnAddresses;
     private String description;
     private Phone contactPhone;
-    private Availability availability;
     private float rentFeeDay;
     private float rentFeeHour;
 
@@ -46,23 +44,11 @@ public class Vehicle {
         this.contactPhone = contactPhone;
     }
 
-    public void setAvailability(Availability availability) {
-        this.availability = availability;
-    }
-
     public void setRentFeeDay(float rentFeeDay) {
         this.rentFeeDay = rentFeeDay;
     }
 
     public void setRentFeeHour(float rentFeeHour) {
         this.rentFeeHour = rentFeeHour;
-    }
-
-  public boolean isAvailable(DateTime dateTime) {
-    return availability.isAvailable(dateTime);
-  }
-
-    public boolean isAvailable(DateTime from, DateTime to) {
-        return availability.isAvailable(from, to);
     }
 }
