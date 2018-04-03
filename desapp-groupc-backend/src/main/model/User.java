@@ -1,5 +1,6 @@
 package main.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,7 +75,7 @@ public class User {
     //On the return, rating must be done from both sides
     public void returnDone(Publication pub, Integer rate){
       EmailSender.SendReturnMessage(pub.getOwnerEmail());
-      rateCounterPart(pub.getOwner(), rate, " ");
+      rateCounterPart(pub.getOwner(), rate, "");
     }
     public void acceptReturn(String receiptEmail, User bidder, Integer rate){
       EmailSender.AcceptReturn(receiptEmail);
@@ -82,8 +83,12 @@ public class User {
     }
 
     public void rateCounterPart(User otherUser, Integer rating, String comments){
-        //TODO: check comments, may not be
-        otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
+        this.rateCounterPart(otherUser,rating);
+        String comment = comments;
+    }
+
+    public void rateCounterPart(User otherUser, Integer rating){
+      otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
     }
 
     public void receiveRating(Integer rating){
@@ -108,8 +113,9 @@ public class User {
         return credits;
     }
 
-    public float getRating() {
-        return rating;
+    public double getRating() {
+      double d = Math.pow(10,2);
+      return (Math.round(this.rating * d) / d);
     }
 
     public String getEmail() {
