@@ -59,6 +59,11 @@
         <version>3.0.1</version>
         <executions>
           <execution>
+            <id>copy-dependencies</id>
+            <phase>package</phase>
+            <goals><goal>copy-dependencies</goal></goals>
+          </execution>
+          <execution>
             <phase>package</phase>
             <goals><goal>copy</goal></goals>
             <configuration>
