@@ -1,9 +1,8 @@
 package test;
 
 import junit.framework.TestCase;
-import main.model.availability.Availability;
 import main.model.Publication;
-import main.model.Vehicle;
+import main.model.Reservation;
 import main.model.availability.Available;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.VehicleBuilder;
@@ -20,9 +19,7 @@ public class TestVehicle extends TestCase {
   }
 
   public void test_makeAVehicleAvailable() {
-    Publication p = new PublicationBuilder()
-      .withAvailability(new Available(today(), tomorrow()))
-      .build();
+    Publication p = todayTomorrowVehicle();
 
     assertTrue(p.isAvailable(today(), today().plusHours(1)));
     assertTrue(p.isAvailable(tomorrow().minusHours(1), tomorrow()));
@@ -38,7 +35,16 @@ public class TestVehicle extends TestCase {
   }
 
   public void test_bookAVehicleAndSeeThatIsNotAvailableAtTheTimeBooked() {
+    Publication p = todayTomorrowVehicle();
+    Reservation r = p.book(DateTime.now(), DateTime.now().plusHours(1), "someUser");
+    r.accept();
+    assertFalse(p.isAvailable(DateTime.now(), DateTime.now().plusHours(1)));
+  }
 
+  private Publication todayTomorrowVehicle() {
+    return new PublicationBuilder()
+      .withAvailability(new Available(today(), tomorrow()))
+      .build();
   }
 
 }
