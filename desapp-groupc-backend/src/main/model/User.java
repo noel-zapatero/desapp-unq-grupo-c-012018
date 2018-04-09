@@ -1,5 +1,6 @@
 package main.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class User {
     public String email;
 
     public float rating;
-    private int amountOfRatings;
+    private List<Integer> totalRatings;
     public float credits;
     public List<Vehicle> myVehicles;
     public List<Vehicle> vehiclesRented;
@@ -27,7 +28,7 @@ public class User {
         this.email = email;
         this.credits = 0;
         this.rating = 0;
-        this.amountOfRatings = 0;
+        this.totalRatings = new ArrayList<Integer>();
         myVehicles = new ArrayList<Vehicle>();
         vehiclesRented = new ArrayList<Vehicle>();
         myOffers = new ArrayList<Publication>();
@@ -65,23 +66,32 @@ public class User {
     }
 
     //On the return, rating must be done from both sides
-    public void returnDone(Publication pub, float rate){
+    public void returnDone(Publication pub, Integer rate){
       EmailSender.SendReturnMessage(pub.getOwnerEmail());
-      rateCounterPart(pub.getOwner(), rate, " ");
+      rateCounterPart(pub.getOwner(), rate, "");
     }
-    public void acceptReturn(String receiptEmail, User bidder, float rate){
+    public void acceptReturn(String receiptEmail, User bidder, Integer rate){
       EmailSender.AcceptReturn(receiptEmail);
       rateCounterPart(bidder, rate, "");
     }
 
-    public void rateCounterPart(User otherUser, float rating, String comments){
-        //TODO: check comments, may not be
-        otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
+    public void rateCounterPart(User otherUser, Integer rating, String comments){
+        this.rateCounterPart(otherUser,rating);
+        String comment = comments;
     }
 
-    public void receiveRating(float rating){
-        this.amountOfRatings++;
-        this.rating = (this.rating+=rating) / this.amountOfRatings;
+    public void rateCounterPart(User otherUser, Integer rating){
+      otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
+    }
+
+    public void receiveRating(Integer rating){
+        this.totalRatings.add(rating);
+        float rate = 0;
+        int i;
+        for (i=0; i < this.totalRatings.size(); i++) {
+              rate += this.totalRatings.get(i);
+        }
+        this.rating = rate / this.totalRatings.size();
     }
 
     public String getName() {
@@ -96,8 +106,9 @@ public class User {
         return credits;
     }
 
-    public float getRating() {
-        return rating;
+    public double getRating() {
+      double d = Math.pow(10,2);
+      return (Math.round(this.rating * d) / d);
     }
 
     public String getEmail() {

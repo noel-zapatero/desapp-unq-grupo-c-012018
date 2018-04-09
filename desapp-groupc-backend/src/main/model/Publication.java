@@ -1,5 +1,6 @@
 package main.model;
 
+import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
 public class Publication {

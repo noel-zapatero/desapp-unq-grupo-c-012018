@@ -37,6 +37,8 @@ public class TestUser extends TestCase {
         assertTrue(newUser.getRating() == 5);
         newUser.receiveRating(3);
         assertTrue(newUser.getRating() == 4);
+        newUser.receiveRating(3);
+        assertTrue(newUser.getRating() == 3.67);
     }
 
     public void testBookingVehicle(){
@@ -49,7 +51,7 @@ public class TestUser extends TestCase {
         .withOwner(newUser)
         .build();
 
-      newUser.bookVehicle(pub);
+      //newUser.bookVehicle(pub);
     }
 
 }
