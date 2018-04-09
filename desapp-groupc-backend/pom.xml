@@ -48,7 +48,13 @@
       <artifactId>jersey-multipart</artifactId>
       <version>1.19.4</version>
     </dependency>
-
+    <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-runner -->
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-runner</artifactId>
+      <version>9.4.9.v20180320</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   <build>
     <finalName>desapp-groupc-backend</finalName>
@@ -62,20 +68,6 @@
             <id>copy-dependencies</id>
             <phase>package</phase>
             <goals><goal>copy-dependencies</goal></goals>
-          </execution>
-          <execution>
-            <phase>package</phase>
-            <goals><goal>copy</goal></goals>
-            <configuration>
-              <artifactItems>
-                <artifactItem>
-                  <groupId>org.eclipse.jetty</groupId>
-                  <artifactId>jetty-maven-plugin</artifactId>
-                  <version>9.4.0.M0</version>
-                  <destFileName>jetty-runner.jar</destFileName>
-                </artifactItem>
-              </artifactItems>
-            </configuration>
           </execution>
         </executions>
       </plugin>
