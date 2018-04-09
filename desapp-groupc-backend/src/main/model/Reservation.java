@@ -28,6 +28,14 @@ public class Reservation {
    * @return si esta reserva coincide con el periodo de start a end
    */
   public boolean conflictsWith(DateTime start, DateTime end) {
-    return new Interval(this.start, this.end).overlaps(new Interval(start, end));
+    return this.overlaps(new Interval(start, end));
+  }
+
+  public boolean overlaps(Interval interval) {
+    return this.asInterval().overlaps(interval);
+  }
+
+  public Interval asInterval() {
+    return new Interval(this.start, this.end);
   }
 }
