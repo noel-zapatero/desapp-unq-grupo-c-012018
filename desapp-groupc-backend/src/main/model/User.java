@@ -40,13 +40,6 @@ public class User {
         this.page.createVehicle(newVehicle);
     }
 
-    public void makeNewOffer (Vehicle myVehicle){
-        //check that myVehicle is already added to "myVehicles" list
-        Publication newPub = new Publication(myVehicle, this);
-        myOffers.add(newPub);
-        page.publish(newPub);
-    }
-
     public void chargeCredits(float moreCred){
         this.credits += moreCred;
     }

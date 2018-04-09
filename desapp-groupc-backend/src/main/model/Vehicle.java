@@ -15,6 +15,7 @@ public class Vehicle {
     private Phone contactPhone;
     private float rentFeeDay;
     private float rentFeeHour;
+    private Availability availability;
 
     public void setType(VehicleType type) {
         this.type = type;
@@ -51,4 +52,10 @@ public class Vehicle {
     public void setRentFeeHour(float rentFeeHour) {
         this.rentFeeHour = rentFeeHour;
     }
+
+    public void setAvailability(Availability availability) {this.availability=availability;}
+
+  public boolean isAvailable(DateTime start, DateTime end) {
+    return availability.isAvailable(start, end);
+  }
 }

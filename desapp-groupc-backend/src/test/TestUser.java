@@ -4,6 +4,7 @@ import junit.framework.TestCase;
 import main.model.Publication;
 import main.model.User;
 import main.model.Vehicle;
+import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
 
 public class TestUser extends TestCase {
@@ -43,7 +44,10 @@ public class TestUser extends TestCase {
         .withEmail("witherwings77@gmail.com")
         .withNameAndLastName("Noel", "Zapatero")
         .build();
-      Publication pub = new Publication(new Vehicle(),newUser);
+      Publication pub = new PublicationBuilder()
+        .withVehicle(new Vehicle())
+        .withOwner(newUser)
+        .build();
 
       newUser.bookVehicle(pub);
     }
