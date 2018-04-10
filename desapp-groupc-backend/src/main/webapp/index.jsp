@@ -42,7 +42,7 @@
 </head>
 <body>
   <div style="background-color:#c90e0e;padding:15px;text-align:center;">
-    <img src="/logo/Logo%20Carpnd.png" style="height: 100px;width: auto">
+    <img src="/logo/Logo%20Carpnd.png" style="height: auto;max-width: 100%">
   </div>
 
   <div style="overflow:auto">
