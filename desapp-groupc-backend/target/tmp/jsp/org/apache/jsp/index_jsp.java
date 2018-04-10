@@ -85,7 +85,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("  <div style=\"background-color:#c90e0e;padding:15px;text-align:center;\">\r\n");
-      out.write("    <img src=\"/logo/Logo%20Carpnd.png\" style=\"height: 100px;width: auto\">\r\n");
+      out.write("    <img src=\"/logo/Logo%20Carpnd.png\" style=\"height: auto;max-width: 100%\">\r\n");
       out.write("  </div>\r\n");
       out.write("\r\n");
       out.write("  <div style=\"overflow:auto\">\r\n");
