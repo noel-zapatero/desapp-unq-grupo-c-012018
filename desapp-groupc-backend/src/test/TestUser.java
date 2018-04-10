@@ -4,7 +4,6 @@ import junit.framework.TestCase;
 import main.model.Carpnd;
 import main.model.Publication;
 import main.model.User;
-import main.model.Vehicle;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
 
@@ -18,7 +17,7 @@ public class TestUser extends TestCase {
                 .withEmail("mburns@springfield.com")
                 .build();
 
-        assert(burns.getName()).equals("Montgomery");
+        assertTrue(burns.getName().equals("Montgomery"));
     }
 
     public void testCreateVehicleFromUser(){

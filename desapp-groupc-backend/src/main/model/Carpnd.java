@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Carpnd {
 
-    List<Publication> offers;
-    List<User> users;
-    List<Vehicle> allVehicles;
+    private List<Publication> offers;
+    private List<User> users;
+    private List<Vehicle> allVehicles;
 
     public Carpnd(){
       this.offers = new ArrayList<Publication>();
@@ -25,30 +25,30 @@ public class Carpnd {
         this.allVehicles.add(vehicle);
     }
 
-    
+
   public void bookVehicle(String bidderName, Publication pub){
-    EmailSender.SendBookMessage(bidderName, pub.getOwnerEmail());
+    EmailSender.sendBookMessage(bidderName, pub.getOwnerEmail());
   }
 
   //TODO: Check credit discount
   public void acceptReservation(String receiptEmail){
-    EmailSender.AcceptReservation(receiptEmail);
+    EmailSender.acceptReservation(receiptEmail);
   }
 
   public void pickUpDone(Publication pub){
-    EmailSender.SendPickUpMessage(pub.getOwnerEmail());
+    EmailSender.sendPickUpMessage(pub.getOwnerEmail());
   }
   public void acceptPickUp(String receiptEmail){
-    EmailSender.AcceptPickUp(receiptEmail);
+    EmailSender.acceptPickUp(receiptEmail);
   }
 
   //On the return, rating must be done from both sides
   public void returnDone(Publication pub, Integer rate){
-    EmailSender.SendReturnMessage(pub.getOwnerEmail());
+    EmailSender.sendReturnMessage(pub.getOwnerEmail());
     rateCounterPart(pub.getOwner(), rate, "");
   }
   public void acceptReturn(String receiptEmail, User bidder, Integer rate){
-    EmailSender.AcceptReturn(receiptEmail);
+    EmailSender.acceptReturn(receiptEmail);
     rateCounterPart(bidder, rate, "");
   }
 

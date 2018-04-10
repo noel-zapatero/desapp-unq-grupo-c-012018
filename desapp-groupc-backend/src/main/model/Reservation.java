@@ -5,10 +5,10 @@ import org.joda.time.Interval;
 
 public class Reservation {
 
-  private final DateTime start;
-  private final DateTime end;
-  private final String username;
-  private final Publication publication;
+  private DateTime start;
+  private DateTime end;
+  private String username;
+  private Publication publication;
 
   public Reservation(DateTime start, DateTime end, String username, Publication publication) {
     this.start = start;
