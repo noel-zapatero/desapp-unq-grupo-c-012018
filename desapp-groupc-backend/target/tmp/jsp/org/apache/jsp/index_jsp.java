@@ -44,8 +44,17 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<html>\r\n");
       out.write("<meta charset=\"UTF-8\">\r\n");
       out.write("<body>\r\n");
-      out.write("<h2>Sarasa2</h2>\r\n");
-      out.write("</body>\r\n");
+      out.write("<h1 style=\"text-align:center;\">CARPND</h1>\r\n");
+      out.write("  <p>\r\n");
+      out.write("  <li>\r\n");
+      out.write("  Log In\r\n");
+      out.write("  </li>\r\n");
+      out.write("  <li>\r\n");
+      out.write("  Create Acoount\r\n");
+      out.write("  </li>\r\n");
+      out.write("  </p>\r\n");
+      out.write("\r\n");
+      out.write("  </body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

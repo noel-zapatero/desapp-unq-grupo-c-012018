@@ -23,6 +23,8 @@ public class TestUser extends TestCase {
 
     public void testCreateVehicleFromUser(){
       User newUser = new UserBuilder().build();
+      Carpnd carpnd = new Carpnd();
+      newUser.setPage(carpnd);
 
       newUser.createVehicle();
       assertTrue(newUser.myVehicles.size() == 1);
@@ -50,22 +52,28 @@ public class TestUser extends TestCase {
     }
 
     public void testEmails(){
+      Carpnd carpnd = new Carpnd();
+
       User newUser = new UserBuilder()
         .withEmail("witherwings77@gmail.com")
         .withNameAndLastName("Noel", "Zapatero")
         .build();
+      newUser.setPage(carpnd);
+
+      newUser.createVehicle();
+
       Publication pub = new PublicationBuilder()
-        .withVehicle(new Vehicle())
+        .withVehicle(newUser.myVehicles.get(0))
         .withOwner(newUser)
         .build();
 
       //Se utiliza solo un mismo usuario y mail para testear la salida y llegada de los mismos
-      newUser.bookVehicle(pub);
-      newUser.acceptReservation(pub.getOwnerEmail());
-      newUser.pickUpDone(pub);
-      newUser.acceptPickUp(pub.getOwnerEmail());
-      newUser.returnDone(pub,5);
-      newUser.acceptReturn(pub.getOwnerEmail(),newUser,5);
+      carpnd.bookVehicle(newUser.getName(),pub);
+      carpnd.acceptReservation(pub.getOwnerEmail());
+      carpnd.pickUpDone(pub);
+      carpnd.acceptPickUp(pub.getOwnerEmail());
+      carpnd.returnDone(pub,5);
+      carpnd.acceptReturn(pub.getOwnerEmail(),newUser,5);
     }
 
 }

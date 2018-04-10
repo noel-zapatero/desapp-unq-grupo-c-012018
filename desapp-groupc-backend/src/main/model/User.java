@@ -1,6 +1,5 @@
 package main.model;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +37,7 @@ public class User {
         //check vehicle constructor
         Vehicle newVehicle = new Vehicle();
         this.myVehicles.add(newVehicle);
-        // this.page.createVehicle(newVehicle); check
+        this.page.createVehicle(newVehicle);
     }
 
     public void chargeCredits(float moreCred){
@@ -47,41 +46,6 @@ public class User {
 
     public void whitdrawCredits(float creds){
         this.credits -= creds;
-    }
-
-    public void bookVehicle(Publication pub){
-      EmailSender.SendBookMessage(this.firstName, pub.getOwnerEmail());
-    }
-
-    //TODO: Check credit discount
-    public void acceptReservation(String receiptEmail){
-      EmailSender.AcceptReservation(receiptEmail);
-    }
-
-    public void pickUpDone(Publication pub){
-      EmailSender.SendPickUpMessage(pub.getOwnerEmail());
-    }
-    public void acceptPickUp(String receiptEmail){
-      EmailSender.AcceptPickUp(receiptEmail);
-    }
-
-    //On the return, rating must be done from both sides
-    public void returnDone(Publication pub, Integer rate){
-      EmailSender.SendReturnMessage(pub.getOwnerEmail());
-      rateCounterPart(pub.getOwner(), rate, "");
-    }
-    public void acceptReturn(String receiptEmail, User bidder, Integer rate){
-      EmailSender.AcceptReturn(receiptEmail);
-      rateCounterPart(bidder, rate, "");
-    }
-
-    public void rateCounterPart(User otherUser, Integer rating, String comments){
-        this.rateCounterPart(otherUser,rating);
-        String comment = comments;
-    }
-
-    public void rateCounterPart(User otherUser, Integer rating){
-      otherUser.receiveRating(rating); //Rating must be a float between 0 and 5
     }
 
     public void receiveRating(Integer rating){
