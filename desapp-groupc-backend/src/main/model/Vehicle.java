@@ -1,23 +1,20 @@
 package main.model;
 
-import main.model.availability.Availability;
-import org.joda.time.DateTime;
-
 import java.util.List;
 
 public class Vehicle {
 
-    private VehicleType type;
+    private String type;
     private int passengerCapacity;
     private String zone;
-    private Address withdrawAddress;
-    private List<Address> returnAddresses;
+    private String withdrawAddress;
+    private List<String> returnAddresses;
     private String description;
-    private Phone contactPhone;
+    private String contactPhone;
     private float rentFeeDay;
     private float rentFeeHour;
 
-    public void setType(VehicleType type) {
+    public void setType(String type) {
         this.type = type;
     }
 
@@ -29,11 +26,11 @@ public class Vehicle {
         this.zone = zone;
     }
 
-    public void setWithdrawAddress(Address withdrawAddress) {
+    public void setWithdrawAddress(String withdrawAddress) {
         this.withdrawAddress = withdrawAddress;
     }
 
-    public void setReturnAddresses(List<Address> returnAddresses) {
+    public void setReturnAddresses(List<String> returnAddresses) {
         this.returnAddresses = returnAddresses;
     }
 
@@ -41,7 +38,7 @@ public class Vehicle {
         this.description = description;
     }
 
-    public void setContactPhone(Phone contactPhone) {
+    public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
     }
 

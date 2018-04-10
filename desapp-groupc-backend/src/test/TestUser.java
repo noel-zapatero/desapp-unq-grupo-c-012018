@@ -1,6 +1,7 @@
 package test;
 
 import junit.framework.TestCase;
+import main.model.Carpnd;
 import main.model.Publication;
 import main.model.User;
 import main.model.Vehicle;
@@ -18,6 +19,13 @@ public class TestUser extends TestCase {
                 .build();
 
         assert(burns.getName()).equals("Montgomery");
+    }
+
+    public void testCreateVehicleFromUser(){
+      User newUser = new UserBuilder().build();
+
+      newUser.createVehicle();
+      assertTrue(newUser.myVehicles.size() == 1);
     }
 
     public void testChargeAndWithdrawCredits(){
@@ -41,7 +49,7 @@ public class TestUser extends TestCase {
         assertTrue(newUser.getRating() == 3.67);
     }
 
-    public void testBookingVehicle(){
+    public void testEmails(){
       User newUser = new UserBuilder()
         .withEmail("witherwings77@gmail.com")
         .withNameAndLastName("Noel", "Zapatero")
@@ -51,7 +59,13 @@ public class TestUser extends TestCase {
         .withOwner(newUser)
         .build();
 
-      //newUser.bookVehicle(pub);
+      //Se utiliza solo un mismo usuario y mail para testear la salida y llegada de los mismos
+      newUser.bookVehicle(pub);
+      newUser.acceptReservation(pub.getOwnerEmail());
+      newUser.pickUpDone(pub);
+      newUser.acceptPickUp(pub.getOwnerEmail());
+      newUser.returnDone(pub,5);
+      newUser.acceptReturn(pub.getOwnerEmail(),newUser,5);
     }
 
 }

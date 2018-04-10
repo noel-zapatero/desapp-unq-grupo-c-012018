@@ -38,7 +38,7 @@ public class User {
         //check vehicle constructor
         Vehicle newVehicle = new Vehicle();
         this.myVehicles.add(newVehicle);
-        this.page.createVehicle(newVehicle);
+        // this.page.createVehicle(newVehicle); check
     }
 
     public void chargeCredits(float moreCred){
