@@ -5,7 +5,7 @@ import main.model.builders.EmailBuilder;
 
 public class EmailSender {
 
-  public static ClientResponse SendBookMessage(String requesterName, String receipt) {
+  public static ClientResponse sendBookMessage(String requesterName, String receipt) {
     ClientResponse cli = new EmailBuilder()
       .withReceipt(receipt)
       .withSubject("Hello " + receipt)
@@ -14,7 +14,7 @@ public class EmailSender {
     return cli;
   }
 
-  public static ClientResponse AcceptReservation(String receiptEmail) {
+  public static ClientResponse acceptReservation(String receiptEmail) {
     ClientResponse cli = new EmailBuilder()
       .withReceipt(receiptEmail)
       .withText("Your request was accepted")
@@ -22,7 +22,7 @@ public class EmailSender {
     return cli;
   }
 
-  public static ClientResponse SendPickUpMessage(String ownerEmail) {
+  public static ClientResponse sendPickUpMessage(String ownerEmail) {
     ClientResponse cli = new EmailBuilder()
       .withReceipt(ownerEmail)
       .withText("PickUpDone by " + ownerEmail)
@@ -30,7 +30,7 @@ public class EmailSender {
     return cli;
   }
 
-  public static ClientResponse AcceptPickUp(String receiptEmail) {
+  public static ClientResponse acceptPickUp(String receiptEmail) {
     ClientResponse cli = new EmailBuilder()
       .withReceipt(receiptEmail)
       .withText("The pickup was accepted by the owner")
@@ -38,7 +38,7 @@ public class EmailSender {
     return cli;
   }
 
-  public static ClientResponse SendReturnMessage(String ownerEmail) {
+  public static ClientResponse sendReturnMessage(String ownerEmail) {
     ClientResponse cli = new EmailBuilder()
       .withReceipt(ownerEmail)
       .withText("Hi " + ownerEmail + ". Your vehicle has been returned")
@@ -46,11 +46,10 @@ public class EmailSender {
     return cli;
   }
 
-  public static ClientResponse AcceptReturn(String receiptEmail) {
-    ClientResponse cli = new EmailBuilder()
+  public static ClientResponse acceptReturn(String receiptEmail) {
+    return new EmailBuilder()
       .withReceipt(receiptEmail)
       .withText("Return accepted")
       .build();
-    return cli;
   }
 }
