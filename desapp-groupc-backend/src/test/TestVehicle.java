@@ -3,6 +3,7 @@ package test;
 import junit.framework.TestCase;
 import main.model.Publication;
 import main.model.Reservation;
+import main.model.Vehicle;
 import main.model.availability.Available;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.VehicleBuilder;
