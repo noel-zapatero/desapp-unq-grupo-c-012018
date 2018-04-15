@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -17,7 +17,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     return _jspx_dependants;
   }
 
-  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+  public void jspService(HttpServletRequest request, HttpServletResponse response)
         throws java.io.IOException, ServletException {
 
     PageContext pageContext = null;

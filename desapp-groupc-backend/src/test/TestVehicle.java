@@ -10,7 +10,7 @@ import org.joda.time.DateTime;
 
 public class TestVehicle extends TestCase {
 
-  public void test_vehiclesFirstStartAsUnavailable() {
+  public void testVehiclesFirstStartAsUnavailable() {
     Publication p = new PublicationBuilder()
       .withVehicle(new VehicleBuilder().build())
       .build();
@@ -18,7 +18,7 @@ public class TestVehicle extends TestCase {
     assertFalse(p.isAvailable(today(), today().plusHours(1)));
   }
 
-  public void test_makeAVehicleAvailable() {
+  public void testMakeAVehicleAvailable() {
     Publication p = todayTomorrowVehicle();
 
     assertTrue(p.isAvailable(today(), today().plusHours(1)));
@@ -34,7 +34,7 @@ public class TestVehicle extends TestCase {
     return DateTime.now();
   }
 
-  public void test_bookAVehicleAndSeeThatIsNotAvailableAtTheTimeBooked() {
+  public void testBookAVehicleAndSeeThatIsNotAvailableAtTheTimeBooked() {
     Publication p = todayTomorrowVehicle();
     Reservation r = p.book(DateTime.now(), DateTime.now().plusHours(1), "someUser");
     r.accept();

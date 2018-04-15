@@ -55,6 +55,11 @@
       <version>9.4.9.v20180320</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>com.codacy</groupId>
+      <artifactId>codacy-coverage-reporter</artifactId>
+      <version>4.0.0</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>desapp-groupc-backend</finalName>
@@ -70,6 +75,17 @@
             <goals><goal>copy-dependencies</goal></goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <formats>
+            <format>xml</format>
+          </formats>
+          <check/>
+        </configuration>
       </plugin>
     </plugins>
   </build>

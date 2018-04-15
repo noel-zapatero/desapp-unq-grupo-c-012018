@@ -43,45 +43,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-runner:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-plus:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-webapp:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-xml:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-annotations:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: javax.annotation:javax.annotation-api:1.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.ow2.asm:asm:6.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.ow2.asm:asm-commons:6.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.ow2.asm:asm-tree:6.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-jaas:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-security:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-server:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.websocket:websocket-server:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.websocket:websocket-common:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.websocket:websocket-api:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-io:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.websocket:websocket-client:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-client:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.websocket:websocket-servlet:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-servlet:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-http:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-jndi:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:jetty-util:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:apache-jsp:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty.toolchain:jetty-schemas:3.1" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.mortbay.jasper:apache-jsp:8.5.24.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.mortbay.jasper:apache-el:8.5.24.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jdt:ecj:3.12.3" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:apache-jstl:9.4.9.v20180320" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.1.1" level="project" />
     <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
-    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.jupiter:junit-jupiter-api:5.2.0-M1" level="project" />
     <orderEntry type="library" name="Maven: org.apiguardian:apiguardian-api:1.0.0" level="project" />
     <orderEntry type="library" name="Maven: org.opentest4j:opentest4j:1.0.0" level="project" />
-    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.junit.platform:junit-platform-commons:1.2.0-M1" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:2.9.8" level="project" />
     <orderEntry type="library" name="Maven: com.sun.jersey:jersey-core:1.19.4" level="project" />
     <orderEntry type="library" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
@@ -120,5 +89,56 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.eclipse.jetty:apache-jstl:9.4.9.v20180320" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.5" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.5" level="project" />
+    <orderEntry type="library" name="Maven: com.codacy:codacy-coverage-reporter:4.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-library:2.11.12" level="project" />
+    <orderEntry type="library" name="Maven: com.codacy:codacy-api-scala_2.11:3.0.7" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.jgit:org.eclipse.jgit:3.6.2.201501210735-r" level="project" />
+    <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.50" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.javaewah:JavaEWAH:0.7.9" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.1.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.1.4" level="project" />
+    <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.4" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-json_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-data_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-core_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-base_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-net_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-io_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-codec_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-mime_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-uri_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: commons-net:commons-net:2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.codacy:coverage-parser_2.11:2.0.7" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: ch.qos.logback:logback-core:1.2.3" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Maven: org.log4s:log4s_2.11:1.5.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.alexarchambault:case-app_2.11:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.alexarchambault:case-app-annotations_2.11:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.github.alexarchambault:case-app-util_2.11:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.chuusai:shapeless_2.11:2.3.2" level="project" />
+    <orderEntry type="library" name="Maven: org.typelevel:macro-compat_2.11:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.propensive:rapture-json-play_2.11:2.0.0-M8" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.11.8" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-parser-combinators_2.11:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.11.8" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe.play:play-json_2.11:2.5.3" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe.play:play-iteratees_2.11:2.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-stm:scala-stm_2.11:0.7" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe:config:1.3.0" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe.play:play-functional_2.11:2.5.3" level="project" />
+    <orderEntry type="library" name="Maven: com.typesafe.play:play-datacommons_2.11:2.5.3" level="project" />
+    <orderEntry type="library" name="Maven: org.joda:joda-convert:1.8.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.7.1" level="project" />
+    <orderEntry type="library" name="Maven: org.typelevel:cats-core_2.11:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.typelevel:cats-macros_2.11:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.typelevel:cats-kernel_2.11:1.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.typelevel:machinist_2.11:0.6.2" level="project" />
   </component>
 </module>
