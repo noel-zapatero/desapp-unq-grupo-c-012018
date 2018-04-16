@@ -7,13 +7,13 @@ public class Reservation {
 
   private DateTime start;
   private DateTime end;
-  private String username;
+  //private String username;
   private Publication publication;
 
   public Reservation(DateTime start, DateTime end, String username, Publication publication) {
     this.start = start;
     this.end = end;
-    this.username = username;
+    //this.username = username;
     this.publication = publication;
   }
 

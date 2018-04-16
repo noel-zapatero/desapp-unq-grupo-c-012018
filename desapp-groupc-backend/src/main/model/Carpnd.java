@@ -5,14 +5,16 @@ import java.util.List;
 
 public class Carpnd {
 
-    private List<Publication> offers;
+    //private List<Publication> offers;
     private List<User> users;
     private List<Vehicle> allVehicles;
+    private String cacheComment;
 
     public Carpnd(){
-      this.offers = new ArrayList<Publication>();
+      //this.offers = new ArrayList<Publication>();
       this.users = new ArrayList<User>();
       this.allVehicles = new ArrayList<Vehicle>();
+      this.cacheComment = "";
     }
 
     public void register(int cuil, String lastName, String firstName, String address, String email){
@@ -54,7 +56,7 @@ public class Carpnd {
 
   public void rateCounterPart(User otherUser, Integer rating, String comments){
     this.rateCounterPart(otherUser,rating);
-    String comment = comments;
+    this.cacheComment = comments;
   }
 
   public void rateCounterPart(User otherUser, Integer rating){

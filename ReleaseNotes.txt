@@ -1,0 +1,17 @@
+---------------------------------------------------------------------
+Carpnd - GRUPOC v1.0
+---------------------------------------------------------------------
+
+NEW FEATURES:
+* Se creo repo en Github
+* Se integraron herramientas externas (Codacy, Travis, Heroku)
+* Modelo practicamente terminado y testeado (91% del codigo)
+* Pantalla prototipo de home web
+
+NOTES:
+* Restan algunas funcionalidades del codigo (AFIP, Google Maps, logueo por redes sociales, busquedas)
+* Varios errores mostrados en Codacy corresponden a archivos autogenerados del proyecto
+* A la hora de la entrega no se habia chequeado el tema de Release Notes o cantidad de errores en Codacy. Se intento arreglar mas tarde.
+
+KNOWN ISSUES:
+* De momento ningun error en particular.

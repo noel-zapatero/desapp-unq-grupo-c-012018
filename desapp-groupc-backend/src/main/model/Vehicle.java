@@ -1,5 +1,6 @@
 package main.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Vehicle {
@@ -14,39 +15,16 @@ public class Vehicle {
     private float rentFeeDay;
     private float rentFeeHour;
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setPassengerCapacity(int passengerCapacity) {
-        this.passengerCapacity = passengerCapacity;
-    }
-
-    public void setZone(String zone) {
-        this.zone = zone;
-    }
-
-    public void setWithdrawAddress(String withdrawAddress) {
-        this.withdrawAddress = withdrawAddress;
-    }
-
-    public void setReturnAddresses(List<String> returnAddresses) {
-        this.returnAddresses = returnAddresses;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setContactPhone(String contactPhone) {
-        this.contactPhone = contactPhone;
-    }
-
-    public void setRentFeeDay(float rentFeeDay) {
-        this.rentFeeDay = rentFeeDay;
-    }
-
-    public void setRentFeeHour(float rentFeeHour) {
-        this.rentFeeHour = rentFeeHour;
+    //Default vehicle. Change
+    public Vehicle(){
+      this.type = "Car";
+      this.passengerCapacity = 4;
+      this.zone = "Default";
+      this.withdrawAddress = "Default";
+      this.returnAddresses = new ArrayList<String>();
+      this.description = "Default";
+      this.contactPhone = "00000000";
+      this.rentFeeDay = 0;
+      this.rentFeeHour = 0;
     }
 }
