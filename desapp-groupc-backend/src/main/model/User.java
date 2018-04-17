@@ -20,6 +20,8 @@ public class User {
     private Carpnd page;
 
     public User(long cuil, String lastName, String firstName, String address, String email){
+
+
         this.cuil = new Cuil(cuil);
         this.lastName = lastName;
         this.firstName = firstName;
@@ -31,6 +33,15 @@ public class User {
         myVehicles = new ArrayList<Vehicle>();
         vehiclesRented = new ArrayList<Vehicle>();
         myOffers = new ArrayList<Publication>();
+    }
+
+  /**
+   * funca para firstName y lastName
+   * @param name
+   * @return
+   */
+  private boolean isValidName(String name) {
+      return name.length() >= 4 && name.length() <= 50;
     }
 
     public void createVehicle(){
