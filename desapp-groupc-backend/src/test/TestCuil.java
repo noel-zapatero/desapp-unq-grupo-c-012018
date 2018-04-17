@@ -25,6 +25,11 @@ public class TestCuil {
 
   @Test(expected = WrongCuilException.class)
   public void test_wrongCuilEnd() {
+    Cuil cuil = new Cuil(20337778885L);
+  }
+
+  @Test
+  public void test_correctCuil() {
     Cuil cuil = new Cuil(20337778881L);
   }
 

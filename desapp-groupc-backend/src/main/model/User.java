@@ -1,11 +1,13 @@
 package main.model;
 
+import model.Cuil;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
-    public long cuil;
+    public Cuil cuil;
     public String lastName;
     public String firstName;
     public String address;
@@ -20,7 +22,7 @@ public class User {
     private Carpnd page;
 
     public User(long cuil, String lastName, String firstName, String address, String email){
-        this.cuil = cuil;
+        this.cuil = new Cuil(cuil);
         this.lastName = lastName;
         this.firstName = firstName;
         this.address = address;

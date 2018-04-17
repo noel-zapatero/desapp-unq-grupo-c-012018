@@ -1,15 +1,18 @@
 package test;
 
-import junit.framework.TestCase;
 import main.model.Publication;
 import main.model.Reservation;
 import main.model.availability.Available;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.VehicleBuilder;
 import org.joda.time.DateTime;
+import org.junit.Test;
 
-public class TestPublication extends TestCase {
+import static junit.framework.TestCase.*;
 
+public class TestPublication {
+
+  @Test
   public void testVehiclesFirstStartAsUnavailable() {
     Publication p = new PublicationBuilder()
       .withVehicle(new VehicleBuilder().build())
@@ -18,6 +21,7 @@ public class TestPublication extends TestCase {
     assertFalse(p.isAvailable(today(), today().plusHours(1)));
   }
 
+  @Test
   public void testMakeAVehicleAvailable() {
     Publication p = todayTomorrowVehicle();
 
@@ -26,14 +30,15 @@ public class TestPublication extends TestCase {
     assertFalse(p.isAvailable(tomorrow(), tomorrow().plusHours(1)));
   }
 
-  private DateTime tomorrow() {
+  public DateTime tomorrow() {
     return today().plusDays(1);
   }
 
-  private DateTime today() {
+  public DateTime today() {
     return DateTime.now();
   }
 
+  @Test
   public void testBookAVehicleAndSeeThatIsNotAvailableAtTheTimeBooked() {
     Publication p = todayTomorrowVehicle();
     Reservation r = p.book(DateTime.now(), DateTime.now().plusHours(1), "someUser");
@@ -41,7 +46,7 @@ public class TestPublication extends TestCase {
     assertFalse(p.isAvailable(DateTime.now(), DateTime.now().plusHours(1)));
   }
 
-  private Publication todayTomorrowVehicle() {
+  public Publication todayTomorrowVehicle() {
     return new PublicationBuilder()
       .withAvailability(new Available(today(), tomorrow()))
       .build();

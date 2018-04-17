@@ -36,7 +36,9 @@ public class Cuil {
   private boolean hasTheRightEnd(Long cuilNumber) {
     String s = cuilNumber.toString();
     Integer slen = s.length();
-    return this.cuilStars.contains(s.substring(slen-1));
+    String tmp = s.substring(slen-1);
+    boolean b = this.cuilEnds.contains(s.substring(slen-1));
+    return b;
   }
 
   private boolean hasTheRightStart(Long cuilNumber) {
