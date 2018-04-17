@@ -8,7 +8,7 @@ import main.model.builders.PublicationBuilder;
 import main.model.builders.VehicleBuilder;
 import org.joda.time.DateTime;
 
-public class TestVehicle extends TestCase {
+public class TestPublication extends TestCase {
 
   public void testVehiclesFirstStartAsUnavailable() {
     Publication p = new PublicationBuilder()

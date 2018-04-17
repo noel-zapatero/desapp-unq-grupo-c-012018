@@ -34,7 +34,7 @@ public class Publication {
   }
 
   private boolean isBooked(DateTime start, DateTime end) {
-      boolean ret = false;
+    boolean ret = false;
     for (Reservation r: acceptedReservations) {
       ret = ret || r.conflictsWith(start, end);
     }

@@ -24,6 +24,6 @@
 
   <servlet-mapping>
     <servlet-name>CXFServlet</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
+    <url-pattern>/main/webservices/*</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -32,17 +32,17 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
     <jaxrs:serviceBeans>
       <ref bean="publicationsRest" />
     </jaxrs:serviceBeans>
-    <!--<jaxrs:extensionMappings>-->
-      <!--<entry key="json" value="application/json" />-->
-      <!--<entry key="xml" value="application/xml" />-->
-    <!--</jaxrs:extensionMappings>-->
-    <!--<jaxrs:providers>-->
-      <!--<ref bean="jaxbProvider" />-->
-      <!--<ref bean="jacksonProvider" />-->
-    <!--</jaxrs:providers>-->
-    <!--<jaxrs:features>-->
-      <!--<cxf:logging />-->
-    <!--</jaxrs:features>-->
+    <jaxrs:extensionMappings>
+      <entry key="json" value="application/json" />
+      <entry key="xml" value="application/xml" />
+    </jaxrs:extensionMappings>
+    <jaxrs:providers>
+      <ref bean="jaxbProvider" />
+      <ref bean="jacksonProvider" />
+    </jaxrs:providers>
+    <jaxrs:features>
+      <cxf:logging />
+    </jaxrs:features>
   </jaxrs:server>
 
   <bean id="publicationsRest" class="main.webservices.PublicationsRest">
