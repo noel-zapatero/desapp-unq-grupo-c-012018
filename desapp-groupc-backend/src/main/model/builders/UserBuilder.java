@@ -8,7 +8,7 @@ public class UserBuilder {
     private String lastName = "No lastname";
     private String firstName = "No name";
     private String address = "No address";
-    private String email = "No email";
+    private String email = "No@email.com";
 
     public User build() {
         User user = new User(cuil,lastName,firstName,address,email);

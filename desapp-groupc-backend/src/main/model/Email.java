@@ -41,4 +41,7 @@ public class Email {
     return adress.contains("@");
   }
 
+  public String getAdress() {
+    return adress;
+  }
 }

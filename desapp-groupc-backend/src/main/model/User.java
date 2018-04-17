@@ -9,7 +9,7 @@ public class User {
     public String lastName;
     public String firstName;
     public String address;
-    public String email;
+    public Email email;
 
     public float rating;
     private List<Integer> totalRatings;
@@ -24,7 +24,7 @@ public class User {
         this.lastName = lastName;
         this.firstName = firstName;
         this.address = address;
-        this.email = email;
+        this.email = new Email(email);
         this.credits = 0;
         this.rating = 0;
         this.totalRatings = new ArrayList<Integer>();
@@ -75,7 +75,7 @@ public class User {
       return (Math.round(this.rating * d) / d);
     }
 
-    public String getEmail() {
+    public Email getEmail() {
       return email;
     }
 }

@@ -23,7 +23,7 @@ public class Publication {
     }
 
   public String getOwnerEmail() {
-    return this.owner.getEmail();
+    return this.owner.getEmail().getAdress();
   }
 
   public User getOwner() {
