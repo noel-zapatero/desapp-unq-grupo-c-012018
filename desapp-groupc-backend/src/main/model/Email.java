@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Email {
 
-  private String adress;
+  private String address;
 
   private List<String> endings = new ArrayList<>();
 
@@ -20,7 +20,7 @@ public class Email {
     if (!this.isValid(adress))
       throw new InvalidEmailException();
 
-    this.adress = adress;
+    this.address = adress;
   }
 
   private boolean isValid(String adress) {
@@ -41,7 +41,7 @@ public class Email {
     return adress.contains("@");
   }
 
-  public String getAdress() {
-    return adress;
+  public String getAddress() {
+    return address;
   }
 }
