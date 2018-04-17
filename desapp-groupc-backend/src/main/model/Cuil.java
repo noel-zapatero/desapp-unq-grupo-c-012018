@@ -1,4 +1,4 @@
-package model;
+package main.model;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
 import main.model.exceptions.WrongCuilException;

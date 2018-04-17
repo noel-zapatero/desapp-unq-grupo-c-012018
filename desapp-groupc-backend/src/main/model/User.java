@@ -1,7 +1,5 @@
 package main.model;
 
-import model.Cuil;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -12,6 +12,7 @@ public class Publication {
     public Vehicle vehicleOffered;
 
     private Availability availability;
+
     private List<Reservation> reservations = new ArrayList<Reservation>();
     private List<Reservation> acceptedReservations = new ArrayList<Reservation>();
 

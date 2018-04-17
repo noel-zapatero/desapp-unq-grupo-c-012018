@@ -1,7 +1,7 @@
 package test;
 
 import main.model.exceptions.WrongCuilException;
-import model.Cuil;
+import main.model.Cuil;
 import org.junit.Test;
 
 public class TestCuil {
@@ -15,8 +15,6 @@ public class TestCuil {
   public void test_seeThatICantCreateACuildWithTheWrongLenght_V2() {
     Cuil cuil = new Cuil(2033777888L);
   }
-
-  // arrancan con 20, 27, 23, 21
 
   @Test(expected = WrongCuilException.class)
   public void test_wrongCuilStart() {

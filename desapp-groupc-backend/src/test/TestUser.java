@@ -5,6 +5,7 @@ import main.model.Publication;
 import main.model.User;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
+import org.junit.Ignore;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
 
@@ -55,6 +56,7 @@ public class TestUser {
     }
 
   @Test
+  @Ignore
     public void testEmails(){
       Carpnd carpnd = new Carpnd();
 

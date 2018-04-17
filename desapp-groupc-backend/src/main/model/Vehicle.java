@@ -27,4 +27,5 @@ public class Vehicle {
       this.rentFeeDay = 0;
       this.rentFeeHour = 0;
     }
+
 }
