@@ -1,6 +1,5 @@
 package test;
 
-import junit.framework.TestCase;
 import main.model.exceptions.WrongCuilException;
 import model.Cuil;
 import org.junit.Test;
@@ -25,8 +24,8 @@ public class TestCuil {
   }
 
   @Test(expected = WrongCuilException.class)
-  public void test_wrongCuilStart_V2() {
-    Cuil cuil = new Cuil(20337778889L);
+  public void test_wrongCuilEnd() {
+    Cuil cuil = new Cuil(20337778881L);
   }
 
 }

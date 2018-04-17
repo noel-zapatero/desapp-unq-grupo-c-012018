@@ -44,7 +44,7 @@ public class Cuil {
   }
 
   private boolean hasTheRightLength(Long cuilNumber) {
-    return cuilNumber.toString().length() != 11;
+    return cuilNumber.toString().length() == 11;
   }
 
 }
