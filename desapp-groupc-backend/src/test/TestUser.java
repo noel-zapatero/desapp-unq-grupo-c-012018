@@ -5,7 +5,6 @@ import main.model.Publication;
 import main.model.User;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
-import main.model.exceptions.InvalidNameException;
 import org.junit.Ignore;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
