@@ -56,7 +56,6 @@ public class TestUser {
     }
 
   @Test
-  @Ignore
     public void testEmails(){
       Carpnd carpnd = new Carpnd();
 
