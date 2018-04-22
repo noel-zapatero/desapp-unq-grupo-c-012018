@@ -1,31 +1,64 @@
 package main.model;
 
-import java.util.ArrayList;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "vehicles")
 public class Vehicle {
 
-    private String type;
-    private int passengerCapacity;
-    private String zone;
-    private String withdrawAddress;
-    private List<String> returnAddresses;
-    private String description;
-    private String contactPhone;
-    private float rentFeeDay;
-    private float rentFeeHour;
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id", updatable = false, nullable = false)
+  private Long id;
+  @Column(name = "type")
+  private String type;
+  @Column(name = "capacity")
+  private int passengerCapacity;
+  @Column(name = "zone")
+  private String zone;
+  @Column(name = "withdraw_address")
+  private String withdrawAddress;
+  @ElementCollection(fetch = FetchType.LAZY)
+  @Column(name = "return_addresses")
+  private List<String> returnAddresses;
+  @Column(name = "description")
+  private String description;
+  @Column(name = "phone")
+  private String contactPhone;
 
-    //Default vehicle. Change
-    public Vehicle(){
-      this.type = "Car";
-      this.passengerCapacity = 4;
-      this.zone = "Default";
-      this.withdrawAddress = "Default";
-      this.returnAddresses = new ArrayList<String>();
-      this.description = "Default";
-      this.contactPhone = "00000000";
-      this.rentFeeDay = 0;
-      this.rentFeeHour = 0;
-    }
+  private float rentFeeDay;
+  private float rentFeeHour;
+
+  //Default vehicle. Change
+  public Vehicle(){ }
+
+  public String getType() {return type;}
+
+  public void setType(String type) {this.type = type;}
+
+  public int getPassengerCapacity() {return passengerCapacity;}
+
+  public void setPassengerCapacity(int passengerCapacity) {this.passengerCapacity = passengerCapacity;}
+
+  public String getZone() {return zone;}
+
+  public void setZone(String zone) {this.zone = zone;}
+
+  public String getWithdrawAddress() {return withdrawAddress;}
+
+  public void setWithdrawAddress(String withdrawAddress) {this.withdrawAddress = withdrawAddress;}
+
+  public List<String> getReturnAddresses() {return returnAddresses;}
+
+  public void setReturnAddresses(List<String> returnAddresses) {this.returnAddresses = returnAddresses;}
+
+  public String getDescription() {return description;}
+
+  public void setDescription(String description) {this.description = description;}
+
+  public String getContactPhone() {return contactPhone;}
+
+  public void setContactPhone(String contactPhone) {this.contactPhone = contactPhone;}
 
 }

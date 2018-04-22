@@ -1,22 +1,22 @@
 package main.model;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import main.model.exceptions.WrongCuilException;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cuil {
 
   private Long number;
 
-  private List<String> cuilStars = new ArrayList<String>();
+  private List<String> cuilStarts = new ArrayList<String>();
   private List<String> cuilEnds  = new ArrayList<String>();
 
   public Cuil(Long number) {
-    this.cuilStars.add("20");
-    this.cuilStars.add("21");
-    this.cuilStars.add("23");
-    this.cuilStars.add("27");
+    this.cuilStarts.add("20");
+    this.cuilStarts.add("21");
+    this.cuilStarts.add("23");
+    this.cuilStarts.add("27");
 
     this.cuilEnds.add("1");
     this.cuilEnds.add("0");
@@ -42,7 +42,7 @@ public class Cuil {
   }
 
   private boolean hasTheRightStart(Long cuilNumber) {
-    return this.cuilStars.contains(cuilNumber.toString().substring(0,2));
+    return this.cuilStarts.contains(cuilNumber.toString().substring(0,2));
   }
 
   private boolean hasTheRightLength(Long cuilNumber) {
