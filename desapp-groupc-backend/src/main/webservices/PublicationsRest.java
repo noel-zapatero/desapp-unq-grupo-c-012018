@@ -14,7 +14,7 @@ public class PublicationsRest {
   @GET
   @Produces("application/json")
   public List<Publication> getAllPublications() {
-    return new ArrayList<>();
+    return new ArrayList<Publication>();
   }
 
 }
