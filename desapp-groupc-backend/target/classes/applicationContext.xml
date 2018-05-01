@@ -1,0 +1,125 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
+
+  <!-- =========================== -->
+  <!-- =========JAXB / CXF ========= -->
+  <!-- =========================== -->
+
+  <import resource="classpath:META-INF/cxf/cxf.xml" />
+  <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
+  <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+  <bean id="jaxbProvider" class="org.apache.cxf.jaxrs.provider.JAXBElementProvider" />
+
+  <bean id='jacksonProvider' class='org.codehaus.jackson.jaxrs.JacksonJaxbJsonProvider' />
+
+
+
+  <!-- =========================== -->
+  <!-- =========Servicios  ========= -->
+  <!-- =========================== -->
+
+
+  <jaxrs:server id="capnd" address="/"  >
+    <jaxrs:serviceBeans>
+      <ref bean="publicationsRest" />
+    </jaxrs:serviceBeans>
+    <jaxrs:extensionMappings>
+      <entry key="json" value="application/json" />
+      <entry key="xml" value="application/xml" />
+    </jaxrs:extensionMappings>
+    <jaxrs:providers>
+      <ref bean="jaxbProvider" />
+      <ref bean="jacksonProvider" />
+    </jaxrs:providers>
+    <jaxrs:features>
+      <cxf:logging />
+    </jaxrs:features>
+  </jaxrs:server>
+
+  <bean id="publicationsRest" class="main.webservices.PublicationsRest">
+
+  </bean>
+
+
+
+  <!-- =========================== -->
+  <!-- =========Persistence  ========= -->
+  <!-- =========================== -->
+
+  <!-- PropertyConfigurer -->
+  <bean id="persistence.propertyConfigurer"
+        class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+      <list>
+        <value>classpath*:hibernate.properties</value>
+        <value>classpath*:jdbc.properties</value>
+      </list>
+    </property>
+  </bean>
+  <!-- /PropertyConfigurer -->
+
+  <!-- DataSource -->
+  <bean id="persistence.dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName" value="${jdbc.driverClassName}" />
+    <property name="url" value="${jdbc.db.url}" />
+    <property name="username" value="${jdbc.username}" />
+    <property name="password" value="${jdbc.password}" />
+    <property name="defaultAutoCommit" value="false" />
+    <property name="poolPreparedStatements" value="true" />
+    <property name="initialSize" value="20" />
+    <property name="maxActive" value="30" />
+    <property name="maxIdle" value="25" />
+  </bean>
+  <!-- /DataSource -->
+
+  <!-- SessionFactory -->
+  <bean id="persistence.sessionFactory"
+        class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" >
+    <property name="dataSource" ref="persistence.dataSource" />
+    <!-- HibernateProperties -->
+    <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+        <prop key="hibernate.dialect">${hibernate.dialect}</prop>
+        <prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+        <prop key="hibernate.cglib.use_reflection_optimizer">true</prop>
+        <prop key="hibernate.connection.autocommit">false</prop>
+      </props>
+    </property>
+  </bean>
+  <!-- /SessionFactory -->
+
+  <!-- Transaction manager for a single JDBC DataSource -->
+  <bean id="persistence.transactionManager"
+        class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+    <property name="sessionFactory" ref="persistence.sessionFactory" />
+  </bean>
+
+  <bean name="persistence.jdbcExceptionTranslator"
+        class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+    <constructor-arg>
+      <ref bean="persistence.dataSource" />
+    </constructor-arg>
+  </bean>
+  <!-- /Transaction manager for a single JDBC DataSource -->
+
+
+
+  <!-- =========================== -->
+  <!-- =========Repositories  ========= -->
+  <!-- =========================== -->
+
+  <bean id="persistence.userRepository" class="main.repositories.UserRepository">
+    <property name="sessionFactory" ref="persistence.sessionFactory" />
+  </bean>
+
+</beans>
