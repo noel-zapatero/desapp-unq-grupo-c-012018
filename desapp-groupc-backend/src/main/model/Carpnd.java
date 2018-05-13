@@ -5,25 +5,25 @@ import java.util.List;
 
 public class Carpnd {
 
-    //private List<Publication> offers;
-    private List<User> users;
-    private List<Vehicle> allVehicles;
-    private String cacheComment;
+  //private List<Publication> offers;
+  private List<User> users;
+  private List<Vehicle> allVehicles;
+  private String cacheComment;
 
-    public Carpnd(){
-      //this.offers = new ArrayList<Publication>();
-      this.users = new ArrayList<User>();
-      this.allVehicles = new ArrayList<Vehicle>();
-      this.cacheComment = "";
-    }
+  public Carpnd(){
+    //this.offers = new ArrayList<Publication>();
+    this.users = new ArrayList<User>();
+    this.allVehicles = new ArrayList<Vehicle>();
+    this.cacheComment = "";
+  }
 
-    public void register(int cuil, String lastName, String firstName, String address, String email){
-        User newUser = new User(cuil,lastName,firstName,address,email);
-        newUser.setPage(this);
-        this.users.add(newUser);
-    }
+  public void register(int cuil, String lastName, String firstName, String address, String email){
+    User newUser = new User(cuil,lastName,firstName,address,email);
+    newUser.setPage(this);
+    this.users.add(newUser);
+  }
 
-    public void createVehicle(Vehicle vehicle){
+  public void createVehicle(Vehicle vehicle){
         this.allVehicles.add(vehicle);
     }
 

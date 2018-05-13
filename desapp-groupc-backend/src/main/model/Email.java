@@ -9,7 +9,7 @@ public class Email {
 
   private String address;
 
-  private List<String> endings = new ArrayList<>();
+  private List<String> endings = new ArrayList<String>();
 
   public Email(String adress) {
     this.endings.add(".com");
