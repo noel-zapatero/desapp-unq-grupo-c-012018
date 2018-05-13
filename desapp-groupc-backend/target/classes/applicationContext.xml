@@ -31,6 +31,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
   <jaxrs:server id="capnd" address="/"  >
     <jaxrs:serviceBeans>
       <ref bean="publicationsRest" />
+      <ref bean="usersRest" />
     </jaxrs:serviceBeans>
     <jaxrs:extensionMappings>
       <entry key="json" value="application/json" />
@@ -46,6 +47,10 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
   </jaxrs:server>
 
   <bean id="publicationsRest" class="main.webservices.PublicationsRest">
+
+  </bean>
+
+  <bean id="usersRest" class="main.webservices.UsersRest">
 
   </bean>
 
@@ -95,11 +100,11 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd">
         <prop key="hibernate.connection.autocommit">false</prop>
       </props>
     </property>
-    <property name="annotatedClasses">
-      <list>
-        <value>main.model.User</value>
-      </list>
-    </property>
+    <!--<property name="annotatedClasses">-->
+      <!--<list>-->
+        <!--<value>main.model.User</value>-->
+      <!--</list>-->
+    <!--</property>-->
   </bean>
   <!-- /SessionFactory -->
 
