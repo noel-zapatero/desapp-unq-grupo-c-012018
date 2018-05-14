@@ -2,12 +2,9 @@ package main.webservices;
 
 import main.model.dtos.UserDto;
 import main.services.UserService;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.io.InputStream;
 
 @Path("/users")
 public class UsersRest {
@@ -18,13 +15,25 @@ public class UsersRest {
   @Path("/{id}")
   @Produces("application/json")
   public Response getUser(@PathParam("id") String id) {
-    return Response.ok(uService.findById(Integer.valueOf(id))).build();
+    return Response.ok(new UserDto(uService.findById(Integer.valueOf(id)))).build();
   }
 
   @POST
-  @Consumes(MediaType.APPLICATION_JSON)
-  public String createUser(String json) {
-    return json;
+  @Consumes("application/json")
+  public Response createUser(UserDto uDto) {
+    if (uService.creatAndSaveFromDto(uDto))
+      return Response.ok().build();
+    else
+      return Response.notModified().build();
+  }
+
+  @PUT
+  @Consumes("application/json")
+  public Response modifyUser(UserDto uDto) {
+    if (uService.updateFromDto(uDto))
+      return Response.ok().build();
+    else
+      return Response.notModified().build();
   }
 
 }

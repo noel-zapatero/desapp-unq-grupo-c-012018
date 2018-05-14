@@ -38,6 +38,7 @@ public class User {
   private List<Integer> totalRatings;
   public List<Vehicle> vehiclesRented;
   private Carpnd page;
+  private String adress;
 
   public User(long cuil, String lastName, String firstName, String address, String email){
 
@@ -111,5 +112,13 @@ public class User {
 
   public int getId() {
     return userId;
+  }
+
+  public Cuil getCuil() {
+    return cuil;
+  }
+
+  public String getAdress() {
+    return adress;
   }
 }

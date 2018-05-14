@@ -49,4 +49,7 @@ public class Cuil {
     return cuilNumber.toString().length() == 11;
   }
 
+  public long getValue() {
+    return number;
+  }
 }
