@@ -1,11 +1,21 @@
 package main.model.availability;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
-public class Available implements Availability {
+import javax.persistence.*;
 
+@Entity
+public class Available extends AbstractAvailability implements Availability {
+
+  @Column
+  @Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
   private DateTime start;
+
+  @Column
+  @Type(type="org.joda.time.contrib.hibernate.PersistentDateTime")
   private DateTime end;
+
 
   public Available(DateTime start, DateTime end) {
     this.start = start;

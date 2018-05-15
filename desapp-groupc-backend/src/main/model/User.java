@@ -13,31 +13,46 @@ public class User {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int userId;
 
-  @Column(name = "cuil")
+  @OneToOne(targetEntity = Cuil.class)
   public Cuil cuil;
 
   @Column(name = "lastName")
   public String lastName;
+
   @Column(name = "firstname")
   public String firstName;
+
   @Column(name = "address")
   public String address;
-  @Column(name = "email")
+
+  @OneToOne(targetEntity = Email.class)
   public Email email;
+
   @Column(name = "rating")
   public float rating;
+
   @Column(name = "credits")
   public float credits;
-  @OneToOne(fetch = FetchType.LAZY)
+
+  @OneToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "vehicles")
   public List<Vehicle> myVehicles;
+
   @OneToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "publications")
   public List<Publication> myOffers;
 
+  @Transient
   private List<Integer> totalRatings;
+
+  @Transient
   public List<Vehicle> vehiclesRented;
+
+  @Transient
   private Carpnd page;
+
+  @Transient
+  private String adress;
 
   public User(long cuil, String lastName, String firstName, String address, String email){
 
@@ -111,5 +126,13 @@ public class User {
 
   public int getId() {
     return userId;
+  }
+
+  public Cuil getCuil() {
+    return cuil;
+  }
+
+  public String getAdress() {
+    return adress;
   }
 }

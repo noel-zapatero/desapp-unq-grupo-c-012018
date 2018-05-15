@@ -2,8 +2,11 @@ package main.model.availability;
 
 import org.joda.time.DateTime;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public interface Availability {
 
-  boolean isAvailable(DateTime start, DateTime end);
+  public boolean isAvailable(DateTime start, DateTime end);
 
 }

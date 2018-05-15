@@ -2,13 +2,19 @@ package main.model;
 
 import main.model.exceptions.InvalidEmailException;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "email")
 public class Email {
 
+  @Id
+  @Column
   private String address;
 
+  @Transient
   private List<String> endings = new ArrayList<String>();
 
   public Email(String adress) {

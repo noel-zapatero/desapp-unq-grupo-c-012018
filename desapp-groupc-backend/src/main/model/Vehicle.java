@@ -1,34 +1,49 @@
 package main.model;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import java.util.List;
 
-//@Entity
-//@Table(name = "vehicles")
+@Entity
+@Table(name = "vehicles")
 public class Vehicle {
 
-//  @Id
-//  @GeneratedValue(strategy = GenerationType.AUTO)
-//  @Column(name = "id", updatable = false, nullable = false)
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id", updatable = false, nullable = false)
   private Long id;
-//  @Column(name = "type")
+
+  @Column(name = "type")
   private String type;
-//  @Column(name = "capacity")
+
+  @Column(name = "capacity")
   private int passengerCapacity;
-//  @Column(name = "zone")
+
+  @Column(name = "zone")
   private String zone;
-//  @Column(name = "withdraw_address")
+
+  @Column(name = "withdraw_address")
   private String withdrawAddress;
-//  @ElementCollection(fetch = FetchType.LAZY)
-//  @Column(name = "return_addresses")
+
+  @ElementCollection(fetch = FetchType.LAZY)
+  @Column(name = "return_addresses")
   private List<String> returnAddresses;
-//  @Column(name = "description")
+
+  @Column(name = "description")
   private String description;
-//  @Column(name = "phone")
+
+  @Column(name = "phone")
   private String contactPhone;
 
+  @Column(name = "rentFeeDay")
   private float rentFeeDay;
+
+  @Column(name = "rentFeeHour")
   private float rentFeeHour;
+
+  // TODO: mapear
+  @OneToOne
+  @JoinTable(name = "users")
+  private User owner;
 
   //Default vehicle. Change
   public Vehicle(){ }
@@ -60,5 +75,13 @@ public class Vehicle {
   public String getContactPhone() {return contactPhone;}
 
   public void setContactPhone(String contactPhone) {this.contactPhone = contactPhone;}
+
+  public User getOwner() {
+    return owner;
+  }
+
+  public void setOwner(User owner) {
+    this.owner = owner;
+  }
 
 }

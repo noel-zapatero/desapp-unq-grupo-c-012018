@@ -1,5 +1,6 @@
 package main.model;
 
+import main.model.availability.AbstractAvailability;
 import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
@@ -15,18 +16,26 @@ public class Publication {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", updatable = false, nullable = false)
   private Long id;
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinTable(name = "users")
   public User owner;
+
   @OneToOne(fetch = FetchType.LAZY)
   @JoinTable(name = "vehicles")
   public Vehicle vehicleOffered;
-  @Column(name = "availability")
-  private Availability availability;
+
+  //@Column(name = "availability")
+  @OneToOne(targetEntity = AbstractAvailability.class)
+  @JoinTable(name = "abstract_availability")
+  public Availability availability;
+
   @OneToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "reservations")
   private List<Reservation> reservations = new ArrayList<Reservation>();
 
+  @OneToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "reservations")
   private List<Reservation> acceptedReservations = new ArrayList<Reservation>();
 
   public Publication (Vehicle newVehicle, User owner, Availability availability){

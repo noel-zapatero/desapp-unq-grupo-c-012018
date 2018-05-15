@@ -2,14 +2,22 @@ package main.model;
 
 import main.model.exceptions.WrongCuilException;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "cuil")
 public class Cuil {
 
+  @Id
+  @Column
   private Long number;
 
+  @Transient
   private List<String> cuilStarts = new ArrayList<String>();
+
+  @Transient
   private List<String> cuilEnds  = new ArrayList<String>();
 
   public Cuil(Long number) {
@@ -49,4 +57,7 @@ public class Cuil {
     return cuilNumber.toString().length() == 11;
   }
 
+  public long getValue() {
+    return number;
+  }
 }
