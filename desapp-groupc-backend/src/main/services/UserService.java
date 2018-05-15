@@ -3,6 +3,8 @@ package main.services;
 import main.model.User;
 import main.model.builders.UserBuilder;
 import main.model.dtos.UserDto;
+import org.springframework.stereotype.Service;
+
 
 public class UserService extends GenericService<User> {
 
