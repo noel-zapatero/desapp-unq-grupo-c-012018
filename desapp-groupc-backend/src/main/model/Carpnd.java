@@ -19,7 +19,6 @@ public class Carpnd {
 
   public void register(int cuil, String lastName, String firstName, String address, String email){
     User newUser = new User(cuil,lastName,firstName,address,email);
-    newUser.setPage(this);
     this.users.add(newUser);
   }
 

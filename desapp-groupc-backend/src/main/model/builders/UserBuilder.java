@@ -35,5 +35,4 @@ public class UserBuilder {
         this.cuil = cuil;
         return this;
     }
-
 }

@@ -1,6 +1,5 @@
 package main.model;
 
-import main.model.availability.AbstractAvailability;
 import main.model.availability.Availability;
 import org.joda.time.DateTime;
 
@@ -9,34 +8,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "publications")
 public class Publication {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id", updatable = false, nullable = false)
-  private Long id;
+  private int publicationId;
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinTable(name = "users")
+  @OneToOne
   public User owner;
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinTable(name = "vehicles")
+  @OneToOne
   public Vehicle vehicleOffered;
 
-  //@Column(name = "availability")
-  @OneToOne(targetEntity = AbstractAvailability.class)
-  @JoinTable(name = "abstract_availability")
+  @OneToOne
   public Availability availability;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "reservations")
+  @OneToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "PUBLICATION_RESERVATION")
   private List<Reservation> reservations = new ArrayList<Reservation>();
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "reservations")
+  @OneToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "PUBLICATION_ACCEPTEDRESERVATION")
   private List<Reservation> acceptedReservations = new ArrayList<Reservation>();
+
+  public Publication() { }
 
   public Publication (Vehicle newVehicle, User owner, Availability availability){
     this.availability = availability;
@@ -45,7 +40,7 @@ public class Publication {
   }
 
   public String getOwnerEmail() {
-    return this.owner.getEmail().getAddress();
+    return this.owner.getEmail();
   }
 
   public User getOwner() {
@@ -64,7 +59,7 @@ public class Publication {
     return ret;
   }
 
-  public Reservation book(DateTime start, DateTime end, String user) {
+  public Reservation book(DateTime start, DateTime end, User user) {
       Reservation r = new Reservation(start, end, user, this);
       this.reservations.add(r);
       return r;

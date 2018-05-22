@@ -4,45 +4,41 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "vehicles")
 public class Vehicle {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id", updatable = false, nullable = false)
-  private Long id;
+  private int vehicleId;
 
-  @Column(name = "type")
+  @Column
   private String type;
 
-  @Column(name = "capacity")
+  @Column
   private int passengerCapacity;
 
-  @Column(name = "zone")
+  @Column
   private String zone;
 
-  @Column(name = "withdraw_address")
+  @Column
   private String withdrawAddress;
 
   @ElementCollection(fetch = FetchType.LAZY)
-  @Column(name = "return_addresses")
+  @Column
   private List<String> returnAddresses;
 
-  @Column(name = "description")
+  @Column
   private String description;
 
-  @Column(name = "phone")
+  @Column
   private String contactPhone;
 
-  @Column(name = "rentFeeDay")
+  @Column
   private float rentFeeDay;
 
-  @Column(name = "rentFeeHour")
+  @Column
   private float rentFeeHour;
 
-  // TODO: mapear
   @OneToOne
-  @JoinTable(name = "users")
   private User owner;
 
   //Default vehicle. Change

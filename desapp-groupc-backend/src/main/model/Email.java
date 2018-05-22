@@ -6,15 +6,15 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "email")
+//@Entity
+//@Table(name = "email")
 public class Email {
 
-  @Id
-  @Column
+//  @Id
+//  @Column
   private String address;
 
-  @Transient
+//  @Transient
   private List<String> endings = new ArrayList<String>();
 
   public Email(String adress) {

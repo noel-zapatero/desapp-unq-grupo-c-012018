@@ -23,16 +23,6 @@ public class TestUser {
     }
 
   @Test
-    public void testCreateVehicleFromUser(){
-      User newUser = new UserBuilder().build();
-      Carpnd carpnd = new Carpnd();
-      newUser.setPage(carpnd);
-
-      newUser.createVehicle();
-      assertTrue(newUser.myVehicles.size() == 1);
-    }
-
-  @Test
     public void testChargeAndWithdrawCredits(){
         User newUser = new UserBuilder().build();
 
@@ -63,9 +53,6 @@ public class TestUser {
         .withEmail("witherwings77@gmail.com")
         .withNameAndLastName("Noel", "Zapatero")
         .build();
-      newUser.setPage(carpnd);
-
-      newUser.createVehicle();
 
       Publication pub = new PublicationBuilder()
         .withVehicle(newUser.myVehicles.get(0))

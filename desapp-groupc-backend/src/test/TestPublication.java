@@ -2,8 +2,9 @@ package test;
 
 import main.model.Publication;
 import main.model.Reservation;
-import main.model.availability.Available;
+import main.model.availability.Availability;
 import main.model.builders.PublicationBuilder;
+import main.model.builders.UserBuilder;
 import main.model.builders.VehicleBuilder;
 import org.joda.time.DateTime;
 import org.junit.Test;
@@ -41,14 +42,14 @@ public class TestPublication {
   @Test
   public void testBookAVehicleAndSeeThatIsNotAvailableAtTheTimeBooked() {
     Publication p = todayTomorrowVehicle();
-    Reservation r = p.book(DateTime.now(), DateTime.now().plusHours(1), "someUser");
+    Reservation r = p.book(DateTime.now(), DateTime.now().plusHours(1), new UserBuilder().build());
     r.accept();
     assertFalse(p.isAvailable(DateTime.now(), DateTime.now().plusHours(1)));
   }
 
   public Publication todayTomorrowVehicle() {
     return new PublicationBuilder()
-      .withAvailability(new Available(today(), tomorrow()))
+      .withAvailability(new Availability(today(), tomorrow()))
       .build();
   }
 

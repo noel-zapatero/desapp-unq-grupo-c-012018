@@ -4,9 +4,18 @@ import main.model.Vehicle;
 
 public class VehicleBuilder {
 
-  private Vehicle vehicle = new Vehicle();
+  private int passengerCapacity = 4;
 
   public Vehicle build() {
-    return vehicle;
+    Vehicle v = new Vehicle();
+
+    v.setPassengerCapacity(passengerCapacity);
+
+    return v;
+  }
+
+  public VehicleBuilder withPassengerAmmount(int x) {
+    this.passengerCapacity = x;
+    return this;
   }
 }
