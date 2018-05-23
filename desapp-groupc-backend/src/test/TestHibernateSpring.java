@@ -4,7 +4,7 @@ import main.model.Publication;
 import main.model.Reservation;
 import main.model.User;
 import main.model.Vehicle;
-import main.model.availability.Availability;
+import main.model.Availability;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.ReservationBuilder;
 import main.model.builders.UserBuilder;

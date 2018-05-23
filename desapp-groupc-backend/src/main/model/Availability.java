@@ -1,4 +1,4 @@
-package main.model.availability;
+package main.model;
 
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
@@ -28,7 +28,19 @@ public class Availability {
   }
 
   public boolean isAvailable(DateTime start, DateTime end) {
-    return true;
+    return this.isBeforeOrAtTheSameTime(start) && this.end.plusMinutes(1).isAfter(end);
+  }
+
+  private boolean isAfter(DateTime start, DateTime end) {
+    return start.isAfter(this.end);
+  }
+
+  private boolean isBefore(DateTime start, DateTime end) {
+    return end.isBefore(this.start);
+  }
+
+  private boolean isBeforeOrAtTheSameTime(DateTime dateTime) {
+    return this.start.isBefore(dateTime.plusMinutes(1));
   }
 
 }

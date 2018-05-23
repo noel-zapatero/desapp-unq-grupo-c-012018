@@ -1,6 +1,6 @@
 package main.repositories;
 
-import main.model.availability.Availability;
+import main.model.Availability;
 import org.apache.log4j.Logger;
 
 public class AvailabilityRepository

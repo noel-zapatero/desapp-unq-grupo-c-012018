@@ -1,6 +1,6 @@
 package main.model.builders;
 
-import main.model.availability.Availability;
+import main.model.Availability;
 import main.model.Publication;
 import main.model.User;
 import main.model.Vehicle;

@@ -2,7 +2,7 @@ package test;
 
 import main.model.Publication;
 import main.model.Reservation;
-import main.model.availability.Availability;
+import main.model.Availability;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
 import main.model.builders.VehicleBuilder;
@@ -14,12 +14,13 @@ import static junit.framework.TestCase.*;
 public class TestPublication {
 
   @Test
-  public void testVehiclesFirstStartAsUnavailable() {
+  public void testVehiclesFirstStartAsAvailableFor1Day() {
     Publication p = new PublicationBuilder()
       .withVehicle(new VehicleBuilder().build())
       .build();
 
-    assertFalse(p.isAvailable(today(), today().plusHours(1)));
+    assertTrue(p.isAvailable(today(), today().plusHours(1)));
+    assertFalse(p.isAvailable(tomorrow(), tomorrow().plusDays(1)));
   }
 
   @Test

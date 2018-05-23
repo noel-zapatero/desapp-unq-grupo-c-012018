@@ -108,7 +108,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
         <value>main.model.Vehicle</value>
         <value>main.model.Publication</value>
         <value>main.model.Reservation</value>
-        <value>main.model.availability.Availability</value>
+        <value>main.model.Availability</value>
         <value>main.model.Cuil</value>
 
         <value>main.model.Email</value>

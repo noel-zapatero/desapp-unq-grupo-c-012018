@@ -5,6 +5,7 @@ import main.model.Publication;
 import main.model.User;
 import main.model.builders.PublicationBuilder;
 import main.model.builders.UserBuilder;
+import main.model.builders.VehicleBuilder;
 import org.junit.Ignore;
 import org.junit.Test;
 import static junit.framework.TestCase.*;
@@ -53,6 +54,8 @@ public class TestUser {
         .withEmail("witherwings77@gmail.com")
         .withNameAndLastName("Noel", "Zapatero")
         .build();
+
+      newUser.addVehicle(new VehicleBuilder().build());
 
       Publication pub = new PublicationBuilder()
         .withVehicle(newUser.myVehicles.get(0))
