@@ -38,6 +38,9 @@ public class Vehicle {
   @Column
   private float rentFeeHour;
 
+  @Column
+  boolean disabled = false;
+
   @OneToOne
   private User owner;
 
@@ -78,6 +81,14 @@ public class Vehicle {
 
   public void setOwner(User owner) {
     this.owner = owner;
+  }
+
+  public boolean isDisabled() {
+    return disabled;
+  }
+
+  public void setDisabled(boolean disabled) {
+    this.disabled = disabled;
   }
 
 }

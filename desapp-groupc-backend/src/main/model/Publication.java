@@ -1,5 +1,6 @@
 package main.model;
 
+import main.model.exceptions.ReservationException;
 import org.joda.time.DateTime;
 
 import javax.persistence.*;
@@ -65,6 +66,9 @@ public class Publication {
   }
 
   public void acceptReservation(Reservation reservation) {
+    if (isBooked(reservation.getStartDate(), reservation.getEndDate()))
+      throw new ReservationException();
+
     this.acceptedReservations.add(reservation);
     this.reservations.remove(reservation);
   }

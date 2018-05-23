@@ -27,6 +27,7 @@ public class Reservation {
 
   @OneToOne
   private Publication publication;
+  private DateTime startDate;
 
   public Reservation() { }
 
@@ -65,5 +66,13 @@ public class Reservation {
 
   public User getUser() {
     return this.user;
+  }
+
+  public DateTime getStartDate() {
+    return start;
+  }
+
+  public DateTime getEndDate() {
+    return end;
   }
 }

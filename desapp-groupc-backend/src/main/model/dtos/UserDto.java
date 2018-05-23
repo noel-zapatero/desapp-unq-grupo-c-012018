@@ -1,6 +1,7 @@
 package main.model.dtos;
 
 import main.model.User;
+import main.model.builders.UserBuilder;
 
 public class UserDto {
 
@@ -24,6 +25,15 @@ public class UserDto {
     this.email = user.getEmail();
     this.rating = user.getRating();
     this.credits = user.getCredits();
+  }
+
+  public User toUser() {
+    return new UserBuilder()
+      .withEmail(this.getEmail())
+      .withNameAndLastName(this.getFirstName(), this.getLastName())
+      .withAddress(this.getAdress())
+      .withCuil(this.getCuil())
+      .build();
   }
 
   public int getUserId() {
