@@ -1,6 +1,7 @@
 package main.webservices;
 
 import main.model.Vehicle;
+import main.model.dtos.VehicleDto;
 import main.services.VehicleService;
 
 import javax.ws.rs.*;
@@ -20,8 +21,8 @@ public class VehiclesRest {
 
   @POST
   @Consumes("application/json")
-  public Response createVehicle(Vehicle v) {
-    if (vService.createVehicle(v))
+  public Response createVehicle(VehicleDto vDto) {
+    if (vService.createVehicle(vDto.toVehicle()))
       return Response.ok().build();
     else
       return Response.notModified().build();
@@ -29,8 +30,8 @@ public class VehiclesRest {
 
   @PUT
   @Consumes("application/json")
-  public Response modifyVehicle(Vehicle v) {
-    if (vService.updateVehicle(v))
+  public Response modifyVehicle(VehicleDto vDto) {
+    if (vService.updateVehicle(vDto.toVehicle()))
       return Response.ok().build();
     else
       return Response.notModified().build();

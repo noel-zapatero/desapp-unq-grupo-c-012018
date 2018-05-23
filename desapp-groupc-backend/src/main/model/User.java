@@ -124,4 +124,8 @@ public class User {
   public List<Vehicle> getVehicles() {
     return this.myVehicles;
   }
+
+  public String getLastName() {
+    return lastName;
+  }
 }

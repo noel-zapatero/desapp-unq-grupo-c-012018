@@ -91,4 +91,27 @@ public class Vehicle {
     this.disabled = disabled;
   }
 
+  public int getId() {
+    return vehicleId;
+  }
+
+  public float getRentFeeDay() {
+    return rentFeeDay;
+  }
+
+  public float getRentFeeHour() {
+    return rentFeeHour;
+  }
+
+  public void setVehicleId(int vehicleId) {
+    this.vehicleId = vehicleId;
+  }
+
+  public void setRentFeeHour(float rentFeeHour) {
+    this.rentFeeHour = rentFeeHour;
+  }
+
+  public void setRentFeeDay(float rentFeeDay) {
+    this.rentFeeDay = rentFeeDay;
+  }
 }
