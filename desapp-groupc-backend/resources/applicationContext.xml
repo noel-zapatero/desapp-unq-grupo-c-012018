@@ -3,8 +3,11 @@
        xmlns:jaxws="http://cxf.apache.org/jaxws"
        xmlns:jaxrs="http://cxf.apache.org/jaxrs"
        xmlns:cxf="http://cxf.apache.org/core" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
 http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
@@ -53,7 +56,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   </bean>
 
-
+  <tx:annotation-driven transaction-manager="persistence.transactionManager"	proxy-target-class="true" />
 
   <!-- =========================== -->
   <!-- =========Persistence  ========= -->
@@ -106,9 +109,6 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
         <value>main.model.Publication</value>
         <value>main.model.Reservation</value>
         <value>main.model.availability.Availability</value>
-        <value>main.model.availability.AbstractAvailability</value>
-        <value>main.model.availability.Available</value>
-        <value>main.model.availability.NotAvailable</value>
         <value>main.model.Cuil</value>
 
         <value>main.model.Email</value>
@@ -141,6 +141,22 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
     <property name="sessionFactory" ref="persistence.sessionFactory" />
   </bean>
 
+  <bean id="persistence.vehicleRepository" class="main.repositories.VehicleRepository">
+    <property name="sessionFactory" ref="persistence.sessionFactory" />
+  </bean>
+
+  <bean id="persistence.publicationRepository" class="main.repositories.PublicationRepository">
+    <property name="sessionFactory" ref="persistence.sessionFactory" />
+  </bean>
+
+  <bean id="persitence.reservationRepository" class="main.repositories.ReservationRepository">
+    <property name="sessionFactory" ref="persistence.sessionFactory" />
+  </bean>
+
+  <bean id="persistence.availabilityRepository" class="main.repositories.AvailabilityRepository">
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
+  </bean>
+
   <!-- =========================== -->
   <!-- =========App Services  ========= -->
   <!-- =========================== -->
@@ -148,4 +164,21 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
   <bean id="userService" class="main.services.UserService">
     <property name="repository" ref="persistence.userRepository" />
   </bean>
+
+  <bean id="vehicleService" class="main.services.VehicleService">
+    <property name="repository" ref="persistence.vehicleRepository" />
+  </bean>
+
+  <bean id="publicationService" class="main.services.PublicationService">
+    <property name="repository" ref="persistence.publicationRepository" />
+  </bean>
+
+  <bean id="reservationService" class="main.services.ReservationService">
+    <property name="repository" ref="persitence.reservationRepository" />
+  </bean>
+
+  <bean id="availabilityService" class="main.services.AvailabilityService">
+    <property name="repository" ref="persistence.availabilityRepository" />
+  </bean>
+
 </beans>

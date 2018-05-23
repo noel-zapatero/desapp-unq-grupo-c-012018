@@ -6,18 +6,18 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "cuil")
+//@Entity
+//@Table(name = "cuil")
 public class Cuil {
 
-  @Id
-  @Column
+//  @Id
+//  @Column
   private Long number;
 
-  @Transient
+//  @Transient
   private List<String> cuilStarts = new ArrayList<String>();
 
-  @Transient
+//  @Transient
   private List<String> cuilEnds  = new ArrayList<String>();
 
   public Cuil(Long number) {

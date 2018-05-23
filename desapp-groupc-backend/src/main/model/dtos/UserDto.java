@@ -17,11 +17,11 @@ public class UserDto {
 
   public UserDto(User user) {
     this.userId = user.getId();
-    this.cuil = user.getCuil().getValue();
+    this.cuil = user.getCuil();
     this.lastName = user.lastName;
     this.firstName = user.firstName;
     this.adress = user.getAdress();
-    this.email = user.getEmail().getAddress();
+    this.email = user.getEmail();
     this.rating = user.getRating();
     this.credits = user.getCredits();
   }

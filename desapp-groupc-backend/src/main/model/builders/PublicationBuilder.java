@@ -4,13 +4,13 @@ import main.model.availability.Availability;
 import main.model.Publication;
 import main.model.User;
 import main.model.Vehicle;
-import main.model.availability.NotAvailable;
+import org.joda.time.DateTime;
 
 public class PublicationBuilder {
 
   private Vehicle vehicle;
   private User owner;
-  private Availability availability = new NotAvailable();
+  private Availability availability = new Availability(DateTime.now(), DateTime.now().plusDays(1));
 
   public PublicationBuilder withVehicle(Vehicle vehicle) {
     this.vehicle = vehicle;

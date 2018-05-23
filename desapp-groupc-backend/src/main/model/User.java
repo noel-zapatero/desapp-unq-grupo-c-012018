@@ -1,71 +1,63 @@
 package main.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
 public class User {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int userId;
 
-  @OneToOne(targetEntity = Cuil.class)
-  public Cuil cuil;
+  @Column
+  public Long cuil;
 
-  @Column(name = "lastName")
+  @Column
   public String lastName;
 
-  @Column(name = "firstname")
+  @Column
   public String firstName;
 
-  @Column(name = "address")
+  @Column
   public String address;
 
-  @OneToOne(targetEntity = Email.class)
-  public Email email;
+  @Column
+  public String email;
 
-  @Column(name = "rating")
+  @Column
   public float rating;
 
-  @Column(name = "credits")
+  @Column
   public float credits;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "vehicles")
+  @OneToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "USER_VEHICLES")
   public List<Vehicle> myVehicles;
 
-  @OneToMany(fetch = FetchType.LAZY)
-  @JoinTable(name = "publications")
+  @OneToMany(fetch = FetchType.EAGER)
   public List<Publication> myOffers;
 
   @Transient
   private List<Integer> totalRatings;
 
   @Transient
-  public List<Vehicle> vehiclesRented;
-
-  @Transient
-  private Carpnd page;
-
-  @Transient
   private String adress;
+
+  public User() {}
 
   public User(long cuil, String lastName, String firstName, String address, String email){
 
-    this.cuil = new Cuil(cuil);
+    this.cuil = cuil;
     this.lastName = lastName;
     this.firstName = firstName;
     this.address = address;
-    this.email = new Email(email);
+    this.email = email;
     this.credits = 0;
     this.rating = 0;
     this.totalRatings = new ArrayList<Integer>();
     myVehicles = new ArrayList<Vehicle>();
-    vehiclesRented = new ArrayList<Vehicle>();
     myOffers = new ArrayList<Publication>();
   }
 
@@ -78,15 +70,12 @@ public class User {
       return name.length() >= 4 && name.length() <= 50;
     }
 
-  public void createVehicle(){
-    //check vehicle constructor
-    Vehicle newVehicle = new Vehicle();
-    this.myVehicles.add(newVehicle);
-    this.page.createVehicle(newVehicle);
-  }
-
   public void chargeCredits(float moreCred){
         this.credits += moreCred;
+    }
+
+    public void addVehicle(Vehicle v) {
+      this.myVehicles.add(v);
     }
 
   public void whitdrawCredits(float creds){
@@ -107,10 +96,6 @@ public class User {
         return firstName;
     }
 
-  public void setPage(Carpnd page) {
-        this.page = page;
-    }
-
   public float getCredits() {
         return credits;
     }
@@ -120,7 +105,7 @@ public class User {
     return (Math.round(this.rating * d) / d);
   }
 
-  public Email getEmail() {
+  public String getEmail() {
       return email;
     }
 
@@ -128,11 +113,15 @@ public class User {
     return userId;
   }
 
-  public Cuil getCuil() {
+  public Long getCuil() {
     return cuil;
   }
 
   public String getAdress() {
     return adress;
+  }
+
+  public List<Vehicle> getVehicles() {
+    return this.myVehicles;
   }
 }

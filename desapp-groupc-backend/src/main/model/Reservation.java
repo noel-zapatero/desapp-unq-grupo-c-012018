@@ -1,33 +1,39 @@
 package main.model;
 
+import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "reservations")
 public class Reservation {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id", updatable = false, nullable = false)
-  private Long id;
-  @Column(name = "start")
+  private int reservationId;
+
+  @Column
+  @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
   private DateTime start;
-  @Column(name = "end")
+
+  @Column
+  @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
   private DateTime end;
+
   //TODO: Chequear si no deberia ser un User, y hacer join
-  @Column(name = "username")
-  private String username;
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinTable(name = "publications")
+  @OneToOne
+  private User user;
+
+  @OneToOne
   private Publication publication;
 
-  public Reservation(DateTime start, DateTime end, String username, Publication publication) {
+  public Reservation() { }
+
+  public Reservation(DateTime start, DateTime end, User username, Publication publication) {
     this.start = start;
     this.end = end;
-    this.username = username;
+    this.user = username;
     this.publication = publication;
   }
 
@@ -51,5 +57,13 @@ public class Reservation {
 
   public Interval asInterval() {
     return new Interval(this.start, this.end);
+  }
+
+  public int getId() {
+    return this.reservationId;
+  }
+
+  public User getUser() {
+    return this.user;
   }
 }
