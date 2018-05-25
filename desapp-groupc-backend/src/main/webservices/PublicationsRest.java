@@ -1,6 +1,7 @@
 package main.webservices;
 
 import main.model.Publication;
+import main.services.PublicationService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -10,6 +11,12 @@ import java.util.List;
 
 @Path("/publications")
 public class PublicationsRest {
+
+  private PublicationService pService;
+
+  public void setPublicationService(final PublicationService pService) {
+    this.pService = pService;
+  }
 
   @GET
   @Produces("application/json")

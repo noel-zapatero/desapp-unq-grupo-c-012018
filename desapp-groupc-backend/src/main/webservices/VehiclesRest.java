@@ -12,6 +12,10 @@ public class VehiclesRest {
 
   private VehicleService vService;
 
+  public void setVehicleService(final VehicleService vService) {
+    this.vService = vService;
+  }
+
   @GET
   @Path("/{id}")
   @Produces("application/json")

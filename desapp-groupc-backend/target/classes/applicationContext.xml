@@ -49,11 +49,23 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
   </jaxrs:server>
 
   <bean id="publicationsRest" class="main.webservices.PublicationsRest">
-
+    <property name="publicationService" ref="publicationService"/>
   </bean>
 
   <bean id="usersRest" class="main.webservices.UsersRest">
+    <property name="uService" ref="userService" />
+  </bean>
 
+  <bean id="vehiclesRest" class="main.webservices.VehiclesRest">
+    <property name="vService" ref="vehicleService" />
+  </bean>
+
+  <bean id="reservationsRest" class="main.webservices.ReservationsRest">
+    <property name="rService" ref="reservationService"/>
+  </bean>
+
+  <bean id="availabilityRest" class="main.webservices.AvailavilityRest">
+    <property name="aService" ref="availabilityService"/>
   </bean>
 
   <tx:annotation-driven transaction-manager="persistence.transactionManager"	proxy-target-class="true" />

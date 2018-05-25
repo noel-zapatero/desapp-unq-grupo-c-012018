@@ -11,6 +11,10 @@ public class UsersRest {
 
   private UserService uService;
 
+  public void setUserService(final UserService uService) {
+    this.uService = uService;
+  }
+
   @GET
   @Path("/{id}")
   @Produces("application/json")
