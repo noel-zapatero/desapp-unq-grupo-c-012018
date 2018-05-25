@@ -21,13 +21,11 @@ public class Reservation {
   @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
   private DateTime end;
 
-  //TODO: Chequear si no deberia ser un User, y hacer join
   @OneToOne
   private User user;
 
   @OneToOne
   private Publication publication;
-  private DateTime startDate;
 
   public Reservation() { }
 
@@ -74,5 +72,29 @@ public class Reservation {
 
   public DateTime getEndDate() {
     return end;
+  }
+
+  public Publication getPublication() {
+    return publication;
+  }
+
+  public void setReservationId(int reservationId) {
+    this.reservationId = reservationId;
+  }
+
+  public void setStart(DateTime start) {
+    this.start = start;
+  }
+
+  public void setEnd(DateTime end) {
+    this.end = end;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
+
+  public void setPublication(Publication publication) {
+    this.publication = publication;
   }
 }

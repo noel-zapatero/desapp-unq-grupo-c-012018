@@ -187,6 +187,8 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   <bean id="reservationService" class="main.services.ReservationService">
     <property name="repository" ref="persitence.reservationRepository" />
+    <property name="uService" ref="userService"/>
+    <property name="pService" ref="publicationService"/>
   </bean>
 
   <bean id="availabilityService" class="main.services.AvailabilityService">

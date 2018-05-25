@@ -30,6 +30,7 @@ public class Publication {
   @OneToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "PUBLICATION_ACCEPTEDRESERVATION")
   private List<Reservation> acceptedReservations = new ArrayList<Reservation>();
+  private int id;
 
   public Publication() { }
 
@@ -71,5 +72,13 @@ public class Publication {
 
     this.acceptedReservations.add(reservation);
     this.reservations.remove(reservation);
+  }
+
+  public int getId() {
+    return publicationId;
+  }
+
+  public void declineReservation(Reservation r) {
+    this.reservations.remove(r);
   }
 }

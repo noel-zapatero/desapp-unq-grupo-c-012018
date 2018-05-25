@@ -23,21 +23,6 @@ public class VehicleDto {
   private String ownerName;
   private String ownerLastName;
 
-  public Vehicle toVehicle() {
-    return new VehicleBuilder()
-      .withVehicleId(vehicleId)
-      .withType(type)
-      .withPassengerCapacity(passengerCapacity)
-      .withZone(zone)
-      .withWithDrawAddress(withdrawAddress)
-      .withReturnAddresses(returnAddresses)
-      .withDescription(description)
-      .withContactPhone(contactPhone)
-      .withRentFeeDay(rentFeeDay)
-      .withRentFeeHour(rentFeeHour)
-      .build();
-  }
-
   public VehicleDto() { }
 
   public VehicleDto(Vehicle v) {
@@ -55,6 +40,21 @@ public class VehicleDto {
     this.ownerId = v.getOwner().getId();
     this.ownerName = v.getOwner().getName();
     this.ownerLastName = v.getOwner().getLastName();
+  }
+
+  public Vehicle toVehicle() {
+    return new VehicleBuilder()
+      .withVehicleId(vehicleId)
+      .withType(type)
+      .withPassengerCapacity(passengerCapacity)
+      .withZone(zone)
+      .withWithDrawAddress(withdrawAddress)
+      .withReturnAddresses(returnAddresses)
+      .withDescription(description)
+      .withContactPhone(contactPhone)
+      .withRentFeeDay(rentFeeDay)
+      .withRentFeeHour(rentFeeHour)
+      .build();
   }
 
   public int getVehicleId() {

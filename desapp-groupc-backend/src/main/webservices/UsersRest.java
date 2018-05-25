@@ -24,8 +24,8 @@ public class UsersRest {
 
   @POST
   @Consumes("application/json")
-  public Response createUser(UserDto uDto) {
-    if (uService.creatAndSaveFromDto(uDto))
+  public Response updateUser(UserDto uDto) {
+    if (uService.updateFromDto(uDto))
       return Response.ok().build();
     else
       return Response.notModified().build();
@@ -33,8 +33,8 @@ public class UsersRest {
 
   @PUT
   @Consumes("application/json")
-  public Response modifyUser(UserDto uDto) {
-    if (uService.updateFromDto(uDto))
+  public Response createUser(UserDto uDto) {
+    if (uService.creatAndSaveFromDto(uDto))
       return Response.ok().build();
     else
       return Response.notModified().build();
