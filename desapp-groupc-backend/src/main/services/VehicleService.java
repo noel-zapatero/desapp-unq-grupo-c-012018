@@ -2,6 +2,9 @@ package main.services;
 
 import main.model.Vehicle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VehicleService extends GenericService<Vehicle> {
 
   private static final long serialVersionUID = -2932116622242535843L;
@@ -23,5 +26,23 @@ public class VehicleService extends GenericService<Vehicle> {
     v.setDisabled(true);
     this.update(v);
     return true;
+  }
+
+  // TODO: refactorizar como hql a la base, esto es poco performante!!
+  public List<Vehicle> getVehiclesFrom(int vehicleId) {
+//    return this.retriveAll()
+//      .stream()
+//      .filter(elt -> elt.getVehicleId() == vehicleId)
+//      .collect(Collectors.toList());
+
+    List<Vehicle> vehicles = new ArrayList<>();
+
+    for (Vehicle vehicle: retriveAll()){
+      if (vehicle.getVehicleId() == vehicleId){
+        vehicles.add(vehicle);
+      }
+    }
+
+    return vehicles;
   }
 }

@@ -114,4 +114,8 @@ public class Vehicle {
   public void setRentFeeDay(float rentFeeDay) {
     this.rentFeeDay = rentFeeDay;
   }
+
+  public int getVehicleId() {
+    return vehicleId;
+  }
 }

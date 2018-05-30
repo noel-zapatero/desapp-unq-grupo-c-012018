@@ -12,10 +12,10 @@ import java.util.List;
 @Path("/publications")
 public class PublicationsRest {
 
-  private PublicationService pService;
+  private PublicationService publicationService;
 
-  public void setPublicationService(final PublicationService pService) {
-    this.pService = pService;
+  public void setPublicationService(final PublicationService publicationService) {
+    this.publicationService = publicationService;
   }
 
   @GET

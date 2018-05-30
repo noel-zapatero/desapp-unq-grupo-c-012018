@@ -49,23 +49,23 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
   </jaxrs:server>
 
   <bean id="publicationsRest" class="main.webservices.PublicationsRest">
-    <property name="pService" ref="publicationService"/>
+    <property name="publicationService" ref="publicationService"/>
   </bean>
 
   <bean id="usersRest" class="main.webservices.UsersRest">
-    <property name="uService" ref="userService" />
+    <property name="userService" ref="userService" />
   </bean>
 
   <bean id="vehiclesRest" class="main.webservices.VehiclesRest">
-    <property name="vService" ref="vehicleService" />
+    <property name="vehicleService" ref="vehicleService" />
   </bean>
 
   <bean id="reservationsRest" class="main.webservices.ReservationsRest">
-    <property name="rService" ref="reservationService"/>
+    <property name="reservationService" ref="reservationService"/>
   </bean>
 
-  <bean id="availabilityRest" class="main.webservices.AvailavilityRest">
-    <property name="aService" ref="availabilityService"/>
+  <bean id="availabilityRest" class="main.webservices.AvailabilityRest">
+    <property name="availabilityService" ref="availabilityService"/>
   </bean>
 
   <tx:annotation-driven transaction-manager="persistence.transactionManager"	proxy-target-class="true" />
@@ -187,8 +187,8 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   <bean id="reservationService" class="main.services.ReservationService">
     <property name="repository" ref="persitence.reservationRepository" />
-    <property name="uService" ref="userService"/>
-    <property name="pService" ref="publicationService"/>
+    <property name="userService" ref="userService"/>
+    <property name="publicationService" ref="publicationService"/>
   </bean>
 
   <bean id="availabilityService" class="main.services.AvailabilityService">

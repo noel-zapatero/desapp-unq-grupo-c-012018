@@ -7,10 +7,10 @@ import javax.ws.rs.Path;
 @Path("/availability")
 public class AvailabilityRest {
 
-  private AvailabilityService aService;
+  private AvailabilityService availabilityService;
 
   public void setAvailabilityService(final AvailabilityService aService) {
-    this.aService = aService;
+    this.availabilityService = availabilityService;
   }
 
 }

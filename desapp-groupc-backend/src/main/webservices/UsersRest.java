@@ -9,23 +9,23 @@ import javax.ws.rs.core.Response;
 @Path("/users")
 public class UsersRest {
 
-  private UserService uService;
+  private UserService userService;
 
-  public void setUserService(final UserService uService) {
-    this.uService = uService;
+  public void setUserService(final UserService userService) {
+    this.userService = userService;
   }
 
   @GET
   @Path("/{id}")
   @Produces("application/json")
   public Response getUser(@PathParam("id") String id) {
-    return Response.ok(new UserDto(uService.findById(Integer.valueOf(id)))).build();
+    return Response.ok(new UserDto(userService.findById(Integer.valueOf(id)))).build();
   }
 
   @POST
   @Consumes("application/json")
   public Response updateUser(UserDto uDto) {
-    if (uService.updateFromDto(uDto))
+    if (userService.updateFromDto(uDto))
       return Response.ok().build();
     else
       return Response.notModified().build();
@@ -34,7 +34,7 @@ public class UsersRest {
   @PUT
   @Consumes("application/json")
   public Response createUser(UserDto uDto) {
-    if (uService.creatAndSaveFromDto(uDto))
+    if (userService.creatAndSaveFromDto(uDto))
       return Response.ok().build();
     else
       return Response.notModified().build();
