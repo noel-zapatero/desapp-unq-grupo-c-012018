@@ -55,6 +55,7 @@ public abstract class HibernateGenericDAO<T> extends HibernateDaoSupport impleme
   }
 
   public T findById(final Serializable id) {
+
     return this.getHibernateTemplate().get(this.persistentClass, id);
   }
 

@@ -29,5 +29,4 @@ public interface GenericRepository<T> {
   int count();
 
   List<T> findByExample(T exampleObject);
-
 }

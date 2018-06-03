@@ -1,5 +1,6 @@
 package main.webservices;
 
+import main.model.User;
 import main.model.dtos.UserDto;
 import main.services.UserService;
 
@@ -22,7 +23,7 @@ public class UsersRest {
     return Response.ok(new UserDto(userService.findById(Integer.valueOf(id)))).build();
   }
 
-  @POST
+  @PUT
   @Consumes("application/json")
   public Response updateUser(UserDto uDto) {
     if (userService.updateFromDto(uDto))
@@ -31,13 +32,12 @@ public class UsersRest {
       return Response.notModified().build();
   }
 
-  @PUT
+  @POST
   @Consumes("application/json")
-  public Response createUser(UserDto uDto) {
-    if (userService.creatAndSaveFromDto(uDto))
-      return Response.ok().build();
-    else
-      return Response.notModified().build();
+  @Produces("application/json")
+  public Response userLogIn(UserDto uDto) {
+    UserDto u = new UserDto(userService.findByEmail(uDto.getEmail()));
+    return Response.ok(u).build();
   }
 
 }

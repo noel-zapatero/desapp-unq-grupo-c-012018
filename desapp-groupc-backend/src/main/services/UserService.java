@@ -3,6 +3,7 @@ package main.services;
 import main.model.User;
 import main.model.builders.UserBuilder;
 import main.model.dtos.UserDto;
+import main.repositories.UserRepository;
 
 public class UserService extends GenericService<User> {
 
@@ -18,5 +19,9 @@ public class UserService extends GenericService<User> {
   public Boolean updateFromDto(UserDto uDto) {
     this.update(uDto.toUser());
     return true;
+  }
+
+  public User findByEmail(String email) {
+    return ((UserRepository)this.getRepository()).findByEmail(email);
   }
 }
