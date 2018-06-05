@@ -1,5 +1,6 @@
 package main.model.builders;
 
+import main.model.User;
 import main.model.Vehicle;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public class VehicleBuilder {
   private String contactPhone;
   private float rentFeeDay;
   private float rentFeeHour;
+  private User owner;
 
   public Vehicle build() {
     Vehicle v = new Vehicle();
@@ -30,6 +32,7 @@ public class VehicleBuilder {
     v.setRentFeeHour(rentFeeHour);
     v.setRentFeeDay(rentFeeDay);
     v.setPassengerCapacity(passengerCapacity);
+    v.setOwner(owner);
 
     return v;
   }
@@ -86,6 +89,11 @@ public class VehicleBuilder {
 
   public VehicleBuilder withRentFeeHour(float rentFeeHour) {
     this.rentFeeHour = rentFeeHour;
+    return this;
+  }
+
+  public VehicleBuilder withOwner(User owner) {
+    this.owner = owner;
     return this;
   }
 }

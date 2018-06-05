@@ -21,7 +21,7 @@ public class UserDto {
     this.cuil = user.getCuil();
     this.lastName = user.lastName;
     this.firstName = user.firstName;
-    this.adress = user.getAdress();
+    this.adress = user.getAddress();
     this.email = user.getEmail();
     this.rating = user.getRating();
     this.credits = user.getCredits();

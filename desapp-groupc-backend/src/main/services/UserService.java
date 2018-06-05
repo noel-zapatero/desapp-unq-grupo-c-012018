@@ -24,4 +24,15 @@ public class UserService extends GenericService<User> {
   public User findByEmail(String email) {
     return ((UserRepository)this.getRepository()).findByEmail(email);
   }
+
+  public User buildAndSaveFromDto(UserDto uDto) {
+    User user = new UserBuilder()
+      .withNameAndLastName(uDto.getFirstName(), uDto.getLastName())
+      .withEmail(uDto.getEmail())
+      .build();
+
+    save(user);
+
+    return user;
+  }
 }

@@ -1,6 +1,7 @@
 package main.webservices;
 
 import main.model.User;
+import main.model.builders.UserBuilder;
 import main.model.dtos.UserDto;
 import main.services.UserService;
 
@@ -36,8 +37,12 @@ public class UsersRest {
   @Consumes("application/json")
   @Produces("application/json")
   public Response userLogIn(UserDto uDto) {
-    UserDto u = new UserDto(userService.findByEmail(uDto.getEmail()));
-    return Response.ok(u).build();
+    User retrievedUser = userService.findByEmail(uDto.getEmail());
+
+    if (retrievedUser == null)
+      retrievedUser = userService.buildAndSaveFromDto(uDto);
+
+    return Response.ok(new UserDto(retrievedUser)).build();
   }
 
 }

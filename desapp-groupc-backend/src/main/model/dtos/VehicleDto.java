@@ -23,6 +23,8 @@ public class VehicleDto {
   private String ownerName;
   private String ownerLastName;
 
+  private String ownerEmail;
+
   public VehicleDto() { }
 
   public VehicleDto(Vehicle v) {
@@ -40,6 +42,8 @@ public class VehicleDto {
     this.ownerId = v.getOwner().getId();
     this.ownerName = v.getOwner().getName();
     this.ownerLastName = v.getOwner().getLastName();
+
+    this.ownerEmail = v.getOwner().getEmail();
   }
 
   public Vehicle toVehicle() {
@@ -161,4 +165,7 @@ public class VehicleDto {
     this.ownerLastName = ownerLastName;
   }
 
+  public String getOwnerEmail() {
+    return ownerEmail;
+  }
 }

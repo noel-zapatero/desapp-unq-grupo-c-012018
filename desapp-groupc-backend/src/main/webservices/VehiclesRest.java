@@ -46,7 +46,7 @@ public class VehiclesRest {
   @POST
   @Consumes("application/json")
   public Response createVehicle(VehicleDto vDto) {
-    if (vehicleService.createVehicle(vDto.toVehicle()))
+    if (vehicleService.createVehicleFromDto(vDto))
       return Response.ok().build();
     else
       return Response.notModified().build();
@@ -55,7 +55,7 @@ public class VehiclesRest {
   @PUT
   @Consumes("application/json")
   public Response modifyVehicle(VehicleDto vDto) {
-    if (vehicleService.updateVehicle(vDto.toVehicle()))
+    if (vehicleService.updateVehicleFromDto(vDto))
       return Response.ok().build();
     else
       return Response.notModified().build();

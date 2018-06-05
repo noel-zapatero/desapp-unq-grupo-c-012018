@@ -179,6 +179,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   <bean id="vehicleService" class="main.services.VehicleService">
     <property name="repository" ref="persistence.vehicleRepository" />
+    <property name="userService" ref="userService" />
   </bean>
 
   <bean id="publicationService" class="main.services.PublicationService">

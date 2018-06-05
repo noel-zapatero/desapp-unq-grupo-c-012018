@@ -42,9 +42,6 @@ public class User {
   @Transient
   private List<Integer> totalRatings;
 
-  @Transient
-  private String adress;
-
   public User() {}
 
   public User(long cuil, String lastName, String firstName, String address, String email){
@@ -117,8 +114,8 @@ public class User {
     return cuil;
   }
 
-  public String getAdress() {
-    return adress;
+  public String getAddress() {
+    return this.address;
   }
 
   public List<Vehicle> getVehicles() {
