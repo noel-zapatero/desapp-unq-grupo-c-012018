@@ -12,7 +12,7 @@ public class VehicleBuilder {
   private String type;
   private String zone;
   private String withdrawAddress;
-  private List<String> returnAddresses;
+  private String returnAddresses;
   private String description;
   private String contactPhone;
   private float rentFeeDay;
@@ -67,7 +67,7 @@ public class VehicleBuilder {
     return this;
   }
 
-  public VehicleBuilder withReturnAddresses(List<String> returnAddresses) {
+  public VehicleBuilder withReturnAddresses(String returnAddresses) {
     this.returnAddresses = returnAddresses;
     return this;
   }

@@ -4,9 +4,23 @@ import java.io.Serializable;
 import java.util.List;
 
 import main.repositories.GenericRepository;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional
 public class GenericService<T> implements Serializable {
+
+  @Autowired
+  private SessionFactory sessionFactory;
+
+  public void setSessionFactory(SessionFactory sessionFactory) {
+    this.sessionFactory = sessionFactory;
+  }
 
   private static final long serialVersionUID = -6540963495078524186L;
 
@@ -32,7 +46,13 @@ public class GenericService<T> implements Serializable {
 
   @Transactional
   public void save(final T object) {
+//    sessionFactory.getCurrentSession().save(object);
     this.getRepository().save(object);
+
+    Session session = sessionFactory.getCurrentSession();
+//    Transaction transaction = session.beginTransaction();
+    session.save(object);
+//    transaction.commit();
   }
 
   @Transactional

@@ -37,7 +37,7 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
   // TODO: refactorizar como hql a la base, esto es poco performante!!
-  public List<Vehicle> getVehiclesFrom(int vehicleId) {
+  public List<Vehicle> getVehiclesFrom(int userId) {
 //    return this.retriveAll()
 //      .stream()
 //      .filter(elt -> elt.getVehicleId() == vehicleId)
@@ -46,7 +46,7 @@ public class VehicleService extends GenericService<Vehicle> {
     List<Vehicle> vehicles = new ArrayList<>();
 
     for (Vehicle vehicle: retriveAll()){
-      if (vehicle.getVehicleId() == vehicleId){
+      if (vehicle.getOwner().getId() == userId){
         vehicles.add(vehicle);
       }
     }
@@ -55,14 +55,14 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
 
-  public boolean createVehicleFromDto(VehicleDto vDto) {
+  public Vehicle createVehicleFromDto(VehicleDto vDto) {
     Vehicle vehicle = new VehicleBuilder()
       .withContactPhone(vDto.getContactPhone())
       .withDescription(vDto.getDescription())
       .withPassengerAmmount(vDto.getPassengerCapacity())
       .withRentFeeDay(vDto.getRentFeeDay())
       .withRentFeeHour(vDto.getRentFeeHour())
-      .withReturnAddresses(vDto.getReturnAddresses())
+      .withReturnAddresses(vDto.getReturnAddress())
       .withType(vDto.getType())
       .withWithDrawAddress(vDto.getWithdrawAddress())
       .withZone(vDto.getZone())
@@ -71,11 +71,15 @@ public class VehicleService extends GenericService<Vehicle> {
 
     save(vehicle);
 
-    return true;
+    return vehicle;
   }
 
   public boolean updateVehicleFromDto(VehicleDto vDto) {
 
     return true;
+  }
+
+  public List<Vehicle> getVehiclesFromEmail(String email) {
+    return getVehiclesFrom(userService.findByEmail(email).getId());
   }
 }

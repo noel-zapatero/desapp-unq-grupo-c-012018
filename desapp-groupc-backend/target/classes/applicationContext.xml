@@ -1,15 +1,32 @@
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:jaxws="http://cxf.apache.org/jaxws"
-       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
-       xmlns:cxf="http://cxf.apache.org/core" xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+       <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+       <!--xmlns:tx="http://www.springframework.org/schema/tx"-->
+       <!--xmlns:jaxws="http://cxf.apache.org/jaxws"-->
+       <!--xmlns:jaxrs="http://cxf.apache.org/jaxrs"-->
+       <!--xmlns:cxf="http://cxf.apache.org/core" xmlns:context="http://www.springframework.org/schema/context"-->
+       <!--xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd-->
 
-http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
-http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd-->
+<!--http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd-->
+<!--http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd-->
+<!--http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">-->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+
+  <tx:annotation-driven transaction-manager="persistence.transactionManager"	proxy-target-class="true" />
+
+  <aop:aspectj-autoproxy />
 
   <!-- =========================== -->
   <!-- =========JAXB / CXF ========= -->
@@ -34,6 +51,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
     <jaxrs:serviceBeans>
       <ref bean="publicationsRest" />
       <ref bean="usersRest" />
+      <ref bean="vehiclesRest" />
     </jaxrs:serviceBeans>
     <jaxrs:extensionMappings>
       <entry key="json" value="application/json" />
@@ -58,6 +76,7 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   <bean id="vehiclesRest" class="main.webservices.VehiclesRest">
     <property name="vehicleService" ref="vehicleService" />
+
   </bean>
 
   <bean id="reservationsRest" class="main.webservices.ReservationsRest">
@@ -67,8 +86,6 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
   <bean id="availabilityRest" class="main.webservices.AvailabilityRest">
     <property name="availabilityService" ref="availabilityService"/>
   </bean>
-
-  <tx:annotation-driven transaction-manager="persistence.transactionManager"	proxy-target-class="true" />
 
   <!-- =========================== -->
   <!-- =========Persistence  ========= -->
@@ -175,23 +192,29 @@ http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd http://www.spr
 
   <bean id="userService" class="main.services.UserService">
     <property name="repository" ref="persistence.userRepository" />
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
   </bean>
 
   <bean id="vehicleService" class="main.services.VehicleService">
     <property name="repository" ref="persistence.vehicleRepository" />
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
+    <property name="userService" ref="userService" />
   </bean>
 
   <bean id="publicationService" class="main.services.PublicationService">
     <property name="repository" ref="persistence.publicationRepository" />
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
   </bean>
 
   <bean id="reservationService" class="main.services.ReservationService">
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
     <property name="repository" ref="persitence.reservationRepository" />
     <property name="userService" ref="userService"/>
     <property name="publicationService" ref="publicationService"/>
   </bean>
 
   <bean id="availabilityService" class="main.services.AvailabilityService">
+    <property name="sessionFactory" ref="persistence.sessionFactory"/>
     <property name="repository" ref="persistence.availabilityRepository" />
   </bean>
 

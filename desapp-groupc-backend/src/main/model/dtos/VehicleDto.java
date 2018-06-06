@@ -7,23 +7,23 @@ import java.util.List;
 
 public class VehicleDto {
 
-  private int vehicleId;
-  private String type;
-  private int passengerCapacity;
-  private String zone;
-  private String withdrawAddress;
-  private List<String> returnAddresses;
-  private String description;
-  private String contactPhone;
-  private float rentFeeDay;
-  private float rentFeeHour;
+  public int vehicleId;
+  public String type;
+  public int passengerCapacity;
+  public String zone;
+  public String withdrawAddress;
+  public String returnAddress;
+  public String description;
+  public String contactPhone;
+  public float rentFeeDay;
+  public float rentFeeHour;
 
   // el dtp es necesario para transportar solo estos datos del duenio y no el objeto entero
-  private int ownerId;
-  private String ownerName;
-  private String ownerLastName;
+  public int ownerId;
+  public String ownerName;
+  public String ownerLastName;
 
-  private String ownerEmail;
+  public String ownerEmail;
 
   public VehicleDto() { }
 
@@ -33,7 +33,7 @@ public class VehicleDto {
     this.passengerCapacity = v.getPassengerCapacity();
     this.zone = v.getZone();
     this.withdrawAddress = v.getWithdrawAddress();
-    this.returnAddresses = v.getReturnAddresses();
+    this.returnAddress = v.getReturnAddress();
     this.description = v.getDescription();
     this.contactPhone = v.getContactPhone();
     this.rentFeeDay = v.getRentFeeDay();
@@ -53,7 +53,7 @@ public class VehicleDto {
       .withPassengerCapacity(passengerCapacity)
       .withZone(zone)
       .withWithDrawAddress(withdrawAddress)
-      .withReturnAddresses(returnAddresses)
+      .withReturnAddresses(returnAddress)
       .withDescription(description)
       .withContactPhone(contactPhone)
       .withRentFeeDay(rentFeeDay)
@@ -101,12 +101,12 @@ public class VehicleDto {
     this.withdrawAddress = withdrawAddress;
   }
 
-  public List<String> getReturnAddresses() {
-    return returnAddresses;
+  public String dresses() {
+    return returnAddress;
   }
 
-  public void setReturnAddresses(List<String> returnAddresses) {
-    this.returnAddresses = returnAddresses;
+  public void setReturnAddress(String returnAddresses) {
+    this.returnAddress = returnAddresses;
   }
 
   public String getDescription() {
@@ -167,5 +167,9 @@ public class VehicleDto {
 
   public String getOwnerEmail() {
     return ownerEmail;
+  }
+
+  public String getReturnAddress() {
+    return returnAddress;
   }
 }

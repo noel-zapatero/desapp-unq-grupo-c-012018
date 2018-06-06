@@ -27,16 +27,16 @@ public class VehiclesRest {
   }
 
   @GET
-  @Path("/from/user/{id}")
+  @Path("/from/user/{email}")
   @Produces("application/json")
-  public Response getVehiclesFromUser(@PathParam("id") String id) {
+  public Response getVehiclesFromUser(@PathParam("email") String email) {
     List<VehicleDto> vehiclesDto = new ArrayList<>();
 //      vehicleService.getVehiclesFrom(Integer.valueOf(id))
 //      .stream()
 //      .map(elt -> new VehicleDto(elt))
 //      .collect(Collectors.toList());
 
-    for (Vehicle vehicle: vehicleService.getVehiclesFrom(Integer.valueOf(id))) {
+    for (Vehicle vehicle: vehicleService.getVehiclesFromEmail(email)) {
       vehiclesDto.add(new VehicleDto(vehicle));
     }
 
@@ -45,11 +45,9 @@ public class VehiclesRest {
 
   @POST
   @Consumes("application/json")
+  @Produces("application/json")
   public Response createVehicle(VehicleDto vDto) {
-    if (vehicleService.createVehicleFromDto(vDto))
-      return Response.ok().build();
-    else
-      return Response.notModified().build();
+    return Response.ok(vehicleService.createVehicleFromDto(vDto)).build();
   }
 
   @PUT

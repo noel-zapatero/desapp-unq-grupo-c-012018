@@ -22,9 +22,9 @@ public class Vehicle {
   @Column
   private String withdrawAddress;
 
-  @ElementCollection(fetch = FetchType.LAZY)
-  @Column
-  private List<String> returnAddresses;
+//  @ElementCollection(fetch = FetchType.LAZY)
+//  @Column
+//  private List<String> returnAddresses;
 
   @Column
   private String description;
@@ -43,6 +43,9 @@ public class Vehicle {
 
   @OneToOne
   private User owner;
+
+  @Column
+  private String returnAddress;
 
   //Default vehicle. Change
   public Vehicle(){ }
@@ -63,9 +66,9 @@ public class Vehicle {
 
   public void setWithdrawAddress(String withdrawAddress) {this.withdrawAddress = withdrawAddress;}
 
-  public List<String> getReturnAddresses() {return returnAddresses;}
+//  public String getReturnAddress() {return returnAddress;}
 
-  public void setReturnAddresses(List<String> returnAddresses) {this.returnAddresses = returnAddresses;}
+  public void setReturnAddresses(String returnAddresses) {this.returnAddress = returnAddresses;}
 
   public String getDescription() {return description;}
 
@@ -117,5 +120,9 @@ public class Vehicle {
 
   public int getVehicleId() {
     return vehicleId;
+  }
+
+  public String getReturnAddress() {
+    return returnAddress;
   }
 }
