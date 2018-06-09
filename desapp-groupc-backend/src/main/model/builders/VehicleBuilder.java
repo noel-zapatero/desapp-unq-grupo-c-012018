@@ -18,6 +18,7 @@ public class VehicleBuilder {
   private float rentFeeDay;
   private float rentFeeHour;
   private User owner;
+  private String imageUrl;
 
   public Vehicle build() {
     Vehicle v = new Vehicle();
@@ -33,6 +34,7 @@ public class VehicleBuilder {
     v.setRentFeeDay(rentFeeDay);
     v.setPassengerCapacity(passengerCapacity);
     v.setOwner(owner);
+    v.setImageUrl(imageUrl);
 
     return v;
   }
@@ -94,6 +96,11 @@ public class VehicleBuilder {
 
   public VehicleBuilder withOwner(User owner) {
     this.owner = owner;
+    return this;
+  }
+
+  public VehicleBuilder withImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
     return this;
   }
 }

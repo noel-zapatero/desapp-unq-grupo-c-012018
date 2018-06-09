@@ -30,9 +30,10 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
   public boolean disableVehicle(Integer vehicleId) {
-    Vehicle v = this.findById(vehicleId);
-    v.setDisabled(true);
-    this.update(v);
+//    Vehicle v = this.findById(vehicleId);
+//    v.setDisabled(true);
+//    this.update(v);
+    this.delete(this.findById(vehicleId));
     return true;
   }
 
@@ -67,6 +68,7 @@ public class VehicleService extends GenericService<Vehicle> {
       .withWithDrawAddress(vDto.getWithdrawAddress())
       .withZone(vDto.getZone())
       .withOwner(userService.findByEmail(vDto.getOwnerEmail()))
+      .withImageUrl(vDto.imageUrl)
       .build();
 
     save(vehicle);
@@ -75,7 +77,9 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
   public boolean updateVehicleFromDto(VehicleDto vDto) {
-
+    Vehicle v = vDto.toVehicle();
+    v.setOwner(userService.findById(vDto.getOwnerId()));
+    this.update(v);
     return true;
   }
 

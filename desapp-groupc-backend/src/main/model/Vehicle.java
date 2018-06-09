@@ -47,6 +47,9 @@ public class Vehicle {
   @Column
   private String returnAddress;
 
+  @Column
+  private String imageUrl;
+
   //Default vehicle. Change
   public Vehicle(){ }
 
@@ -124,5 +127,13 @@ public class Vehicle {
 
   public String getReturnAddress() {
     return returnAddress;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
   }
 }

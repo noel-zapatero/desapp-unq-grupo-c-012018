@@ -17,6 +17,7 @@ public class VehicleDto {
   public String contactPhone;
   public float rentFeeDay;
   public float rentFeeHour;
+  public String imageUrl;
 
   // el dtp es necesario para transportar solo estos datos del duenio y no el objeto entero
   public int ownerId;
@@ -44,6 +45,8 @@ public class VehicleDto {
     this.ownerLastName = v.getOwner().getLastName();
 
     this.ownerEmail = v.getOwner().getEmail();
+
+    this.imageUrl = v.getImageUrl();
   }
 
   public Vehicle toVehicle() {
@@ -58,7 +61,20 @@ public class VehicleDto {
       .withContactPhone(contactPhone)
       .withRentFeeDay(rentFeeDay)
       .withRentFeeHour(rentFeeHour)
+      .withImageUrl(imageUrl)
       .build();
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+  public void setOwnerEmail(String ownerEmail) {
+    this.ownerEmail = ownerEmail;
   }
 
   public int getVehicleId() {

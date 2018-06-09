@@ -63,9 +63,9 @@ public class VehiclesRest {
   @Path("/{id}")
   public Response deleteVehicle(@PathParam("id") String id) {
     if (vehicleService.disableVehicle(Integer.valueOf(id)))
-      return Response.ok().build();
+      return Response.ok("deleted").build();
     else
-      return Response.notModified().build();
+      return Response.notModified("not deleted").build();
   }
 
 }
