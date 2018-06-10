@@ -35,4 +35,20 @@ public class UserService extends GenericService<User> {
 
     return user;
   }
+
+
+  public boolean chargeCredits(String userEmail, int credits) {
+    User user = findByEmail(userEmail);
+    user.chargeCredits(credits);
+    update(user);
+    return true;
+  }
+
+
+  public boolean withdrawCredits(String userEmail, int credits) {
+    User user = findByEmail(userEmail);
+    user.whitdrawCredits(credits);
+    update(user);
+    return true;
+  }
 }

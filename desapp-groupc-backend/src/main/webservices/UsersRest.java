@@ -2,6 +2,7 @@ package main.webservices;
 
 import main.model.User;
 import main.model.builders.UserBuilder;
+import main.model.dtos.CreditsOperationDto;
 import main.model.dtos.UserDto;
 import main.services.UserService;
 
@@ -31,6 +32,20 @@ public class UsersRest {
       return Response.ok().build();
     else
       return Response.notModified().build();
+  }
+
+  @PUT
+  @Path("/chargecredits")
+  public Response chargeCredits(CreditsOperationDto op) {
+    userService.chargeCredits(op.getUserEmail(), op.getCredits());
+    return Response.ok().build();
+  }
+
+  @PUT
+  @Path("/withdrawcredits")
+  public Response withdrawCredits(CreditsOperationDto op) {
+    userService.withdrawCredits(op.getUserEmail(), op.getCredits());
+    return Response.ok().build();
   }
 
   @POST
