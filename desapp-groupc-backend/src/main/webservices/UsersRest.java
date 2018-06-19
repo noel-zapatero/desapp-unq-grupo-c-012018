@@ -1,7 +1,6 @@
 package main.webservices;
 
 import main.model.User;
-import main.model.builders.UserBuilder;
 import main.model.dtos.CreditsOperationDto;
 import main.model.dtos.UserDto;
 import main.services.UserService;
@@ -23,6 +22,13 @@ public class UsersRest {
   @Produces("application/json")
   public Response getUser(@PathParam("id") String id) {
     return Response.ok(new UserDto(userService.findById(Integer.valueOf(id)))).build();
+  }
+
+  @GET
+  @Path("/byemail/{email}")
+  @Produces("application/json")
+  public Response findUserByEmail(@PathParam("email") String email) {
+    return Response.ok(new UserDto(userService.findByEmail(email))).build();
   }
 
   @PUT
