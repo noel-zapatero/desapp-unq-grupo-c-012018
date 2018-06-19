@@ -3,9 +3,8 @@ package main.webservices;
 import main.model.Publication;
 import main.services.PublicationService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,4 +23,11 @@ public class PublicationsRest {
     return new ArrayList<Publication>();
   }
 
+  @POST
+  @Consumes("application/json")
+  @Produces("application/json")
+  @Path("/pub/{id}")
+  public Response createPublication(@PathParam("id") String id) {
+    return Response.ok(publicationService.createPublication(Integer.valueOf(id))).build();
+  }
 }
