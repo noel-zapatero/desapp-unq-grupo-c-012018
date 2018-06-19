@@ -125,8 +125,4 @@ public class User {
   public String getLastName() {
     return lastName;
   }
-
-  public void setCredits(float credits) {
-    this.credits = credits;
-  }
 }

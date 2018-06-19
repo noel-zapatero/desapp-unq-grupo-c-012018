@@ -9,11 +9,9 @@ public class UserBuilder {
     private String firstName = "No name";
     private String address = "No address";
     private String email = "No@email.com";
-    private float credits = 0;
 
     public User build() {
         User user = new User(cuil,lastName,firstName,address,email);
-        user.setCredits(credits);
         return user;
     }
 
