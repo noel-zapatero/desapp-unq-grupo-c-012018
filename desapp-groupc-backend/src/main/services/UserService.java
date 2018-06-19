@@ -51,4 +51,9 @@ public class UserService extends GenericService<User> {
     update(user);
     return true;
   }
+
+  public int getUserCredits(String email) {
+    User user = findByEmail(email);
+    return (int)user.getCredits();
+  }
 }
