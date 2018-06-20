@@ -210,6 +210,8 @@
   <bean id="publicationService" class="main.services.PublicationService">
     <property name="repository" ref="persistence.publicationRepository" />
     <property name="sessionFactory" ref="persistence.sessionFactory"/>
+    <property name="vehicleService" ref="vehicleService"/>
+    <property name="userService" ref="userService"/>
   </bean>
 
   <bean id="reservationService" class="main.services.ReservationService">

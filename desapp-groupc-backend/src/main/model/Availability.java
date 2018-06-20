@@ -1,5 +1,6 @@
 package main.model;
 
+import main.model.dtos.PublicationDto;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
@@ -43,4 +44,28 @@ public class Availability {
     return this.start.isBefore(dateTime.plusMinutes(1));
   }
 
+  public DateTime getStart() {
+    return start;
+  }
+
+  public DateTime getEnd() {
+    return end;
+  }
+
+  public static Availability FromPublicationDto(PublicationDto pDto) {
+    return new Availability(new DateTime(
+      pDto.getStartYear(),
+      pDto.getStartMonth(),
+      pDto.getStartDayOfMonth(),
+      1,
+      1
+    ),
+      new DateTime(
+        pDto.getEndYear(),
+        pDto.getEndMonth(),
+        pDto.getEndDayOfMonth(),
+        1,
+        1
+      ));
+  }
 }

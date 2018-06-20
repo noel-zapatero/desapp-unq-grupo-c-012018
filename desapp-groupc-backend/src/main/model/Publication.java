@@ -30,7 +30,6 @@ public class Publication {
   @OneToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "PUBLICATION_ACCEPTEDRESERVATION")
   private List<Reservation> acceptedReservations = new ArrayList<Reservation>();
-  private int id;
 
   public Publication() { }
 
@@ -80,5 +79,37 @@ public class Publication {
 
   public void declineReservation(Reservation r) {
     this.reservations.remove(r);
+  }
+
+  public Vehicle getVehicleOffered() {
+    return vehicleOffered;
+  }
+
+  public Availability getAvailability() {
+    return availability;
+  }
+
+  public void setPublicationId(int publicationId) {
+    this.publicationId = publicationId;
+  }
+
+  public void setVehicleOffered(Vehicle vehicleOffered) {
+    this.vehicleOffered = vehicleOffered;
+  }
+
+  public void setOwner(User owner) {
+    this.owner = owner;
+  }
+
+  public void setAvailability(Availability availability) {
+    this.availability = availability;
+  }
+
+  public void setReservations(List<Reservation> reservations) {
+    this.reservations = reservations;
+  }
+
+  public void setAcceptedReservations(List<Reservation> acceptedReservations) {
+    this.acceptedReservations = acceptedReservations;
   }
 }
