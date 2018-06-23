@@ -1601,3 +1601,1283 @@ INFO	2018-06-20 18:47:04,362	3438	org.springframework.orm.hibernate4.HibernateTr
 INFO	2018-06-20 18:47:04,375	3451	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
 INFO	2018-06-20 18:47:04,399	3475	org.springframework.jdbc.support.SQLErrorCodesFactory	[main]	SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
 INFO	2018-06-20 18:47:04,412	3488	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization completed in 3487 ms
+INFO	2018-06-20 18:51:49,208	288284	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-20]	Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/main/webservices/users
+Http-Method: OPTIONS
+Content-Type: 
+Headers: {Accept=[*/*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], Access-Control-Request-Headers=[content-type], Access-Control-Request-Method=[POST], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Origin=[http://localhost:4200], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-20 18:51:49,421	288497	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: OPTIONS
+Content-Type: 
+Headers: {Accept=[*/*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], Access-Control-Request-Headers=[content-type], Access-Control-Request-Method=[GET], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Origin=[http://localhost:4200], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-20 18:51:49,431	288507	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 18:51:49,434	288510	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-22]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:51:49,777	288853	main.aspects.AuditoryAspect	[qtp2003961164-22]	Tiempo: 332 ms
+WARN	2018-06-20 18:51:49,785	288861	org.apache.cxf.phase.PhaseInterceptorChain	[qtp2003961164-22]	Application {http://webservices.main/}PublicationsRest has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$22bc4a94.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+WARN	2018-06-20 18:51:49,834	288910	org.apache.cxf.phase.PhaseInterceptorChain	[qtp2003961164-22]	Exception in handleFault on interceptor org.apache.cxf.binding.xml.interceptor.XMLFaultOutInterceptor@2be0df05
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$22bc4a94.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+ERROR	2018-06-20 18:51:49,835	288911	org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver	[qtp2003961164-22]	Error occurred during error handling, give up!
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$22bc4a94.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+INFO	2018-06-20 18:51:56,364	295440	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-17]	Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8080/main/webservices/vehicles
+Http-Method: OPTIONS
+Content-Type: 
+Headers: {Accept=[*/*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], Access-Control-Request-Headers=[content-type], Access-Control-Request-Method=[POST], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Origin=[http://localhost:4200], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-20 18:53:01,272	360348	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 5
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 18:53:01,274	360350	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-22]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:53:01,836	360912	main.aspects.AuditoryAspect	[qtp2003961164-22]	Tiempo: 102 ms
+INFO	2018-06-20 18:53:01,915	360991	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-22]	Outbound Message
+---------------------------
+ID: 5
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:53:01 GMT]}
+Payload: {"adress":"No address","firstName":"Lucas","email":"lucasfdl22@gmail.com","credits":0.0,"lastName":"Fedele","userId":1,"rating":0.0,"cuil":20337778881}
+--------------------------------------
+INFO	2018-06-20 18:53:23,222	0	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization started
+INFO	2018-06-20 18:53:23,286	64	org.springframework.web.context.support.XmlWebApplicationContext	[main]	Refreshing Root WebApplicationContext: startup date [Wed Jun 20 18:53:23 CLT 2018]; root of context hierarchy
+INFO	2018-06-20 18:53:23,477	255	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from file [/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/applicationContext.xml]
+INFO	2018-06-20 18:53:23,623	401	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+INFO	2018-06-20 18:53:23,642	420	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+INFO	2018-06-20 18:53:23,671	449	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+INFO	2018-06-20 18:53:23,846	624	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/hibernate.properties]
+INFO	2018-06-20 18:53:23,847	625	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/jdbc.properties]
+INFO	2018-06-20 18:53:24,629	1407	org.hibernate.annotations.common.Version	[main]	HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO	2018-06-20 18:53:24,634	1412	org.hibernate.Version	[main]	HHH000412: Hibernate Core {4.3.6.Final}
+INFO	2018-06-20 18:53:24,639	1417	org.hibernate.cfg.Environment	[main]	HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=${jdbc.driverClassName}, hibernate.default_schema=public, hibernate.dialect=org.hibernate.dialect.HSQLDialect, hibernate.connection.username=${jdbc.username}, hibernate.hbm2ddl.auto=create, hibernate.connection.url=${jdbc.url}, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.connection.password=****, <!--=You'd probably want to change this to update to run it for the first time :) -->}
+INFO	2018-06-20 18:53:24,639	1417	org.hibernate.cfg.Environment	[main]	HHH000021: Bytecode provider name : javassist
+INFO	2018-06-20 18:53:25,407	2185	org.hibernate.dialect.Dialect	[main]	HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+INFO	2018-06-20 18:53:25,581	2359	org.hibernate.engine.transaction.internal.TransactionFactoryInitiator	[main]	HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO	2018-06-20 18:53:25,586	2364	org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory	[main]	HHH000397: Using ASTQueryTranslatorFactory
+INFO	2018-06-20 18:53:25,870	2648	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000227: Running hbm2ddl schema export
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION drop constraint FK_e06c3untaavvodta90axijbcj
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_ACCEPTEDRESERVATION
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION drop constraint FK_frp6wwwrb7ne9ofvb4wmnlpr
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_ACCEPTEDRESERVATION
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_RESERVATION drop constraint FK_p9rt5uya8erahg41foofwap2w
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_RESERVATION
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_RESERVATION drop constraint FK_gnu96sfktbuefrx3igosctf7c
+ERROR	2018-06-20 18:53:25,874	2652	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_RESERVATION
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_a4645lv6055b71cb6f8kjw1jb
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_qa2bqqbaf9ow46qwewpym6yy9
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_o1yugyaoot1vrbnu39wdjmur4
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Reservation drop constraint FK_6vn8g5cb3gk4st4c27nh17vky
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.RESERVATION
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Reservation drop constraint FK_9n8vmuoncni5dp0od13o1m9i2
+ERROR	2018-06-20 18:53:25,875	2653	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.RESERVATION
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.USER_VEHICLES drop constraint FK_gw9o7r1l16chpi9jacb77oynw
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_VEHICLES
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.USER_VEHICLES drop constraint FK_3hdm9puulfwwvn9om3j16mv7x
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_VEHICLES
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.User_Publication drop constraint FK_83g4aika75imndku104wan6jf
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_PUBLICATION
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.User_Publication drop constraint FK_gwgva0pxcgy3nvyo3ak5hvn49
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_PUBLICATION
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Vehicle drop constraint FK_8f3vo60r2ev0gjii3oha3r0m6
+ERROR	2018-06-20 18:53:25,876	2654	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.VEHICLE
+INFO	2018-06-20 18:53:25,893	2671	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000230: Schema export complete
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:25,941	2719	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,012	2790	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,012	2790	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,013	2791	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,013	2791	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,013	2791	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,013	2791	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,013	2791	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,042	2820	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,042	2820	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,042	2820	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,042	2820	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,042	2820	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,043	2821	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,043	2821	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,460	3238	org.apache.cxf.endpoint.ServerImpl	[main]	Setting the server's publish address to be /
+INFO	2018-06-20 18:53:26,511	3289	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,511	3289	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,512	3290	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,512	3290	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,512	3290	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,512	3290	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,512	3290	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,545	3323	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:53:26,582	3360	org.springframework.orm.hibernate4.HibernateTransactionManager	[main]	Using DataSource [org.apache.commons.dbcp.BasicDataSource@7809027c] of Hibernate SessionFactory for HibernateTransactionManager
+INFO	2018-06-20 18:53:26,598	3376	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+INFO	2018-06-20 18:53:26,626	3404	org.springframework.jdbc.support.SQLErrorCodesFactory	[main]	SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+INFO	2018-06-20 18:53:26,643	3421	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization completed in 3421 ms
+INFO	2018-06-20 18:53:53,364	30142	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp1993366729-17]	Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 18:53:53,375	30153	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp1993366729-17]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:53:53,541	30319	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp1993366729-20]	Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-20 18:53:53,539	30317	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp1993366729-19]	Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 18:53:53,543	30321	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp1993366729-20]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+WARN	2018-06-20 18:53:53,543	30321	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp1993366729-19]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:53:53,833	30611	main.aspects.AuditoryAspect	[qtp1993366729-20]	Tiempo: 283 ms
+INFO	2018-06-20 18:53:53,835	30613	main.aspects.AuditoryAspect	[qtp1993366729-19]	Tiempo: 285 ms
+WARN	2018-06-20 18:53:53,854	30632	org.apache.cxf.phase.PhaseInterceptorChain	[qtp1993366729-20]	Application {http://webservices.main/}PublicationsRest has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$f7aca2df.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+WARN	2018-06-20 18:53:53,858	30636	org.apache.cxf.phase.PhaseInterceptorChain	[qtp1993366729-19]	Application {http://webservices.main/}PublicationsRest has thrown exception, unwinding now
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.services.VehicleService.getVehiclesFromEmail(VehicleService.java:87)
+	at main.services.VehicleService$$FastClassBySpringCGLIB$$92ad4864.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:267)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.services.VehicleService$$EnhancerBySpringCGLIB$$990e7f6e.getVehiclesFromEmail(<generated>)
+	at main.webservices.VehiclesRest.getVehiclesFromUser(VehiclesRest.java:39)
+	at main.webservices.VehiclesRest$$FastClassBySpringCGLIB$$b35db6ac.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.VehiclesRest$$EnhancerBySpringCGLIB$$808c8640.getVehiclesFromUser(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+INFO	2018-06-20 18:53:53,922	30700	main.aspects.AuditoryAspect	[qtp1993366729-17]	Tiempo: 412 ms
+WARN	2018-06-20 18:53:53,936	30714	org.apache.cxf.phase.PhaseInterceptorChain	[qtp1993366729-19]	Exception in handleFault on interceptor org.apache.cxf.binding.xml.interceptor.XMLFaultOutInterceptor@29e4a4a8
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.services.VehicleService.getVehiclesFromEmail(VehicleService.java:87)
+	at main.services.VehicleService$$FastClassBySpringCGLIB$$92ad4864.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:267)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.services.VehicleService$$EnhancerBySpringCGLIB$$990e7f6e.getVehiclesFromEmail(<generated>)
+	at main.webservices.VehiclesRest.getVehiclesFromUser(VehiclesRest.java:39)
+	at main.webservices.VehiclesRest$$FastClassBySpringCGLIB$$b35db6ac.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.VehiclesRest$$EnhancerBySpringCGLIB$$808c8640.getVehiclesFromUser(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+ERROR	2018-06-20 18:53:53,937	30715	org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver	[qtp1993366729-19]	Error occurred during error handling, give up!
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.services.VehicleService.getVehiclesFromEmail(VehicleService.java:87)
+	at main.services.VehicleService$$FastClassBySpringCGLIB$$92ad4864.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:99)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:267)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.services.VehicleService$$EnhancerBySpringCGLIB$$990e7f6e.getVehiclesFromEmail(<generated>)
+	at main.webservices.VehiclesRest.getVehiclesFromUser(VehiclesRest.java:39)
+	at main.webservices.VehiclesRest$$FastClassBySpringCGLIB$$b35db6ac.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.VehiclesRest$$EnhancerBySpringCGLIB$$808c8640.getVehiclesFromUser(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+WARN	2018-06-20 18:53:53,939	30717	org.apache.cxf.phase.PhaseInterceptorChain	[qtp1993366729-20]	Exception in handleFault on interceptor org.apache.cxf.binding.xml.interceptor.XMLFaultOutInterceptor@29e4a4a8
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$f7aca2df.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+ERROR	2018-06-20 18:53:53,940	30718	org.apache.cxf.interceptor.AbstractFaultChainInitiatorObserver	[qtp1993366729-20]	Error occurred during error handling, give up!
+org.apache.cxf.interceptor.Fault
+	at org.apache.cxf.service.invoker.AbstractInvoker.createFault(AbstractInvoker.java:170)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:136)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:204)
+	at org.apache.cxf.jaxrs.JAXRSInvoker.invoke(JAXRSInvoker.java:101)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor$1.run(ServiceInvokerInterceptor.java:58)
+	at org.apache.cxf.interceptor.ServiceInvokerInterceptor.handleMessage(ServiceInvokerInterceptor.java:94)
+	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:272)
+	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:249)
+	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:248)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:222)
+	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:153)
+	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:181)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:289)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:214)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:735)
+	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:265)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:684)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:503)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:137)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:557)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:231)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1086)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:429)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:193)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1020)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:135)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:255)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:154)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:116)
+	at org.eclipse.jetty.server.Server.handle(Server.java:370)
+	at org.eclipse.jetty.server.AbstractHttpConnection.handleRequest(AbstractHttpConnection.java:494)
+	at org.eclipse.jetty.server.AbstractHttpConnection.headerComplete(AbstractHttpConnection.java:971)
+	at org.eclipse.jetty.server.AbstractHttpConnection$RequestHandler.headerComplete(AbstractHttpConnection.java:1033)
+	at org.eclipse.jetty.http.HttpParser.parseNext(HttpParser.java:644)
+	at org.eclipse.jetty.http.HttpParser.parseAvailable(HttpParser.java:235)
+	at org.eclipse.jetty.server.AsyncHttpConnection.handle(AsyncHttpConnection.java:82)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint.handle(SelectChannelEndPoint.java:696)
+	at org.eclipse.jetty.io.nio.SelectChannelEndPoint$1.run(SelectChannelEndPoint.java:53)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:608)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$3.run(QueuedThreadPool.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.NullPointerException
+	at main.model.dtos.UserDto.<init>(UserDto.java:20)
+	at main.webservices.UsersRest.findUserByEmail(UsersRest.java:31)
+	at main.webservices.UsersRest$$FastClassBySpringCGLIB$$8003ec2b.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:717)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:85)
+	at main.aspects.AuditoryAspect.aroundAuditory(AuditoryAspect.java:19)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:621)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:610)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:68)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:653)
+	at main.webservices.UsersRest$$EnhancerBySpringCGLIB$$f7aca2df.findUserByEmail(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.cxf.service.invoker.AbstractInvoker.performInvocation(AbstractInvoker.java:188)
+	at org.apache.cxf.service.invoker.AbstractInvoker.invoke(AbstractInvoker.java:104)
+	... 40 more
+INFO	2018-06-20 18:53:53,997	30775	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp1993366729-17]	Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:53:53 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"rating":0.0,"cuil":20337778881,"credits":0.0}
+--------------------------------------
+INFO	2018-06-20 18:57:46,333	0	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization started
+INFO	2018-06-20 18:57:46,400	67	org.springframework.web.context.support.XmlWebApplicationContext	[main]	Refreshing Root WebApplicationContext: startup date [Wed Jun 20 18:57:46 CLT 2018]; root of context hierarchy
+INFO	2018-06-20 18:57:46,570	237	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from file [/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/applicationContext.xml]
+INFO	2018-06-20 18:57:46,716	383	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+INFO	2018-06-20 18:57:46,740	407	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+INFO	2018-06-20 18:57:46,764	431	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+INFO	2018-06-20 18:57:47,004	671	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/hibernate.properties]
+INFO	2018-06-20 18:57:47,006	673	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/jdbc.properties]
+INFO	2018-06-20 18:57:47,870	1537	org.hibernate.annotations.common.Version	[main]	HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO	2018-06-20 18:57:47,878	1545	org.hibernate.Version	[main]	HHH000412: Hibernate Core {4.3.6.Final}
+INFO	2018-06-20 18:57:47,881	1548	org.hibernate.cfg.Environment	[main]	HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=${jdbc.driverClassName}, hibernate.default_schema=public, hibernate.dialect=org.hibernate.dialect.HSQLDialect, hibernate.connection.username=${jdbc.username}, hibernate.hbm2ddl.auto=create, hibernate.connection.url=${jdbc.url}, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.connection.password=****, <!--=You'd probably want to change this to update to run it for the first time :) -->}
+INFO	2018-06-20 18:57:47,882	1549	org.hibernate.cfg.Environment	[main]	HHH000021: Bytecode provider name : javassist
+INFO	2018-06-20 18:57:48,658	2325	org.hibernate.dialect.Dialect	[main]	HHH000400: Using dialect: org.hibernate.dialect.HSQLDialect
+INFO	2018-06-20 18:57:48,818	2485	org.hibernate.engine.transaction.internal.TransactionFactoryInitiator	[main]	HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO	2018-06-20 18:57:48,821	2488	org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory	[main]	HHH000397: Using ASTQueryTranslatorFactory
+INFO	2018-06-20 18:57:49,061	2728	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000227: Running hbm2ddl schema export
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION drop constraint FK_e06c3untaavvodta90axijbcj
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_ACCEPTEDRESERVATION
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION drop constraint FK_frp6wwwrb7ne9ofvb4wmnlpr
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_ACCEPTEDRESERVATION
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_RESERVATION drop constraint FK_p9rt5uya8erahg41foofwap2w
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_RESERVATION
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.PUBLICATION_RESERVATION drop constraint FK_gnu96sfktbuefrx3igosctf7c
+ERROR	2018-06-20 18:57:49,065	2732	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION_RESERVATION
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_a4645lv6055b71cb6f8kjw1jb
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_qa2bqqbaf9ow46qwewpym6yy9
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Publication drop constraint FK_o1yugyaoot1vrbnu39wdjmur4
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.PUBLICATION
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Reservation drop constraint FK_6vn8g5cb3gk4st4c27nh17vky
+ERROR	2018-06-20 18:57:49,066	2733	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.RESERVATION
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Reservation drop constraint FK_9n8vmuoncni5dp0od13o1m9i2
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.RESERVATION
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.USER_VEHICLES drop constraint FK_gw9o7r1l16chpi9jacb77oynw
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_VEHICLES
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.USER_VEHICLES drop constraint FK_3hdm9puulfwwvn9om3j16mv7x
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_VEHICLES
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.User_Publication drop constraint FK_83g4aika75imndku104wan6jf
+ERROR	2018-06-20 18:57:49,067	2734	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_PUBLICATION
+ERROR	2018-06-20 18:57:49,068	2735	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.User_Publication drop constraint FK_gwgva0pxcgy3nvyo3ak5hvn49
+ERROR	2018-06-20 18:57:49,068	2735	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.USER_PUBLICATION
+ERROR	2018-06-20 18:57:49,068	2735	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000389: Unsuccessful: alter table public.Vehicle drop constraint FK_8f3vo60r2ev0gjii3oha3r0m6
+ERROR	2018-06-20 18:57:49,068	2735	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	user lacks privilege or object not found: PUBLIC.VEHICLE
+INFO	2018-06-20 18:57:49,088	2755	org.hibernate.tool.hbm2ddl.SchemaExport	[main]	HHH000230: Schema export complete
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,141	2808	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,213	2880	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,232	2899	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,632	3299	org.apache.cxf.endpoint.ServerImpl	[main]	Setting the server's publish address to be /
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,680	3347	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,714	3381	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,714	3381	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,714	3381	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,714	3381	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,715	3382	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,715	3382	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,715	3382	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-20 18:57:49,768	3435	org.springframework.orm.hibernate4.HibernateTransactionManager	[main]	Using DataSource [org.apache.commons.dbcp.BasicDataSource@5574f42b] of Hibernate SessionFactory for HibernateTransactionManager
+INFO	2018-06-20 18:57:49,785	3452	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+INFO	2018-06-20 18:57:49,814	3481	org.springframework.jdbc.support.SQLErrorCodesFactory	[main]	SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+INFO	2018-06-20 18:57:49,830	3497	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization completed in 3496 ms
+INFO	2018-06-20 18:58:09,428	23095	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-19]	Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 18:58:09,441	23108	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-19]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:58:10,058	23725	main.aspects.AuditoryAspect	[qtp2003961164-19]	Tiempo: 437 ms
+INFO	2018-06-20 18:58:10,120	23787	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-19]	Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:58:10 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 18:58:15,475	29142	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-18]	Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 18:58:15,477	29144	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-18]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:58:15,500	29167	main.aspects.AuditoryAspect	[qtp2003961164-18]	Tiempo: 21 ms
+INFO	2018-06-20 18:58:15,502	29169	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-18]	Outbound Message
+---------------------------
+ID: 2
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:58:15 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 18:58:15,820	29487	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-19]	Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 18:58:15,821	29488	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-19]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:58:15,822	29489	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 18:58:15,824	29491	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:58:15,854	29521	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 13 ms
+INFO	2018-06-20 18:58:15,855	29522	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 4
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:58:15 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 18:58:15,879	29546	main.aspects.AuditoryAspect	[qtp2003961164-19]	Tiempo: 38 ms
+INFO	2018-06-20 18:58:15,887	29554	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-19]	Outbound Message
+---------------------------
+ID: 3
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:58:15 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-20 18:58:26,081	39748	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-20]	Inbound Message
+----------------------------
+ID: 5
+Address: http://localhost:8080/main/webservices/vehicles
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[248], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"type":"Auto","passengerCapacity":2,"zone":"","withdrawAddress":"","returnAddress":"","description":"","contactPhone":"","rentFeeDay":0,"rentFeeHour":0,"ownerName":"Lucas","ownerLastName":"Fedele","ownerEmail":"lucasfdl22@gmail.com","imageUrl":""}
+--------------------------------------
+WARN	2018-06-20 18:58:26,082	39749	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-20]	Both main.webservices.VehiclesRest#createVehicle and main.webservices.VehiclesRest#createVehicle are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 18:58:26,108	39775	main.aspects.AuditoryAspect	[qtp2003961164-20]	Tiempo: 10 ms
+INFO	2018-06-20 18:58:26,122	39789	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-20]	Outbound Message
+---------------------------
+ID: 5
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 22:58:26 GMT]}
+Payload: {"id":1,"type":"Auto","vehicleId":1,"imageUrl":"","description":"","disabled":false,"contactPhone":"","passengerCapacity":2,"rentFeeDay":0.0,"rentFeeHour":0.0,"returnAddress":"","withdrawAddress":"","owner":{"firstName":"Lucas","myVehicles":[],"myOffers":[],"address":"No address","name":"Lucas","id":1,"rating":0.0,"cuil":20337778881,"vehicles":[],"email":"lucasfdl22@gmail.com","credits":0.0,"lastName":"Fedele"},"zone":""}
+--------------------------------------
+INFO	2018-06-20 18:58:34,798	48465	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 6
+Address: http://localhost:8080/main/webservices/vehicles/pub/1
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[81], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null,"lazyInit":null,"headers":{}}}
+--------------------------------------
+INFO	2018-06-20 19:00:12,321	145988	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 7
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:00:12,324	145991	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:00:12,329	145996	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 3 ms
+INFO	2018-06-20 19:00:12,331	145998	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 7
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:00:12 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:00:12,626	146293	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-19]	Inbound Message
+----------------------------
+ID: 8
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 19:00:12,627	146294	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-19]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:00:12,629	146296	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-20]	Inbound Message
+----------------------------
+ID: 9
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 19:00:12,630	146297	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-20]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:00:12,636	146303	main.aspects.AuditoryAspect	[qtp2003961164-20]	Tiempo: 6 ms
+INFO	2018-06-20 19:00:12,638	146305	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-20]	Outbound Message
+---------------------------
+ID: 9
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:00:12 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:00:12,639	146306	main.aspects.AuditoryAspect	[qtp2003961164-19]	Tiempo: 11 ms
+INFO	2018-06-20 19:00:12,647	146314	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-19]	Outbound Message
+---------------------------
+ID: 8
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:00:12 GMT]}
+Payload: [{"type":"Auto","vehicleId":1,"imageUrl":"","description":"","contactPhone":"","passengerCapacity":2,"rentFeeDay":0.0,"rentFeeHour":0.0,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","ownerId":1,"zone":"","ownerName":"Lucas","ownerLastName":"Fedele"}]
+--------------------------------------
+INFO	2018-06-20 19:03:11,221	324888	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 10
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:03:11,224	324891	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:03:11,228	324895	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 4 ms
+INFO	2018-06-20 19:03:11,229	324896	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 10
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:03:11 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:19:16,800	1290467	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-18]	Inbound Message
+----------------------------
+ID: 11
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:19:16,814	1290481	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-18]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:19:16,836	1290503	main.aspects.AuditoryAspect	[qtp2003961164-18]	Tiempo: 18 ms
+INFO	2018-06-20 19:19:16,845	1290512	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-18]	Outbound Message
+---------------------------
+ID: 11
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:19:16 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:19:27,845	1301512	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 12
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:19:27,846	1301513	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-22]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:19:27,849	1301516	main.aspects.AuditoryAspect	[qtp2003961164-22]	Tiempo: 2 ms
+INFO	2018-06-20 19:19:27,850	1301517	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-22]	Outbound Message
+---------------------------
+ID: 12
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:19:27 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:19:39,316	1312983	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 13
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:19:39,316	1312983	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:19:39,321	1312988	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 4 ms
+INFO	2018-06-20 19:19:39,322	1312989	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 13
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:19:39 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:20:37,661	1371328	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-19]	Inbound Message
+----------------------------
+ID: 14
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:20:37,663	1371330	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-19]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:20:37,671	1371338	main.aspects.AuditoryAspect	[qtp2003961164-19]	Tiempo: 7 ms
+INFO	2018-06-20 19:20:37,672	1371339	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-19]	Outbound Message
+---------------------------
+ID: 14
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:20:37 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:20:43,873	1377540	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 15
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/home], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:20:43,874	1377541	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-22]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:20:43,882	1377549	main.aspects.AuditoryAspect	[qtp2003961164-22]	Tiempo: 7 ms
+INFO	2018-06-20 19:20:43,893	1377560	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-22]	Outbound Message
+---------------------------
+ID: 15
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:20:43 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:20:51,103	1384770	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-19]	Inbound Message
+----------------------------
+ID: 16
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-20 19:20:51,103	1384770	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-19]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:20:51,107	1384774	main.aspects.AuditoryAspect	[qtp2003961164-19]	Tiempo: 3 ms
+INFO	2018-06-20 19:20:51,108	1384775	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-19]	Outbound Message
+---------------------------
+ID: 16
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:20:51 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:20:51,410	1385077	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 18
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-20 19:20:51,410	1385077	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-18]	Inbound Message
+----------------------------
+ID: 17
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-20 19:20:51,411	1385078	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+WARN	2018-06-20 19:20:51,411	1385078	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-18]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-20 19:20:51,417	1385084	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 4 ms
+INFO	2018-06-20 19:20:51,419	1385086	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 18
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:20:51 GMT]}
+Payload: {"userId":1,"adress":"No address","rating":0.0,"cuil":20337778881,"email":"lucasfdl22@gmail.com","credits":0.0,"firstName":"Lucas","lastName":"Fedele"}
+--------------------------------------
+INFO	2018-06-20 19:20:51,425	1385092	main.aspects.AuditoryAspect	[qtp2003961164-18]	Tiempo: 11 ms
+INFO	2018-06-20 19:20:51,426	1385093	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-18]	Outbound Message
+---------------------------
+ID: 17
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 20 Jun 2018 23:20:51 GMT]}
+Payload: [{"type":"Auto","vehicleId":1,"imageUrl":"","description":"","contactPhone":"","passengerCapacity":2,"rentFeeDay":0.0,"rentFeeHour":0.0,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","ownerId":1,"zone":"","ownerName":"Lucas","ownerLastName":"Fedele"}]
+--------------------------------------
