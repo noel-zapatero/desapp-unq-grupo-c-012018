@@ -60,6 +60,8 @@ public class UsersRest {
   public Response userLogIn(UserDto uDto) {
     User retrievedUser = userService.findByEmail(uDto.getEmail());
 
+    
+
     if (retrievedUser == null)
       retrievedUser = userService.buildAndSaveFromDto(uDto);
 

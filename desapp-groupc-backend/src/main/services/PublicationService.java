@@ -38,7 +38,8 @@ public class PublicationService extends GenericService<Publication> {
   public List<Publication> getPublicationsFromUserEmail(String userEmail) {
     List<Publication> ret = new ArrayList<>();
     for (Publication p: retriveAll()) {
-      if (p.getOwnerEmail() == userEmail) {
+      System.out.print(userEmail.equals(p.getOwnerEmail()));
+      if (userEmail.equals(p.getOwnerEmail())) {
         ret.add(p);
       }
     }
@@ -61,7 +62,7 @@ public class PublicationService extends GenericService<Publication> {
     return ret;
   }
 
-  public void createPublicationFromDto(PublicationDto pDto) {
+  public PublicationDto createPublicationFromDto(PublicationDto pDto) {
     Vehicle vehicleOffered = vehicleService.findById(pDto.getVehicleOfferedId());
     Publication p = new PublicationBuilder()
       .withPublicationId(pDto.getPublicationId())
@@ -72,6 +73,8 @@ public class PublicationService extends GenericService<Publication> {
 
     availabilityService.save(p.getAvailability());
     save(p);
+
+    return new PublicationDto(p);
   }
 
   public void deleteById(int id) {

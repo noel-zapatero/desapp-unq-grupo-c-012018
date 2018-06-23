@@ -23,7 +23,7 @@ public class PublicationDto {
 
   public PublicationDto(Publication publication) {
     this.setPublicationId(publication.getId());
-    this.setPublicationId(publication.getVehicleOffered().getId());
+    this.setVehicleOfferedId(publication.getVehicleOffered().getId());
 
     this.setStartDayOfMonth(publication.getAvailability().getStart().getDayOfMonth());
     this.setStartMonth(publication.getAvailability().getStart().getMonthOfYear());

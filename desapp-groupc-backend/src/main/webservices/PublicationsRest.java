@@ -1,10 +1,12 @@
 package main.webservices;
 
+import main.model.Publication;
 import main.model.dtos.PublicationDto;
 import main.services.PublicationService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Path("/publications")
 public class PublicationsRest {
@@ -32,15 +34,15 @@ public class PublicationsRest {
   @Path("/fromuser/{userEmail}")
   @Produces("application/json")
   public Response getPublicationsFromUser(@PathParam("userEmail") String userEmail) {
-    return Response.ok(publicationService.getPublicationsFromUserEmailAsDto(userEmail)).build();
+    List<PublicationDto> pubs = publicationService.getPublicationsFromUserEmailAsDto(userEmail);
+    return Response.ok(pubs).build();
   }
 
   @POST
   @Consumes("application/json")
   @Produces("application/json")
   public Response createPublication(PublicationDto pDto) {
-    publicationService.createPublicationFromDto(pDto);
-    return Response.ok(true).build();
+    return Response.ok(publicationService.createPublicationFromDto(pDto)).build();
   }
 
   @DELETE
