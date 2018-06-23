@@ -23,7 +23,7 @@ public class VehiclesRest {
   @Path("/{id}")
   @Produces("application/json")
   public Response getVehicle(@PathParam("id") String id) {
-    return Response.ok(vehicleService.findById(Integer.valueOf(id))).build();
+    return Response.ok(new VehicleDto(vehicleService.findById(Integer.valueOf(id)))).build();
   }
 
   @GET

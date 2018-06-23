@@ -4,24 +4,26 @@ import main.model.Publication;
 
 public class PublicationDto {
 
-  private int publicationId;
-  private VehicleDto vehicleOffered;
+  public int publicationId;
+  public int vehicleOfferedId;
 
   /* AVAILABILITY */
 
   //start
-  private int startYear;
-  private int startMonth;
-  private int startDayOfMonth;
+  public int startYear;
+  public int startMonth;
+  public int startDayOfMonth;
 
   //end
-  private int endYear;
-  private int endMonth;
-  private int endDayOfMonth;
+  public int endYear;
+  public int endMonth;
+  public int endDayOfMonth;
+
+  public PublicationDto() { }
 
   public PublicationDto(Publication publication) {
     this.setPublicationId(publication.getId());
-    this.setVehicleOffered(new VehicleDto(publication.getVehicleOffered()));
+    this.setPublicationId(publication.getVehicleOffered().getId());
 
     this.setStartDayOfMonth(publication.getAvailability().getStart().getDayOfMonth());
     this.setStartMonth(publication.getAvailability().getStart().getMonthOfYear());
@@ -40,12 +42,12 @@ public class PublicationDto {
     this.publicationId = publicationId;
   }
 
-  public VehicleDto getVehicleOffered() {
-    return vehicleOffered;
+  public int getVehicleOfferedId() {
+    return vehicleOfferedId;
   }
 
-  public void setVehicleOffered(VehicleDto vehicleOffered) {
-    this.vehicleOffered = vehicleOffered;
+  public void setVehicleOfferedId(int vehicleOfferedId) {
+    this.vehicleOfferedId = vehicleOfferedId;
   }
 
   public int getStartYear() {

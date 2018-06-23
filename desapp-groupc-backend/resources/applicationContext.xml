@@ -58,6 +58,7 @@
       <ref bean="publicationsRest" />
       <ref bean="usersRest" />
       <ref bean="vehiclesRest" />
+      <ref bean="reservationsRest"/>
     </jaxrs:serviceBeans>
     <jaxrs:extensionMappings>
       <entry key="json" value="application/json" />
@@ -212,6 +213,7 @@
     <property name="sessionFactory" ref="persistence.sessionFactory"/>
     <property name="vehicleService" ref="vehicleService"/>
     <property name="userService" ref="userService"/>
+    <property name="availabilityService" ref="availabilityService"/>
   </bean>
 
   <bean id="reservationService" class="main.services.ReservationService">

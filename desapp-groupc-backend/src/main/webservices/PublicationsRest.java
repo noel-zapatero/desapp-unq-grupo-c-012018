@@ -37,9 +37,10 @@ public class PublicationsRest {
 
   @POST
   @Consumes("application/json")
+  @Produces("application/json")
   public Response createPublication(PublicationDto pDto) {
     publicationService.createPublicationFromDto(pDto);
-    return Response.ok().build();
+    return Response.ok(true).build();
   }
 
   @DELETE

@@ -13,6 +13,7 @@ public class PublicationService extends GenericService<Publication> {
 
   private VehicleService vehicleService;
   private UserService userService;
+  private AvailabilityService availabilityService;
 
   public void setVehicleService(VehicleService vehicleService) {
     this.vehicleService = vehicleService;
@@ -21,6 +22,8 @@ public class PublicationService extends GenericService<Publication> {
   public void setUserService(UserService userService) {
     this.userService = userService;
   }
+
+  public void setAvailabilityService(AvailabilityService availabilityService) {this.availabilityService=availabilityService;}
 
   public void acceptReservation(Publication p, Reservation r) {
     p.acceptReservation(r);
@@ -59,13 +62,15 @@ public class PublicationService extends GenericService<Publication> {
   }
 
   public void createPublicationFromDto(PublicationDto pDto) {
+    Vehicle vehicleOffered = vehicleService.findById(pDto.getVehicleOfferedId());
     Publication p = new PublicationBuilder()
       .withPublicationId(pDto.getPublicationId())
-      .withOwner(userService.findByEmail(pDto.getVehicleOffered().getOwnerEmail()))
-      .withVehicle(vehicleService.findById(pDto.getVehicleOffered().getVehicleId()))
+        .withOwner(userService.findByEmail(vehicleOffered.getOwner().getEmail()))
+      .withVehicle(vehicleOffered)
       .withAvailability(Availability.FromPublicationDto(pDto))
       .build();
 
+    availabilityService.save(p.getAvailability());
     save(p);
   }
 
