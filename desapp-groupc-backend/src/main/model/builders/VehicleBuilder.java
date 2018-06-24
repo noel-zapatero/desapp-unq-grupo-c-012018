@@ -15,10 +15,9 @@ public class VehicleBuilder {
   private String returnAddresses;
   private String description;
   private String contactPhone;
-  private float rentFeeDay;
-  private float rentFeeHour;
   private User owner;
   private String imageUrl;
+  private String brandModel;
 
   public Vehicle build() {
     Vehicle v = new Vehicle();
@@ -30,11 +29,10 @@ public class VehicleBuilder {
     v.setReturnAddresses(returnAddresses);
     v.setDescription(description);
     v.setContactPhone(contactPhone);
-    v.setRentFeeHour(rentFeeHour);
-    v.setRentFeeDay(rentFeeDay);
     v.setPassengerCapacity(passengerCapacity);
     v.setOwner(owner);
     v.setImageUrl(imageUrl);
+    v.setBrandModel(brandModel);
 
     return v;
   }
@@ -69,6 +67,11 @@ public class VehicleBuilder {
     return this;
   }
 
+  public VehicleBuilder withBrandModel(String brandModel) {
+    this.brandModel = brandModel;
+    return this;
+  }
+
   public VehicleBuilder withReturnAddresses(String returnAddresses) {
     this.returnAddresses = returnAddresses;
     return this;
@@ -81,16 +84,6 @@ public class VehicleBuilder {
 
   public VehicleBuilder withContactPhone(String contactPhone) {
     this.contactPhone = contactPhone;
-    return this;
-  }
-
-  public VehicleBuilder withRentFeeDay(float rentFeeDay) {
-    this.rentFeeDay = rentFeeDay;
-    return this;
-  }
-
-  public VehicleBuilder withRentFeeHour(float rentFeeHour) {
-    this.rentFeeHour = rentFeeHour;
     return this;
   }
 

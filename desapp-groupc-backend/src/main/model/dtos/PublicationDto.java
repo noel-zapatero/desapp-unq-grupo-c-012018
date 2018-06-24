@@ -19,6 +19,10 @@ public class PublicationDto {
   public int endMonth;
   public int endDayOfMonth;
 
+  /* RENT FEE */
+  public float rentFeeDay;
+  public float rentFeeHour;
+
   public PublicationDto() { }
 
   public PublicationDto(Publication publication) {
@@ -32,6 +36,25 @@ public class PublicationDto {
     this.setEndDayOfMonth(publication.getAvailability().getEnd().getDayOfMonth());
     this.setEndMonth(publication.getAvailability().getEnd().getMonthOfYear());
     this.setEndYear(publication.getAvailability().getEnd().getYear());
+
+    this.setRentFeeDay(publication.getRentFeeDay());
+    this.setRentFeeHour(publication.getRentFeeHour());
+  }
+
+  public float getRentFeeDay() {
+    return rentFeeDay;
+  }
+
+  public void setRentFeeDay(float rentFeeDay) {
+    this.rentFeeDay = rentFeeDay;
+  }
+
+  public float getRentFeeHour() {
+    return rentFeeHour;
+  }
+
+  public void setRentFeeHour(float rentFeeHour) {
+    this.rentFeeHour = rentFeeHour;
   }
 
   public int getPublicationId() {

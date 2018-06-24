@@ -3,7 +3,6 @@ package main.services;
 import main.model.*;
 import main.model.builders.PublicationBuilder;
 import main.model.dtos.PublicationDto;
-import main.model.dtos.VehicleDto;
 
 import java.util.ArrayList;
 import java.util.List;

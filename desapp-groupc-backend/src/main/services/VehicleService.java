@@ -6,6 +6,7 @@ import main.model.dtos.VehicleDto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class VehicleService extends GenericService<Vehicle> {
 
@@ -41,7 +42,7 @@ public class VehicleService extends GenericService<Vehicle> {
   public List<Vehicle> getVehiclesFrom(int userId) {
 //    return this.retriveAll()
 //      .stream()
-//      .filter(elt -> elt.getVehicleId() == vehicleId)
+//      .filter(elt -> elt.getId() == userId)
 //      .collect(Collectors.toList());
 
     List<Vehicle> vehicles = new ArrayList<>();
@@ -61,14 +62,13 @@ public class VehicleService extends GenericService<Vehicle> {
       .withContactPhone(vDto.getContactPhone())
       .withDescription(vDto.getDescription())
       .withPassengerAmmount(vDto.getPassengerCapacity())
-      .withRentFeeDay(vDto.getRentFeeDay())
-      .withRentFeeHour(vDto.getRentFeeHour())
       .withReturnAddresses(vDto.getReturnAddress())
       .withType(vDto.getType())
       .withWithDrawAddress(vDto.getWithdrawAddress())
       .withZone(vDto.getZone())
       .withOwner(userService.findByEmail(vDto.getOwnerEmail()))
-      .withImageUrl(vDto.imageUrl)
+      .withImageUrl(vDto.getImageUrl())
+      .withBrandModel(vDto.getBrandModel())
       .build();
 
     save(vehicle);

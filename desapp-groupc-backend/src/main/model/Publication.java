@@ -23,6 +23,12 @@ public class Publication {
   @OneToOne
   public Availability availability;
 
+  @Column
+  private float rentFeeDay;
+
+  @Column
+  private float rentFeeHour;
+
   @OneToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "PUBLICATION_RESERVATION")
   private List<Reservation> reservations = new ArrayList<Reservation>();
@@ -37,6 +43,34 @@ public class Publication {
     this.availability = availability;
     this.owner = owner;
     this.vehicleOffered = newVehicle;
+  }
+
+  public int getPublicationId() {
+    return publicationId;
+  }
+
+  public float getRentFeeDay() {
+    return rentFeeDay;
+  }
+
+  public void setRentFeeDay(float rentFeeDay) {
+    this.rentFeeDay = rentFeeDay;
+  }
+
+  public float getRentFeeHour() {
+    return rentFeeHour;
+  }
+
+  public void setRentFeeHour(float rentFeeHour) {
+    this.rentFeeHour = rentFeeHour;
+  }
+
+  public List<Reservation> getReservations() {
+    return reservations;
+  }
+
+  public List<Reservation> getAcceptedReservations() {
+    return acceptedReservations;
   }
 
   public String getOwnerEmail() {

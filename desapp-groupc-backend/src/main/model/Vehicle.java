@@ -22,21 +22,14 @@ public class Vehicle {
   @Column
   private String withdrawAddress;
 
-//  @ElementCollection(fetch = FetchType.LAZY)
-//  @Column
-//  private List<String> returnAddresses;
+  @Column
+  private String brandModel;
 
   @Column
   private String description;
 
   @Column
   private String contactPhone;
-
-  @Column
-  private float rentFeeDay;
-
-  @Column
-  private float rentFeeHour;
 
   @Column
   boolean disabled = false;
@@ -50,8 +43,19 @@ public class Vehicle {
   @Column
   private String imageUrl;
 
-  //Default vehicle. Change
   public Vehicle(){ }
+
+  public String getBrandModel() {
+    return brandModel;
+  }
+
+  public void setBrandModel(String brandModel) {
+    this.brandModel = brandModel;
+  }
+
+  public void setReturnAddress(String returnAddress) {
+    this.returnAddress = returnAddress;
+  }
 
   public String getType() {return type;}
 
@@ -101,24 +105,8 @@ public class Vehicle {
     return vehicleId;
   }
 
-  public float getRentFeeDay() {
-    return rentFeeDay;
-  }
-
-  public float getRentFeeHour() {
-    return rentFeeHour;
-  }
-
   public void setVehicleId(int vehicleId) {
     this.vehicleId = vehicleId;
-  }
-
-  public void setRentFeeHour(float rentFeeHour) {
-    this.rentFeeHour = rentFeeHour;
-  }
-
-  public void setRentFeeDay(float rentFeeDay) {
-    this.rentFeeDay = rentFeeDay;
   }
 
   public int getVehicleId() {
