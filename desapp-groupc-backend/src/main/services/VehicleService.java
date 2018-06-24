@@ -31,10 +31,7 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
   public boolean disableVehicle(Integer vehicleId) {
-//    Vehicle v = this.findById(vehicleId);
-//    v.setDisabled(true);
-//    this.update(v);
-    this.delete(this.findById(vehicleId));
+    delete(findById(vehicleId));
     return true;
   }
 
@@ -57,7 +54,7 @@ public class VehicleService extends GenericService<Vehicle> {
   }
 
 
-  public Vehicle createVehicleFromDto(VehicleDto vDto) {
+  public VehicleDto createVehicleFromDto(VehicleDto vDto) {
     Vehicle vehicle = new VehicleBuilder()
       .withContactPhone(vDto.getContactPhone())
       .withDescription(vDto.getDescription())
@@ -73,7 +70,7 @@ public class VehicleService extends GenericService<Vehicle> {
 
     save(vehicle);
 
-    return vehicle;
+    return new VehicleDto(vehicle);
   }
 
   public boolean updateVehicleFromDto(VehicleDto vDto) {

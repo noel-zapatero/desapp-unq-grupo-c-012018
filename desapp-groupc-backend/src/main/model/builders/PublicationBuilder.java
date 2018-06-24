@@ -14,6 +14,8 @@ public class PublicationBuilder {
   private Availability availability = new Availability(DateTime.now(), DateTime.now().plusDays(1));
   private List<Reservation> reservations = new ArrayList<>();
   private List<Reservation> acceptedReservations = new ArrayList<>();
+  private float rentFeeHour;
+  private float rentFeeDay;
 
   public PublicationBuilder withVehicle(Vehicle vehicle) {
     this.vehicle = vehicle;
@@ -29,6 +31,8 @@ public class PublicationBuilder {
     publication.setAvailability(availability);
     publication.setReservations(reservations);
     publication.setAcceptedReservations(acceptedReservations);
+    publication.setRentFeeHour(rentFeeHour);
+    publication.setRentFeeDay(rentFeeDay);
 
     return publication;
   }
@@ -45,6 +49,16 @@ public class PublicationBuilder {
 
   public PublicationBuilder withPublicationId(int publicationId) {
     this.publicationId = publicationId;
+    return this;
+  }
+
+  public PublicationBuilder withRentFeeHour(float rentFeeHour) {
+    this.rentFeeHour = rentFeeHour;
+    return this;
+  }
+
+  public PublicationBuilder withRentFeeDay(float rentFeeDay) {
+    this.rentFeeDay = rentFeeDay;
     return this;
   }
 }

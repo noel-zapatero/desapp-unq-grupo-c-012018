@@ -68,6 +68,8 @@ public class PublicationService extends GenericService<Publication> {
         .withOwner(userService.findByEmail(vehicleOffered.getOwner().getEmail()))
       .withVehicle(vehicleOffered)
       .withAvailability(Availability.FromPublicationDto(pDto))
+      .withRentFeeHour(pDto.getRentFeeHour())
+      .withRentFeeDay(pDto.getRentFeeDay())
       .build();
 
     availabilityService.save(p.getAvailability());
@@ -77,6 +79,10 @@ public class PublicationService extends GenericService<Publication> {
   }
 
   public void deleteById(int id) {
-    delete(findById(id));
+    Publication pub = findById(id);
+    User owner = userService.findByEmail(pub.getOwnerEmail());
+    owner.deletePublication(pub);
+    userService.update(owner);
+    delete(pub);
   }
 }

@@ -36,7 +36,7 @@ public class VehicleDto {
     this.returnAddress = v.getReturnAddress();
     this.description = v.getDescription();
     this.contactPhone = v.getContactPhone();
-
+    this.brandModel = v.getBrandModel();
     this.ownerId = v.getOwner().getId();
     this.ownerName = v.getOwner().getName();
     this.ownerLastName = v.getOwner().getLastName();
@@ -60,6 +60,8 @@ public class VehicleDto {
       .withBrandModel(brandModel)
       .build();
   }
+
+
 
   public String getImageUrl() {
     return imageUrl;
