@@ -200,6 +200,7 @@
   <bean id="userService" class="main.services.UserService">
     <property name="repository" ref="persistence.userRepository" />
     <property name="sessionFactory" ref="persistence.sessionFactory"/>
+    <property name="vehicleService" ref="vehicleService"/>
   </bean>
 
   <bean id="vehicleService" class="main.services.VehicleService">
