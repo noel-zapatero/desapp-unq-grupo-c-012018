@@ -63,7 +63,7 @@ public class UsersRest {
     if (retrievedUser == null)
       retrievedUser = userService.buildAndSaveFromDto(uDto);
 
-    retrievedUser = userService.load(retrievedUser);
+//    retrievedUser = userService.load(retrievedUser);
 
     return Response.ok(new UserDto(retrievedUser)).build();
   }
