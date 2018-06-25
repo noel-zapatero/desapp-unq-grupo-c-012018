@@ -1233,3 +1233,245 @@ Response-Code: 200
 Content-Type: 
 Headers: {Date=[Mon, 25 Jun 2018 19:03:39 GMT], Content-Length=[0]}
 --------------------------------------
+INFO	2018-06-25 15:08:18,944	0	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization started
+INFO	2018-06-25 15:08:19,040	96	org.springframework.web.context.support.XmlWebApplicationContext	[main]	Refreshing Root WebApplicationContext: startup date [Mon Jun 25 15:08:19 CLT 2018]; root of context hierarchy
+INFO	2018-06-25 15:08:19,214	270	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from file [/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/applicationContext.xml]
+INFO	2018-06-25 15:08:19,344	400	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+INFO	2018-06-25 15:08:19,360	416	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+INFO	2018-06-25 15:08:19,377	433	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+INFO	2018-06-25 15:08:19,552	608	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/hibernate.properties]
+INFO	2018-06-25 15:08:19,553	609	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/jdbc.properties]
+INFO	2018-06-25 15:08:20,197	1253	org.hibernate.annotations.common.Version	[main]	HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO	2018-06-25 15:08:20,203	1259	org.hibernate.Version	[main]	HHH000412: Hibernate Core {4.3.6.Final}
+INFO	2018-06-25 15:08:20,206	1262	org.hibernate.cfg.Environment	[main]	HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=${jdbc.driverClassName}, hibernate.default_schema=public, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, hibernate.connection.username=${jdbc.username}, hibernate.hbm2ddl.auto=update, hibernate.connection.url=${jdbc.url}, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.connection.password=****, <!--=You'd probably want to change this to create to run it for the first time :) -->}
+INFO	2018-06-25 15:08:20,206	1262	org.hibernate.cfg.Environment	[main]	HHH000021: Bytecode provider name : javassist
+INFO	2018-06-25 15:08:21,174	2230	org.hibernate.dialect.Dialect	[main]	HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+INFO	2018-06-25 15:08:21,180	2236	org.hibernate.engine.jdbc.internal.LobCreatorBuilder	[main]	HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO	2018-06-25 15:08:21,448	2504	org.hibernate.engine.transaction.internal.TransactionFactoryInitiator	[main]	HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO	2018-06-25 15:08:21,452	2508	org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory	[main]	HHH000397: Using ASTQueryTranslatorFactory
+INFO	2018-06-25 15:08:21,993	3049	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000228: Running hbm2ddl schema update
+INFO	2018-06-25 15:08:21,994	3050	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000102: Fetching database metadata
+INFO	2018-06-25 15:08:22,007	3063	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000396: Updating schema
+INFO	2018-06-25 15:08:22,010	3066	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-25 15:08:22,012	3068	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-25 15:08:22,012	3068	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-25 15:08:22,013	3069	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-25 15:08:22,014	3070	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-25 15:08:22,015	3071	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-25 15:08:22,042	3098	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000261: Table found: carpnd.USER
+INFO	2018-06-25 15:08:22,042	3098	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000037: Columns: [id]
+INFO	2018-06-25 15:08:22,043	3099	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000108: Foreign keys: []
+INFO	2018-06-25 15:08:22,043	3099	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000126: Indexes: [primary]
+INFO	2018-06-25 15:08:22,044	3100	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-25 15:08:22,045	3101	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+INFO	2018-06-25 15:08:22,057	3113	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-25 15:08:22,058	3114	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-25 15:08:22,059	3115	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-25 15:08:22,060	3116	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-25 15:08:22,061	3117	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-25 15:08:22,063	3119	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-25 15:08:22,063	3119	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-25 15:08:22,064	3120	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+INFO	2018-06-25 15:08:22,065	3121	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-25 15:08:22,066	3122	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-25 15:08:22,067	3123	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-25 15:08:22,068	3124	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-25 15:08:22,070	3126	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-25 15:08:22,071	3127	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-25 15:08:22,072	3128	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-25 15:08:22,074	3130	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+ERROR	2018-06-25 15:08:22,082	3138	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Availability (availabilityId integer not null auto_increment, end datetime, start datetime, primary key (availabilityId))
+ERROR	2018-06-25 15:08:22,082	3138	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'availability' already exists
+ERROR	2018-06-25 15:08:22,083	3139	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.PUBLICATION_ACCEPTEDRESERVATION (Publication_publicationId integer not null, acceptedReservations_reservationId integer not null)
+ERROR	2018-06-25 15:08:22,083	3139	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication_acceptedreservation' already exists
+ERROR	2018-06-25 15:08:22,083	3139	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.PUBLICATION_RESERVATION (Publication_publicationId integer not null, reservations_reservationId integer not null)
+ERROR	2018-06-25 15:08:22,083	3139	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication_reservation' already exists
+ERROR	2018-06-25 15:08:22,084	3140	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Publication (publicationId integer not null auto_increment, rentFeeDay float, rentFeeHour float, availability_availabilityId integer, owner_userId integer, vehicleOffered_vehicleId integer, primary key (publicationId))
+ERROR	2018-06-25 15:08:22,084	3140	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication' already exists
+ERROR	2018-06-25 15:08:22,085	3141	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Reservation (reservationId integer not null auto_increment, end datetime, start datetime, publication_publicationId integer, user_userId integer, primary key (reservationId))
+ERROR	2018-06-25 15:08:22,085	3141	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'reservation' already exists
+ERROR	2018-06-25 15:08:22,086	3142	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.USER_VEHICLES (User_userId integer not null, myVehicles_vehicleId integer not null)
+ERROR	2018-06-25 15:08:22,086	3142	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'user_vehicles' already exists
+ERROR	2018-06-25 15:08:22,087	3143	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column userId integer not null
+ERROR	2018-06-25 15:08:22,087	3143	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'userId'
+ERROR	2018-06-25 15:08:22,088	3144	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column address varchar(255)
+ERROR	2018-06-25 15:08:22,088	3144	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'address'
+ERROR	2018-06-25 15:08:22,088	3144	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column credits float
+ERROR	2018-06-25 15:08:22,089	3145	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'credits'
+ERROR	2018-06-25 15:08:22,089	3145	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column cuil bigint
+ERROR	2018-06-25 15:08:22,089	3145	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'cuil'
+ERROR	2018-06-25 15:08:22,090	3146	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column email varchar(255)
+ERROR	2018-06-25 15:08:22,090	3146	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'email'
+ERROR	2018-06-25 15:08:22,090	3146	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column firstName varchar(255)
+ERROR	2018-06-25 15:08:22,090	3146	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'firstName'
+ERROR	2018-06-25 15:08:22,091	3147	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column lastName varchar(255)
+ERROR	2018-06-25 15:08:22,091	3147	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'lastName'
+ERROR	2018-06-25 15:08:22,092	3148	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column rating float
+ERROR	2018-06-25 15:08:22,092	3148	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'rating'
+ERROR	2018-06-25 15:08:22,092	3148	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.User_Publication (User_userId integer not null, myOffers_publicationId integer not null)
+ERROR	2018-06-25 15:08:22,092	3148	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'user_publication' already exists
+ERROR	2018-06-25 15:08:22,095	3151	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Vehicle (vehicleId integer not null auto_increment, brandModel varchar(255), contactPhone varchar(255), description varchar(255), disabled bit, imageUrl varchar(255), passengerCapacity integer, returnAddress varchar(255), type varchar(255), withdrawAddress varchar(255), zone varchar(255), owner_userId integer, primary key (vehicleId))
+ERROR	2018-06-25 15:08:22,095	3151	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'vehicle' already exists
+ERROR	2018-06-25 15:08:22,237	3293	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION add constraint FK_e06c3untaavvodta90axijbcj foreign key (acceptedReservations_reservationId) references public.Reservation (reservationId)
+ERROR	2018-06-25 15:08:22,237	3293	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,247	3303	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION add constraint FK_frp6wwwrb7ne9ofvb4wmnlpr foreign key (Publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-25 15:08:22,248	3304	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,257	3313	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_RESERVATION add constraint FK_p9rt5uya8erahg41foofwap2w foreign key (reservations_reservationId) references public.Reservation (reservationId)
+ERROR	2018-06-25 15:08:22,257	3313	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,265	3321	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_RESERVATION add constraint FK_gnu96sfktbuefrx3igosctf7c foreign key (Publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-25 15:08:22,265	3321	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,276	3332	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_a4645lv6055b71cb6f8kjw1jb foreign key (availability_availabilityId) references public.Availability (availabilityId)
+ERROR	2018-06-25 15:08:22,276	3332	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,285	3341	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_qa2bqqbaf9ow46qwewpym6yy9 foreign key (owner_userId) references public.User (userId)
+ERROR	2018-06-25 15:08:22,286	3342	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,309	3365	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_o1yugyaoot1vrbnu39wdjmur4 foreign key (vehicleOffered_vehicleId) references public.Vehicle (vehicleId)
+ERROR	2018-06-25 15:08:22,309	3365	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,332	3388	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Reservation add constraint FK_6vn8g5cb3gk4st4c27nh17vky foreign key (publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-25 15:08:22,332	3388	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,352	3408	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Reservation add constraint FK_9n8vmuoncni5dp0od13o1m9i2 foreign key (user_userId) references public.User (userId)
+ERROR	2018-06-25 15:08:22,352	3408	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,363	3419	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.USER_VEHICLES add constraint FK_gw9o7r1l16chpi9jacb77oynw foreign key (myVehicles_vehicleId) references public.Vehicle (vehicleId)
+ERROR	2018-06-25 15:08:22,363	3419	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,372	3428	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.USER_VEHICLES add constraint FK_3hdm9puulfwwvn9om3j16mv7x foreign key (User_userId) references public.User (userId)
+ERROR	2018-06-25 15:08:22,372	3428	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,386	3442	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User_Publication add constraint FK_83g4aika75imndku104wan6jf foreign key (myOffers_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-25 15:08:22,386	3442	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,407	3463	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User_Publication add constraint FK_gwgva0pxcgy3nvyo3ak5hvn49 foreign key (User_userId) references public.User (userId)
+ERROR	2018-06-25 15:08:22,407	3463	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+ERROR	2018-06-25 15:08:22,423	3479	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Vehicle add constraint FK_8f3vo60r2ev0gjii3oha3r0m6 foreign key (owner_userId) references public.User (userId)
+ERROR	2018-06-25 15:08:22,423	3479	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_180'
+INFO	2018-06-25 15:08:22,423	3479	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000232: Schema update complete
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,501	3557	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,602	3658	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,603	3659	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,623	3679	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,685	3741	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,685	3741	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,685	3741	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,685	3741	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,685	3741	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,686	3742	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,686	3742	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,831	3887	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-25 15:08:22,997	4053	org.apache.cxf.endpoint.ServerImpl	[main]	Setting the server's publish address to be /
+INFO	2018-06-25 15:08:23,052	4108	org.springframework.orm.hibernate4.HibernateTransactionManager	[main]	Using DataSource [org.apache.commons.dbcp.BasicDataSource@6d066064] of Hibernate SessionFactory for HibernateTransactionManager
+INFO	2018-06-25 15:08:23,068	4124	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+INFO	2018-06-25 15:08:23,098	4154	org.springframework.jdbc.support.SQLErrorCodesFactory	[main]	SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+INFO	2018-06-25 15:08:23,113	4169	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization completed in 4168 ms
+INFO	2018-06-25 15:09:30,577	71633	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/main/webservices/vehicles
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[390], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"type":"Auto","passengerCapacity":"6","brandModel":"BMW X6","zone":"","withdrawAddress":"","returnAddress":"","description":"","contactPhone":"","ownerName":"Lucas","ownerLastName":"Fedele","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn"}
+--------------------------------------
+WARN	2018-06-25 15:09:30,586	71642	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.VehiclesRest#createVehicle and main.webservices.VehiclesRest#createVehicle are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-25 15:09:31,111	72167	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 355 ms
+INFO	2018-06-25 15:09:31,182	72238	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Mon, 25 Jun 2018 19:09:31 GMT]}
+Payload: {"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1}
+--------------------------------------
+INFO	2018-06-25 15:09:40,759	81815	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-18]	Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-25 15:09:40,759	81815	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-18]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-25 15:09:40,793	81849	main.aspects.AuditoryAspect	[qtp2003961164-18]	Tiempo: 17 ms
+INFO	2018-06-25 15:09:40,796	81852	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-18]	Outbound Message
+---------------------------
+ID: 2
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Mon, 25 Jun 2018 19:09:40 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":0.0,"userId":1}
+--------------------------------------
+INFO	2018-06-25 15:09:41,072	82128	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-22]	Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-25 15:09:41,074	82130	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-22]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-25 15:09:41,074	82130	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-21]	Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-25 15:09:41,080	82136	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-21]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-25 15:09:41,083	82139	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp2003961164-23]	Inbound Message
+----------------------------
+ID: 5
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-25 15:09:41,084	82140	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp2003961164-23]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-25 15:09:41,113	82169	main.aspects.AuditoryAspect	[qtp2003961164-21]	Tiempo: 32 ms
+INFO	2018-06-25 15:09:41,117	82173	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-21]	Outbound Message
+---------------------------
+ID: 4
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Mon, 25 Jun 2018 19:09:41 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":0.0,"userId":1}
+--------------------------------------
+INFO	2018-06-25 15:09:41,132	82188	main.aspects.AuditoryAspect	[qtp2003961164-23]	Tiempo: 48 ms
+INFO	2018-06-25 15:09:41,133	82189	main.aspects.AuditoryAspect	[qtp2003961164-22]	Tiempo: 57 ms
+INFO	2018-06-25 15:09:41,140	82196	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-23]	Outbound Message
+---------------------------
+ID: 5
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Mon, 25 Jun 2018 19:09:41 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-25 15:09:41,141	82197	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp2003961164-22]	Outbound Message
+---------------------------
+ID: 3
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Mon, 25 Jun 2018 19:09:41 GMT]}
+Payload: [{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"Alta nave papa!","zone":"","vehicleId":1,"contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1},{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1}]
+--------------------------------------
