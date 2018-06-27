@@ -41,16 +41,22 @@ public class UsersRest {
   }
 
   @PUT
-  @Path("/chargecredits")
-  public Response chargeCredits(CreditsOperationDto op) {
-    userService.chargeCredits(op.getUserEmail(), op.getCredits());
+  @Path("chargecredits/{userEmail}/{credits}")
+  public Response chargeCredits(
+    @PathParam("userEmail") String userEmail,
+    @PathParam("credits") String credits)
+  {
+    userService.chargeCredits(userEmail, Integer.valueOf(credits));
     return Response.ok().build();
   }
 
   @PUT
-  @Path("/withdrawcredits")
-  public Response withdrawCredits(CreditsOperationDto op) {
-    userService.withdrawCredits(op.getUserEmail(), op.getCredits());
+  @Path("withdrawcredits/{userEmail}/{credits}")
+  public Response withdrawCredits(
+    @PathParam("userEmail") String userEmail,
+    @PathParam("credits") String credits)
+  {
+    userService.withdrawCredits(userEmail, Integer.valueOf(credits));
     return Response.ok().build();
   }
 
