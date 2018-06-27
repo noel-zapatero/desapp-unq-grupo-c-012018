@@ -47,7 +47,7 @@ public class UsersRest {
     @PathParam("credits") String credits)
   {
     userService.chargeCredits(userEmail, Integer.valueOf(credits));
-    return Response.ok().build();
+    return Response.ok(userService.creditsOf(userEmail)).build();
   }
 
   @PUT
@@ -57,7 +57,7 @@ public class UsersRest {
     @PathParam("credits") String credits)
   {
     userService.withdrawCredits(userEmail, Integer.valueOf(credits));
-    return Response.ok().build();
+    return Response.ok(userService.creditsOf(userEmail)).build();
   }
 
   @POST

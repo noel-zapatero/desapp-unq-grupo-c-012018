@@ -110,4 +110,8 @@ public class UserService extends GenericService<User> {
     save(user);
     return user;
   }
+
+  public int creditsOf(String userEmail) {
+    return (int)findByEmail(userEmail).getCredits();
+  }
 }

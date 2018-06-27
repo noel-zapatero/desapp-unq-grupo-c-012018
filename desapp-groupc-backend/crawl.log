@@ -2293,3 +2293,621 @@ Content-Type: application/json
 Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:21:29 GMT]}
 Payload: [{"type":"Auto","description":"Alta nave papa!","zone":"","vehicleId":1,"contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"},{"type":"Auto","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"}]
 --------------------------------------
+INFO	2018-06-26 21:23:40,605	165874	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-23]	Inbound Message
+----------------------------
+ID: 6
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-26 21:23:40,607	165876	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-23]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:40,616	165885	main.aspects.AuditoryAspect	[qtp794949943-23]	Tiempo: 7 ms
+INFO	2018-06-26 21:23:40,618	165887	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-23]	Outbound Message
+---------------------------
+ID: 6
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:40 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:23:40,855	166124	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-21]	Inbound Message
+----------------------------
+ID: 7
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:23:40,856	166125	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-21]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:40,868	166137	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 8
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-26 21:23:40,874	166143	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-18]	Inbound Message
+----------------------------
+ID: 9
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:23:40,875	166144	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+WARN	2018-06-26 21:23:40,875	166144	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-18]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:40,893	166162	main.aspects.AuditoryAspect	[qtp794949943-21]	Tiempo: 37 ms
+INFO	2018-06-26 21:23:40,895	166164	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-21]	Outbound Message
+---------------------------
+ID: 7
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:40 GMT]}
+Payload: [{"type":"Auto","description":"Alta nave papa!","zone":"","vehicleId":1,"contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"},{"type":"Auto","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"}]
+--------------------------------------
+INFO	2018-06-26 21:23:40,901	166170	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 25 ms
+INFO	2018-06-26 21:23:40,901	166170	main.aspects.AuditoryAspect	[qtp794949943-18]	Tiempo: 23 ms
+INFO	2018-06-26 21:23:40,902	166171	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 8
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:40 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:23:40,902	166171	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-18]	Outbound Message
+---------------------------
+ID: 9
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:40 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-26 21:23:52,376	177645	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-22]	Inbound Message
+----------------------------
+ID: 10
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-26 21:23:52,378	177647	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-22]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:52,387	177656	main.aspects.AuditoryAspect	[qtp794949943-22]	Tiempo: 9 ms
+INFO	2018-06-26 21:23:52,388	177657	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-22]	Outbound Message
+---------------------------
+ID: 10
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:52 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:23:52,522	177791	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-19]	Inbound Message
+----------------------------
+ID: 11
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-26 21:23:52,523	177792	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-21]	Inbound Message
+----------------------------
+ID: 12
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:23:52,523	177792	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-19]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+WARN	2018-06-26 21:23:52,523	177792	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-21]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:52,526	177795	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 13
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:23:52,526	177795	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:23:52,530	177799	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 4 ms
+INFO	2018-06-26 21:23:52,531	177800	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 13
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:52 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-26 21:23:52,535	177804	main.aspects.AuditoryAspect	[qtp794949943-21]	Tiempo: 11 ms
+INFO	2018-06-26 21:23:52,536	177805	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-21]	Outbound Message
+---------------------------
+ID: 12
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:52 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:23:52,536	177805	main.aspects.AuditoryAspect	[qtp794949943-19]	Tiempo: 11 ms
+INFO	2018-06-26 21:23:52,538	177807	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-19]	Outbound Message
+---------------------------
+ID: 11
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:23:52 GMT]}
+Payload: [{"type":"Auto","description":"Alta nave papa!","zone":"","vehicleId":1,"contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"},{"type":"Auto","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"}]
+--------------------------------------
+INFO	2018-06-26 21:24:38,427	223696	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-22]	Inbound Message
+----------------------------
+ID: 14
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-26 21:24:38,428	223697	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-22]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:24:38,441	223710	main.aspects.AuditoryAspect	[qtp794949943-22]	Tiempo: 12 ms
+INFO	2018-06-26 21:24:38,442	223711	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-22]	Outbound Message
+---------------------------
+ID: 14
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:24:38 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:24:38,707	223976	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-19]	Inbound Message
+----------------------------
+ID: 15
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:24:38,708	223977	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-19]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:24:38,709	223978	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-23]	Inbound Message
+----------------------------
+ID: 16
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:24:38,710	223979	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-23]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:24:38,721	223990	main.aspects.AuditoryAspect	[qtp794949943-23]	Tiempo: 10 ms
+INFO	2018-06-26 21:24:38,722	223991	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-23]	Outbound Message
+---------------------------
+ID: 16
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:24:38 GMT]}
+Payload: {"email":"lucasfdl22@gmail.com","firstName":"Lucas","lastName":"Fedele","userId":1,"credits":50.0,"rating":0.0,"cuil":20337778881,"adress":"No address"}
+--------------------------------------
+INFO	2018-06-26 21:24:38,722	223991	main.aspects.AuditoryAspect	[qtp794949943-19]	Tiempo: 14 ms
+INFO	2018-06-26 21:24:38,724	223993	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-19]	Outbound Message
+---------------------------
+ID: 15
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:24:38 GMT]}
+Payload: [{"type":"Auto","description":"Alta nave papa!","zone":"","vehicleId":1,"contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"},{"type":"Auto","description":"","zone":"","vehicleId":2,"contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"ownerName":"Lucas","ownerLastName":"Fedele"}]
+--------------------------------------
+INFO	2018-06-26 21:24:38,727	223996	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 17
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:24:38,728	223997	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:24:38,732	224001	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 4 ms
+INFO	2018-06-26 21:24:38,733	224002	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 17
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:24:38 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-26 21:24:54,633	0	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization started
+INFO	2018-06-26 21:24:54,698	65	org.springframework.web.context.support.XmlWebApplicationContext	[main]	Refreshing Root WebApplicationContext: startup date [Tue Jun 26 21:24:54 CLT 2018]; root of context hierarchy
+INFO	2018-06-26 21:24:54,858	225	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from file [/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/applicationContext.xml]
+INFO	2018-06-26 21:24:55,010	377	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+INFO	2018-06-26 21:24:55,026	393	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-extension-soap.xml]
+INFO	2018-06-26 21:24:55,042	409	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [META-INF/cxf/cxf-servlet.xml]
+INFO	2018-06-26 21:24:55,212	579	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/hibernate.properties]
+INFO	2018-06-26 21:24:55,213	580	org.springframework.beans.factory.config.PropertyPlaceholderConfigurer	[main]	Loading properties file from URL [file:/Users/wolfx/Documents/Facultad/Desapp/desapp-unq-grupo-c-012018/desapp-groupc-backend/target/classes/jdbc.properties]
+INFO	2018-06-26 21:24:55,941	1308	org.hibernate.annotations.common.Version	[main]	HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO	2018-06-26 21:24:55,947	1314	org.hibernate.Version	[main]	HHH000412: Hibernate Core {4.3.6.Final}
+INFO	2018-06-26 21:24:55,949	1316	org.hibernate.cfg.Environment	[main]	HHH000205: Loaded properties from resource hibernate.properties: {hibernate.connection.driver_class=${jdbc.driverClassName}, hibernate.default_schema=public, hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, hibernate.connection.username=${jdbc.username}, hibernate.hbm2ddl.auto=update, hibernate.connection.url=${jdbc.url}, hibernate.bytecode.use_reflection_optimizer=false, hibernate.show_sql=true, hibernate.connection.password=****, <!--=You'd probably want to change this to create to run it for the first time :) -->}
+INFO	2018-06-26 21:24:55,950	1317	org.hibernate.cfg.Environment	[main]	HHH000021: Bytecode provider name : javassist
+INFO	2018-06-26 21:24:56,721	2088	org.hibernate.dialect.Dialect	[main]	HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+INFO	2018-06-26 21:24:56,728	2095	org.hibernate.engine.jdbc.internal.LobCreatorBuilder	[main]	HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+INFO	2018-06-26 21:24:56,896	2263	org.hibernate.engine.transaction.internal.TransactionFactoryInitiator	[main]	HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO	2018-06-26 21:24:56,900	2267	org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory	[main]	HHH000397: Using ASTQueryTranslatorFactory
+INFO	2018-06-26 21:24:57,157	2524	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000228: Running hbm2ddl schema update
+INFO	2018-06-26 21:24:57,157	2524	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000102: Fetching database metadata
+INFO	2018-06-26 21:24:57,161	2528	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000396: Updating schema
+INFO	2018-06-26 21:24:57,166	2533	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-26 21:24:57,167	2534	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-26 21:24:57,167	2534	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-26 21:24:57,168	2535	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-26 21:24:57,169	2536	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-26 21:24:57,169	2536	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-26 21:24:57,181	2548	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000261: Table found: carpnd.USER
+INFO	2018-06-26 21:24:57,182	2549	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000037: Columns: [id]
+INFO	2018-06-26 21:24:57,182	2549	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000108: Foreign keys: []
+INFO	2018-06-26 21:24:57,182	2549	org.hibernate.tool.hbm2ddl.TableMetadata	[main]	HHH000126: Indexes: [primary]
+INFO	2018-06-26 21:24:57,183	2550	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-26 21:24:57,184	2551	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+INFO	2018-06-26 21:24:57,185	2552	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-26 21:24:57,186	2553	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-26 21:24:57,187	2554	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-26 21:24:57,188	2555	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-26 21:24:57,188	2555	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-26 21:24:57,189	2556	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-26 21:24:57,189	2556	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-26 21:24:57,190	2557	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+INFO	2018-06-26 21:24:57,190	2557	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Availability
+INFO	2018-06-26 21:24:57,191	2558	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_ACCEPTEDRESERVATION
+INFO	2018-06-26 21:24:57,191	2558	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: PUBLICATION_RESERVATION
+INFO	2018-06-26 21:24:57,192	2559	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Publication
+INFO	2018-06-26 21:24:57,193	2560	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Reservation
+INFO	2018-06-26 21:24:57,194	2561	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: USER_VEHICLES
+INFO	2018-06-26 21:24:57,195	2562	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: User_Publication
+INFO	2018-06-26 21:24:57,195	2562	java.sql.DatabaseMetaData	[main]	HHH000262: Table not found: Vehicle
+ERROR	2018-06-26 21:24:57,205	2572	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Availability (availabilityId integer not null auto_increment, end datetime, start datetime, primary key (availabilityId))
+ERROR	2018-06-26 21:24:57,205	2572	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'availability' already exists
+ERROR	2018-06-26 21:24:57,206	2573	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.PUBLICATION_ACCEPTEDRESERVATION (Publication_publicationId integer not null, acceptedReservations_reservationId integer not null)
+ERROR	2018-06-26 21:24:57,206	2573	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication_acceptedreservation' already exists
+ERROR	2018-06-26 21:24:57,206	2573	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.PUBLICATION_RESERVATION (Publication_publicationId integer not null, reservations_reservationId integer not null)
+ERROR	2018-06-26 21:24:57,206	2573	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication_reservation' already exists
+ERROR	2018-06-26 21:24:57,207	2574	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Publication (publicationId integer not null auto_increment, rentFeeDay float, rentFeeHour float, availability_availabilityId integer, owner_userId integer, vehicleOffered_vehicleId integer, primary key (publicationId))
+ERROR	2018-06-26 21:24:57,207	2574	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'publication' already exists
+ERROR	2018-06-26 21:24:57,207	2574	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Reservation (reservationId integer not null auto_increment, end datetime, start datetime, publication_publicationId integer, user_userId integer, primary key (reservationId))
+ERROR	2018-06-26 21:24:57,208	2575	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'reservation' already exists
+ERROR	2018-06-26 21:24:57,208	2575	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.USER_VEHICLES (User_userId integer not null, myVehicles_vehicleId integer not null)
+ERROR	2018-06-26 21:24:57,208	2575	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'user_vehicles' already exists
+ERROR	2018-06-26 21:24:57,210	2577	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column userId integer not null
+ERROR	2018-06-26 21:24:57,210	2577	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'userId'
+ERROR	2018-06-26 21:24:57,210	2577	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column address varchar(255)
+ERROR	2018-06-26 21:24:57,210	2577	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'address'
+ERROR	2018-06-26 21:24:57,210	2577	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column credits float
+ERROR	2018-06-26 21:24:57,211	2578	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'credits'
+ERROR	2018-06-26 21:24:57,211	2578	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column cuil bigint
+ERROR	2018-06-26 21:24:57,211	2578	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'cuil'
+ERROR	2018-06-26 21:24:57,212	2579	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column email varchar(255)
+ERROR	2018-06-26 21:24:57,212	2579	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'email'
+ERROR	2018-06-26 21:24:57,212	2579	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column firstName varchar(255)
+ERROR	2018-06-26 21:24:57,212	2579	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'firstName'
+ERROR	2018-06-26 21:24:57,213	2580	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column lastName varchar(255)
+ERROR	2018-06-26 21:24:57,213	2580	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'lastName'
+ERROR	2018-06-26 21:24:57,213	2580	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User add column rating float
+ERROR	2018-06-26 21:24:57,213	2580	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Duplicate column name 'rating'
+ERROR	2018-06-26 21:24:57,214	2581	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.User_Publication (User_userId integer not null, myOffers_publicationId integer not null)
+ERROR	2018-06-26 21:24:57,214	2581	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'user_publication' already exists
+ERROR	2018-06-26 21:24:57,215	2582	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: create table public.Vehicle (vehicleId integer not null auto_increment, brandModel varchar(255), contactPhone varchar(255), description varchar(255), disabled bit, imageUrl varchar(255), passengerCapacity integer, returnAddress varchar(255), type varchar(255), withdrawAddress varchar(255), zone varchar(255), owner_userId integer, primary key (vehicleId))
+ERROR	2018-06-26 21:24:57,215	2582	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Table 'vehicle' already exists
+ERROR	2018-06-26 21:24:57,268	2635	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION add constraint FK_e06c3untaavvodta90axijbcj foreign key (acceptedReservations_reservationId) references public.Reservation (reservationId)
+ERROR	2018-06-26 21:24:57,268	2635	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,278	2645	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_ACCEPTEDRESERVATION add constraint FK_frp6wwwrb7ne9ofvb4wmnlpr foreign key (Publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-26 21:24:57,278	2645	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,289	2656	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_RESERVATION add constraint FK_p9rt5uya8erahg41foofwap2w foreign key (reservations_reservationId) references public.Reservation (reservationId)
+ERROR	2018-06-26 21:24:57,290	2657	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,301	2668	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.PUBLICATION_RESERVATION add constraint FK_gnu96sfktbuefrx3igosctf7c foreign key (Publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-26 21:24:57,301	2668	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,321	2688	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_a4645lv6055b71cb6f8kjw1jb foreign key (availability_availabilityId) references public.Availability (availabilityId)
+ERROR	2018-06-26 21:24:57,321	2688	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,334	2701	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_qa2bqqbaf9ow46qwewpym6yy9 foreign key (owner_userId) references public.User (userId)
+ERROR	2018-06-26 21:24:57,334	2701	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,346	2713	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Publication add constraint FK_o1yugyaoot1vrbnu39wdjmur4 foreign key (vehicleOffered_vehicleId) references public.Vehicle (vehicleId)
+ERROR	2018-06-26 21:24:57,346	2713	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,361	2728	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Reservation add constraint FK_6vn8g5cb3gk4st4c27nh17vky foreign key (publication_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-26 21:24:57,362	2729	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,378	2745	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Reservation add constraint FK_9n8vmuoncni5dp0od13o1m9i2 foreign key (user_userId) references public.User (userId)
+ERROR	2018-06-26 21:24:57,378	2745	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,391	2758	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.USER_VEHICLES add constraint FK_gw9o7r1l16chpi9jacb77oynw foreign key (myVehicles_vehicleId) references public.Vehicle (vehicleId)
+ERROR	2018-06-26 21:24:57,391	2758	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,399	2766	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.USER_VEHICLES add constraint FK_3hdm9puulfwwvn9om3j16mv7x foreign key (User_userId) references public.User (userId)
+ERROR	2018-06-26 21:24:57,399	2766	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,407	2774	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User_Publication add constraint FK_83g4aika75imndku104wan6jf foreign key (myOffers_publicationId) references public.Publication (publicationId)
+ERROR	2018-06-26 21:24:57,407	2774	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,417	2784	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.User_Publication add constraint FK_gwgva0pxcgy3nvyo3ak5hvn49 foreign key (User_userId) references public.User (userId)
+ERROR	2018-06-26 21:24:57,417	2784	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+ERROR	2018-06-26 21:24:57,432	2799	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000388: Unsuccessful: alter table public.Vehicle add constraint FK_8f3vo60r2ev0gjii3oha3r0m6 foreign key (owner_userId) references public.User (userId)
+ERROR	2018-06-26 21:24:57,432	2799	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	Can't write; duplicate key in table '#sql-5f_50'
+INFO	2018-06-26 21:24:57,432	2799	org.hibernate.tool.hbm2ddl.SchemaUpdate	[main]	HHH000232: Schema update complete
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,480	2847	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,552	2919	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,553	2920	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,574	2941	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,627	2994	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final org.hibernate.Session org.springframework.orm.hibernate4.support.HibernateDaoSupport.currentSession() throws org.springframework.dao.DataAccessResourceFailureException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setHibernateTemplate(org.springframework.orm.hibernate4.HibernateTemplate)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [protected final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.checkDaoConfig()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.orm.hibernate4.support.HibernateDaoSupport.setSessionFactory(org.hibernate.SessionFactory)] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.hibernate.SessionFactory org.springframework.orm.hibernate4.support.HibernateDaoSupport.getSessionFactory()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final org.springframework.orm.hibernate4.HibernateTemplate org.springframework.orm.hibernate4.support.HibernateDaoSupport.getHibernateTemplate()] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,757	3124	org.springframework.aop.framework.CglibAopProxy	[main]	Unable to proxy method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is final: All calls to this method via a proxy will NOT be routed to the target instance.
+INFO	2018-06-26 21:24:57,945	3312	org.apache.cxf.endpoint.ServerImpl	[main]	Setting the server's publish address to be /
+INFO	2018-06-26 21:24:58,000	3367	org.springframework.orm.hibernate4.HibernateTransactionManager	[main]	Using DataSource [org.apache.commons.dbcp.BasicDataSource@6d066064] of Hibernate SessionFactory for HibernateTransactionManager
+INFO	2018-06-26 21:24:58,014	3381	org.springframework.beans.factory.xml.XmlBeanDefinitionReader	[main]	Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+INFO	2018-06-26 21:24:58,042	3409	org.springframework.jdbc.support.SQLErrorCodesFactory	[main]	SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+INFO	2018-06-26 21:24:58,059	3426	org.springframework.web.context.ContextLoader	[main]	Root WebApplicationContext: initialization completed in 3426 ms
+INFO	2018-06-26 21:25:09,805	15172	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 1
+Address: http://localhost:8080/main/webservices/users/chargecredits/lucasfdl22@gmail.com/150
+Encoding: ISO-8859-1
+Http-Method: PUT
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[52], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null}}
+--------------------------------------
+WARN	2018-06-26 21:25:09,816	15183	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.UsersRest#chargeCredits and main.webservices.UsersRest#chargeCredits are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:25:10,179	15546	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 358 ms
+INFO	2018-06-26 21:25:10,373	15740	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 1
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:25:10 GMT]}
+Payload: 200
+--------------------------------------
+INFO	2018-06-26 21:25:17,642	23009	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 2
+Address: http://localhost:8080/main/webservices/users/withdrawcredits/lucasfdl22@gmail.com/20
+Encoding: ISO-8859-1
+Http-Method: PUT
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[52], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null}}
+--------------------------------------
+WARN	2018-06-26 21:25:17,645	23012	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.UsersRest#withdrawCredits and main.webservices.UsersRest#withdrawCredits are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:25:17,691	23058	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 45 ms
+INFO	2018-06-26 21:25:17,699	23066	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 2
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:25:17 GMT]}
+Payload: 180
+--------------------------------------
+INFO	2018-06-26 21:26:15,070	80437	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-19]	Inbound Message
+----------------------------
+ID: 3
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-26 21:26:15,072	80439	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-19]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:15,081	80448	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 4
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:26:15,083	80450	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:15,120	80487	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-18]	Inbound Message
+----------------------------
+ID: 5
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:26:15,121	80488	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-18]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:15,121	80488	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-21]	Inbound Message
+----------------------------
+ID: 6
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:26:15,124	80491	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-21]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:15,155	80522	main.aspects.AuditoryAspect	[qtp794949943-18]	Tiempo: 31 ms
+INFO	2018-06-26 21:26:15,170	80537	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 86 ms
+INFO	2018-06-26 21:26:15,187	80554	main.aspects.AuditoryAspect	[qtp794949943-21]	Tiempo: 62 ms
+INFO	2018-06-26 21:26:15,223	80590	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 4
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:15 GMT]}
+Payload: [{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"Alta nave papa!","zone":"","contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"vehicleId":1},{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"","zone":"","contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"vehicleId":2}]
+--------------------------------------
+INFO	2018-06-26 21:26:15,229	80596	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-18]	Outbound Message
+---------------------------
+ID: 5
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:15 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":180.0,"userId":1}
+--------------------------------------
+INFO	2018-06-26 21:26:15,228	80595	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-21]	Outbound Message
+---------------------------
+ID: 6
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:15 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-26 21:26:15,259	80626	main.aspects.AuditoryAspect	[qtp794949943-19]	Tiempo: 7 ms
+INFO	2018-06-26 21:26:15,262	80629	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-19]	Outbound Message
+---------------------------
+ID: 3
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:15 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":180.0,"userId":1}
+--------------------------------------
+INFO	2018-06-26 21:26:21,605	86972	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 7
+Address: http://localhost:8080/main/webservices/users/withdrawcredits/lucasfdl22@gmail.com/1
+Encoding: ISO-8859-1
+Http-Method: PUT
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[52], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null}}
+--------------------------------------
+WARN	2018-06-26 21:26:21,606	86973	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.UsersRest#withdrawCredits and main.webservices.UsersRest#withdrawCredits are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:21,628	86995	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 21 ms
+INFO	2018-06-26 21:26:21,629	86996	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 7
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:21 GMT]}
+Payload: 179
+--------------------------------------
+INFO	2018-06-26 21:26:29,848	95215	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-20]	Inbound Message
+----------------------------
+ID: 8
+Address: http://localhost:8080/main/webservices/users/withdrawcredits/lucasfdl22@gmail.com/5
+Encoding: ISO-8859-1
+Http-Method: PUT
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[52], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null}}
+--------------------------------------
+WARN	2018-06-26 21:26:29,849	95216	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-20]	Both main.webservices.UsersRest#withdrawCredits and main.webservices.UsersRest#withdrawCredits are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:26:29,872	95239	main.aspects.AuditoryAspect	[qtp794949943-20]	Tiempo: 22 ms
+INFO	2018-06-26 21:26:29,875	95242	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-20]	Outbound Message
+---------------------------
+ID: 8
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:26:29 GMT]}
+Payload: 174
+--------------------------------------
+INFO	2018-06-26 21:27:34,736	160103	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-18]	Inbound Message
+----------------------------
+ID: 9
+Address: http://localhost:8080/main/webservices/users
+Encoding: ISO-8859-1
+Http-Method: POST
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[127], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"userId":null,"cuil":null,"lastName":"Fedele","firstName":"Lucas","email":"lucasfdl22@gmail.com","rating":null,"credits":null}
+--------------------------------------
+WARN	2018-06-26 21:27:34,740	160107	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-18]	Both main.webservices.UsersRest#userLogIn and main.webservices.UsersRest#userLogIn are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:27:34,750	160117	main.aspects.AuditoryAspect	[qtp794949943-18]	Tiempo: 8 ms
+INFO	2018-06-26 21:27:34,751	160118	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-18]	Outbound Message
+---------------------------
+ID: 9
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:27:34 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":174.0,"userId":1}
+--------------------------------------
+INFO	2018-06-26 21:27:35,042	160409	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-22]	Inbound Message
+----------------------------
+ID: 10
+Address: http://localhost:8080/main/webservices/vehicles/from/user/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+INFO	2018-06-26 21:27:35,043	160410	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-23]	Inbound Message
+----------------------------
+ID: 11
+Address: http://localhost:8080/main/webservices/users/byemail/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: 
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Type=[null], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:27:35,043	160410	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-22]	Both main.webservices.VehiclesRest#getVehiclesFromUser and main.webservices.VehiclesRest#getVehiclesFromUser are equal candidates for handling the current request which can lead to unpredictable results
+WARN	2018-06-26 21:27:35,043	160410	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-23]	Both main.webservices.UsersRest#findUserByEmail and main.webservices.UsersRest#findUserByEmail are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:27:35,050	160417	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-19]	Inbound Message
+----------------------------
+ID: 12
+Address: http://localhost:8080/main/webservices/publications/fromuser/lucasfdl22@gmail.com
+Http-Method: GET
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], content-type=[application/json], Host=[localhost:8080], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+--------------------------------------
+WARN	2018-06-26 21:27:35,056	160423	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-19]	Both main.webservices.PublicationsRest#getPublicationsFromUser and main.webservices.PublicationsRest#getPublicationsFromUser are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:27:35,073	160440	main.aspects.AuditoryAspect	[qtp794949943-19]	Tiempo: 17 ms
+INFO	2018-06-26 21:27:35,074	160441	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-19]	Outbound Message
+---------------------------
+ID: 12
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:27:35 GMT]}
+Payload: []
+--------------------------------------
+INFO	2018-06-26 21:27:35,079	160446	main.aspects.AuditoryAspect	[qtp794949943-23]	Tiempo: 27 ms
+INFO	2018-06-26 21:27:35,081	160448	main.aspects.AuditoryAspect	[qtp794949943-22]	Tiempo: 36 ms
+INFO	2018-06-26 21:27:35,081	160448	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-23]	Outbound Message
+---------------------------
+ID: 11
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:27:35 GMT]}
+Payload: {"adress":"No address","email":"lucasfdl22@gmail.com","rating":0.0,"cuil":20337778881,"firstName":"Lucas","lastName":"Fedele","credits":174.0,"userId":1}
+--------------------------------------
+INFO	2018-06-26 21:27:35,083	160450	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-22]	Outbound Message
+---------------------------
+ID: 10
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:27:35 GMT]}
+Payload: [{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"Alta nave papa!","zone":"","contactPhone":"+54 011 1234-5678","passengerCapacity":2,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/324x183/public/media/image/2017/10/nuevo-audi-a7-2018_5.jpg?itok=wQiR05dF","brandModel":"AUDI A7","ownerId":1,"vehicleId":1},{"type":"Auto","ownerName":"Lucas","ownerLastName":"Fedele","description":"","zone":"","contactPhone":"","passengerCapacity":6,"returnAddress":"","withdrawAddress":"","ownerEmail":"lucasfdl22@gmail.com","imageUrl":"https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/main_element/public/media/image/2014/02/294641-bmw-x6-m50d-frontal.jpg?itok=3UvxKbMn","brandModel":"BMW X6","ownerId":1,"vehicleId":2}]
+--------------------------------------
+INFO	2018-06-26 21:27:43,155	168522	org.apache.cxf.interceptor.LoggingInInterceptor	[qtp794949943-23]	Inbound Message
+----------------------------
+ID: 13
+Address: http://localhost:8080/main/webservices/users/withdrawcredits/lucasfdl22@gmail.com/50
+Encoding: ISO-8859-1
+Http-Method: PUT
+Content-Type: application/json
+Headers: {Accept=[application/json, text/plain, */*], accept-encoding=[gzip, deflate, br], Accept-Language=[en-US,en;q=0.9,es;q=0.8], connection=[keep-alive], Content-Length=[52], content-type=[application/json], Host=[localhost:8080], Origin=[http://localhost:4200], Referer=[http://localhost:4200/user-profile], User-Agent=[Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36]}
+Payload: {"headers":{"normalizedNames":{},"lazyUpdate":null}}
+--------------------------------------
+WARN	2018-06-26 21:27:43,156	168523	org.apache.cxf.jaxrs.utils.JAXRSUtils	[qtp794949943-23]	Both main.webservices.UsersRest#withdrawCredits and main.webservices.UsersRest#withdrawCredits are equal candidates for handling the current request which can lead to unpredictable results
+INFO	2018-06-26 21:27:43,184	168551	main.aspects.AuditoryAspect	[qtp794949943-23]	Tiempo: 27 ms
+INFO	2018-06-26 21:27:43,186	168553	org.apache.cxf.interceptor.LoggingOutInterceptor	[qtp794949943-23]	Outbound Message
+---------------------------
+ID: 13
+Response-Code: 200
+Content-Type: application/json
+Headers: {Content-Type=[application/json], Date=[Wed, 27 Jun 2018 01:27:43 GMT]}
+Payload: 124
+--------------------------------------
