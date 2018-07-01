@@ -12,15 +12,15 @@ import java.util.List;
 public class ReservationService extends GenericService<Reservation> {
   private static final long serialVersionUID = -2932116622242535843L;
 
-  private UserService uService;
-  private PublicationService pService;
+  private UserService userService;
+  private PublicationService publicationService;
 
-  public void setUserService(UserService uService) {
-    this.uService = uService;
+  public void setUserService(UserService userService) {
+    this.userService = userService;
   }
 
-  public void setPublicationService(PublicationService pService) {
-    this.pService = pService;
+  public void setPublicationService(PublicationService publicationService) {
+    this.publicationService = publicationService;
   }
 
   public void saveReservationDto(ReservationDto rDto) {
@@ -34,8 +34,8 @@ public class ReservationService extends GenericService<Reservation> {
       new ReservationBuilder()
         .withStartDate(startDate)
         .withEndDate(endDate)
-        .withUser(uService.findById(rDto.getUserId()))
-        .withPublication(pService.findById(rDto.getPublicationId()))
+        .withUser(userService.findByEmail(rDto.getUserEmail()))
+        .withPublication(publicationService.findById(rDto.getPublicationId()))
         .build()
     );
   }
@@ -43,13 +43,13 @@ public class ReservationService extends GenericService<Reservation> {
   public void acceptReservation(int rId) {
     Reservation r = this.findById(rId);
     Publication p = r.getPublication();
-    pService.acceptReservation(p, r);
+    publicationService.acceptReservation(p, r);
   }
 
   public void declineReservation(int rId) {
     Reservation r = this.findById(rId);
     Publication p = r.getPublication();
-    pService.declineReservation(p, r);
+    publicationService.declineReservation(p, r);
   }
 
   public List<ReservationDto> getReservationsOf(int pubId) {
@@ -71,5 +71,26 @@ public class ReservationService extends GenericService<Reservation> {
       }
     }
     return reservation;
+  }
+
+  public ReservationDto createReservation(ReservationDto rDto) {
+    int pubid = rDto.getPublicationId();
+    Publication publication = publicationService.findById(pubid);
+    Reservation reservation = new ReservationBuilder()
+      .withStartDate(new DateTime(
+        rDto.getStartYear(),
+        rDto.getStartMonth(),
+        rDto.getStartDayOfMonth(), 1,1))
+      .withEndDate(new DateTime(
+        rDto.getEndYear(),
+        rDto.getEndMonth(),
+        rDto.getEndDayOfMonth(), 1,1))
+      .withUser(userService.findByEmail(rDto.getUserEmail()))
+      .withPublication(publication)
+      .build();
+
+    save(reservation);
+
+    return new ReservationDto(reservation);
   }
 }

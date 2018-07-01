@@ -40,10 +40,11 @@ public class ReservationsRest {
     return Response.ok(reservation).build();
   }
 
-  @PUT
+  @POST
   @Consumes("application/json")
-  public void createReservation(ReservationDto rDto) {
-    reservationService.saveReservationDto(rDto);
+  public Response createReservation(ReservationDto rDto) {
+    ReservationDto ret = reservationService.createReservation(rDto);
+    return Response.ok(ret).build();
   }
 
   @Path("/accept/{id}")

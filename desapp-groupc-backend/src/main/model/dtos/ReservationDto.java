@@ -19,7 +19,7 @@ public class ReservationDto {
   public int endDayOfMonth;
 
   // razones del dto
-  public int userId;
+  public String userEmail;
   public int publicationId;
 
   public ReservationDto() { }
@@ -35,7 +35,7 @@ public class ReservationDto {
     this.endMonth = r.getEnd().getMonthOfYear();
     this.endDayOfMonth = r .getEnd().getDayOfMonth();
 
-    this.userId = r.getUser().getId();
+    this.userEmail = r.getUserEmail();
     this.publicationId = r.getPublication().getId();
     this.accepted = r.getAccepted();
   }
@@ -96,12 +96,12 @@ public class ReservationDto {
     this.endDayOfMonth = endDayOfMonth;
   }
 
-  public int getUserId() {
-    return userId;
+  public String getUserEmail() {
+    return userEmail;
   }
 
-  public void setUserId(int userId) {
-    this.userId = userId;
+  public void setUserEmail(String userEmail) {
+    this.userEmail = userEmail;
   }
 
   public int getPublicationId() {

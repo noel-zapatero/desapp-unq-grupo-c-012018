@@ -126,7 +126,7 @@ public class Reservation {
     return end;
   }
 
-  public Object getUserEmail() {
+  public String getUserEmail() {
     return this.user.email;
   }
 }

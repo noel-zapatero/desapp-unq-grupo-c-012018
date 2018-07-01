@@ -37,7 +37,7 @@ public class ReservationBuilder {
     return this;
   }
 
-  public ReservationBuilder withPublication(Publication p) {
+  public ReservationBuilder withPublication(Publication publication) {
     this.publication = publication;
     return this;
   }
