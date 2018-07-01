@@ -58,4 +58,21 @@ public class ReservationsRest {
   public void declineReseration(@PathParam("id") String id) {
     reservationService.declineReservation(Integer.valueOf(id));
   }
+
+  @Path("/retire/{reservationId}")
+  @PUT
+  @Produces("application/json")
+  public Response retireVehicle(@PathParam("reservationId") String reservationId) {
+    ReservationDto reservation = this.reservationService.retireVehicle(Integer.valueOf(reservationId));
+    return Response.ok(reservation).build();
+  }
+
+  @Path("/acceptretire/{reservationId}")
+  @PUT
+  @Produces("application/json")
+  public Response acceptRetire(@PathParam("reservationId") String reservationId) {
+    ReservationDto reservation = this.reservationService.acceptRetire(Integer.valueOf(reservationId));
+    return Response.ok(reservation).build();
+  }
+
 }

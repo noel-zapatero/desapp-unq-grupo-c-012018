@@ -105,6 +105,7 @@ public class Publication {
 
     this.acceptedReservations.add(reservation);
     this.reservations.remove(reservation);
+    reservation.setAccepted(true);
   }
 
   public int getId() {

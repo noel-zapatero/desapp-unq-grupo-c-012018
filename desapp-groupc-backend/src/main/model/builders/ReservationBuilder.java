@@ -10,6 +10,7 @@ public class ReservationBuilder {
   DateTime end = DateTime.now().plusDays(1);
   User user;
   Publication publication;
+  private String retireState;
 
   public Reservation build() {
     Reservation r = new Reservation();
@@ -18,6 +19,7 @@ public class ReservationBuilder {
     r.setEnd(end);
     r.setUser(user);
     r.setPublication(publication);
+    r.setRetireState(retireState);
 
     return r;
   }
@@ -39,6 +41,11 @@ public class ReservationBuilder {
 
   public ReservationBuilder withPublication(Publication publication) {
     this.publication = publication;
+    return this;
+  }
+
+  public ReservationBuilder withRetireState(String retireState) {
+    this.retireState = retireState;
     return this;
   }
 }

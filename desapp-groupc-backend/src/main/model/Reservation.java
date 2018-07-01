@@ -30,6 +30,9 @@ public class Reservation {
   @OneToOne
   private Publication publication;
 
+  @Column
+  private String retireState = "AWAITINGRETIRE";
+
   public Reservation() { }
 
   public Reservation(DateTime start, DateTime end, User username, Publication publication) {
@@ -90,6 +93,14 @@ public class Reservation {
     this.start = start;
   }
 
+  public String getRetireState() {
+    return retireState;
+  }
+
+  public void setRetireState(String retireState) {
+    this.retireState = retireState;
+  }
+
   public void setEnd(DateTime end) {
     this.end = end;
   }
@@ -129,4 +140,13 @@ public class Reservation {
   public String getUserEmail() {
     return this.user.email;
   }
+
+  public void retire() {
+    this.retireState = "RETIRING";
+  }
+
+  public void acceptRetire() {
+    this.retireState = "RETIRED";
+  }
+
 }

@@ -44,12 +44,15 @@ public class ReservationService extends GenericService<Reservation> {
     Reservation r = this.findById(rId);
     Publication p = r.getPublication();
     publicationService.acceptReservation(p, r);
+    update(r);
   }
 
   public void declineReservation(int rId) {
     Reservation r = this.findById(rId);
     Publication p = r.getPublication();
     publicationService.declineReservation(p, r);
+    r.setPublication(null);
+    delete(r);
   }
 
   public List<ReservationDto> getReservationsOf(int pubId) {
@@ -87,10 +90,26 @@ public class ReservationService extends GenericService<Reservation> {
         rDto.getEndDayOfMonth(), 1,1))
       .withUser(userService.findByEmail(rDto.getUserEmail()))
       .withPublication(publication)
+      .withRetireState(rDto.getRetireState())
       .build();
 
     save(reservation);
 
     return new ReservationDto(reservation);
   }
+
+  public ReservationDto retireVehicle(int reservationId) {
+    Reservation reservation = findById(reservationId);
+    reservation.retire();
+    update(reservation);
+    return new ReservationDto(reservation);
+  }
+
+  public ReservationDto acceptRetire(int reservationId) {
+    Reservation reservation = findById(reservationId);
+    reservation.acceptRetire();
+    update(reservation);
+    return new ReservationDto(reservation);
+  }
+
 }

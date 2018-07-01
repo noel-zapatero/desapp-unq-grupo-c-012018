@@ -22,6 +22,8 @@ public class ReservationDto {
   public String userEmail;
   public int publicationId;
 
+  public String retireState = "";
+
   public ReservationDto() { }
 
   public ReservationDto(Reservation r) {
@@ -38,6 +40,16 @@ public class ReservationDto {
     this.userEmail = r.getUserEmail();
     this.publicationId = r.getPublication().getId();
     this.accepted = r.getAccepted();
+
+    this.retireState =r.getRetireState();
+  }
+
+  public String getRetireState() {
+    return retireState;
+  }
+
+  public void setRetireState(String retireState) {
+    this.retireState = retireState;
   }
 
   public int getReservationId() {
