@@ -14,6 +14,9 @@ public class Reservation {
   private int reservationId;
 
   @Column
+  private boolean accepted = false;
+
+  @Column
   @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDateTime")
   private DateTime start;
 
@@ -37,6 +40,7 @@ public class Reservation {
   }
 
   public void accept() {
+    this.accepted = true;
     this.publication.acceptReservation(this);
   }
 
@@ -96,5 +100,33 @@ public class Reservation {
 
   public void setPublication(Publication publication) {
     this.publication = publication;
+  }
+
+  public boolean getAccepted() {
+    return accepted;
+  }
+
+  public int getReservationId() {
+    return reservationId;
+  }
+
+  public boolean isAccepted() {
+    return accepted;
+  }
+
+  public void setAccepted(boolean accepted) {
+    this.accepted = accepted;
+  }
+
+  public DateTime getStart() {
+    return start;
+  }
+
+  public DateTime getEnd() {
+    return end;
+  }
+
+  public Object getUserEmail() {
+    return this.user.email;
   }
 }

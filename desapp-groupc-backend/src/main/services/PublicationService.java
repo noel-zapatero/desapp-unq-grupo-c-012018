@@ -85,4 +85,10 @@ public class PublicationService extends GenericService<Publication> {
     userService.update(owner);
     delete(pub);
   }
+
+  public boolean isOwner(String userEmail, Integer pubId) {
+    Publication publication = findById(pubId);
+    boolean ret = publication.getOwnerEmail().equals(userEmail);
+    return ret;
+  }
 }

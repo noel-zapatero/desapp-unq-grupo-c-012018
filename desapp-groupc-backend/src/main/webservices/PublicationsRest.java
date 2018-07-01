@@ -3,12 +3,15 @@ package main.webservices;
 import main.model.Publication;
 import main.model.dtos.PublicationDto;
 import main.services.PublicationService;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
+import org.apache.cxf.rs.security.cors.LocalPreflight;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/publications")
+@CrossOriginResourceSharing(allowAllOrigins = true)
 public class PublicationsRest {
 
   private PublicationService publicationService;
@@ -36,6 +39,12 @@ public class PublicationsRest {
   public Response getPublicationsFromUser(@PathParam("userEmail") String userEmail) {
     List<PublicationDto> pubs = publicationService.getPublicationsFromUserEmailAsDto(userEmail);
     return Response.ok(pubs).build();
+  }
+
+  @GET
+  @Path("/isowner/{userEmail}/{pubId}")
+  public Response isOwner(@PathParam("userEmail") String userEmail, @PathParam("pubId") String pubId) {
+    return Response.ok(publicationService.isOwner(userEmail, Integer.valueOf(pubId))).build();
   }
 
   @POST

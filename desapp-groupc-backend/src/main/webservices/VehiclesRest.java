@@ -3,6 +3,8 @@ package main.webservices;
 import main.model.Vehicle;
 import main.model.dtos.VehicleDto;
 import main.services.VehicleService;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
+import org.apache.cxf.rs.security.cors.LocalPreflight;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
@@ -11,6 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Path("/vehicles")
+@CrossOriginResourceSharing(allowAllOrigins = true)
 public class VehiclesRest {
 
   private VehicleService vehicleService;
@@ -29,6 +32,7 @@ public class VehiclesRest {
   @GET
   @Path("/from/user/{email}")
   @Produces("application/json")
+  @CrossOriginResourceSharing(allowAllOrigins = true)
   public Response getVehiclesFromUser(@PathParam("email") String email) {
     List<VehicleDto> vehiclesDto = new ArrayList<>();
 //      vehicleService.getVehiclesFrom(Integer.valueOf(id))

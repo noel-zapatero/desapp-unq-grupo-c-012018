@@ -60,6 +60,9 @@
   <!-- =========Servicios  ========= -->
   <!-- =========================== -->
 
+  <bean id="cors-filter" class="org.apache.cxf.rs.security.cors.CrossOriginResourceSharingFilter"/>
+  <bean id="cors-server" scope="prototype"
+        class="org.apache.cxf.systest.jaxrs.cors.AnnotatedCorsServer" />
 
   <jaxrs:server id="capnd" address="/"  >
     <jaxrs:serviceBeans>
@@ -73,6 +76,7 @@
       <entry key="xml" value="application/xml" />
     </jaxrs:extensionMappings>
     <jaxrs:providers>
+      <ref bean="cors-filter" />
       <ref bean="jaxbProvider" />
       <ref bean="jacksonProvider" />
     </jaxrs:providers>

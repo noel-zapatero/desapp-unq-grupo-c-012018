@@ -1,14 +1,16 @@
 package main.webservices;
 
 import main.model.User;
-import main.model.dtos.CreditsOperationDto;
 import main.model.dtos.UserDto;
 import main.services.UserService;
+import org.apache.cxf.rs.security.cors.CrossOriginResourceSharing;
+import org.apache.cxf.rs.security.cors.LocalPreflight;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 @Path("/users")
+@CrossOriginResourceSharing(allowAllOrigins = true)
 public class UsersRest {
 
   private UserService userService;

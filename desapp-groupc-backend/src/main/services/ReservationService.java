@@ -4,6 +4,10 @@ import main.model.Publication;
 import main.model.Reservation;
 import main.model.builders.ReservationBuilder;
 import main.model.dtos.ReservationDto;
+import org.joda.time.DateTime;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ReservationService extends GenericService<Reservation> {
   private static final long serialVersionUID = -2932116622242535843L;
@@ -20,10 +24,16 @@ public class ReservationService extends GenericService<Reservation> {
   }
 
   public void saveReservationDto(ReservationDto rDto) {
+    DateTime startDate =
+      new DateTime(rDto.getStartYear(), rDto.getStartMonth(), rDto.getStartDayOfMonth(), 1, 1);
+
+    DateTime endDate =
+      new DateTime(rDto.getEndYear(), rDto.getEndMonth(), rDto.getEndDayOfMonth(), 1, 1);
+
     this.save(
       new ReservationBuilder()
-        .withStartDate(rDto.getStart())
-        .withEndDate(rDto.getEnd())
+        .withStartDate(startDate)
+        .withEndDate(endDate)
         .withUser(uService.findById(rDto.getUserId()))
         .withPublication(pService.findById(rDto.getPublicationId()))
         .build()
@@ -40,5 +50,26 @@ public class ReservationService extends GenericService<Reservation> {
     Reservation r = this.findById(rId);
     Publication p = r.getPublication();
     pService.declineReservation(p, r);
+  }
+
+  public List<ReservationDto> getReservationsOf(int pubId) {
+    List<ReservationDto> reservations = new ArrayList<>();
+    for (Reservation reservation: retriveAll()) {
+      if (reservation.getPublication().getId() == pubId) {
+        reservations.add(new ReservationDto(reservation));
+      }
+    }
+    return reservations;
+  }
+
+  // retorna null si no hay
+  public ReservationDto getMyReservationOf(String userEmail, int pubId) {
+    ReservationDto reservation = null;
+    for (Reservation r: retriveAll()) {
+      if (r.getPublication().getId() == pubId && r.getUserEmail().equals(userEmail)) {
+        reservation = new ReservationDto(r);
+      }
+    }
+    return reservation;
   }
 }
