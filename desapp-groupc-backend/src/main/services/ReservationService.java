@@ -112,4 +112,17 @@ public class ReservationService extends GenericService<Reservation> {
     return new ReservationDto(reservation);
   }
 
+  public ReservationDto returnVehicle(Integer reservationId) {
+    Reservation reservation = findById(reservationId);
+    reservation.returnVehicle();
+    update(reservation);
+    return new ReservationDto(reservation);
+  }
+
+  public ReservationDto acceptReturn(Integer reservationId) {
+    Reservation reservation = findById(reservationId);
+    reservation.acceptReturn();
+    update(reservation);
+    return new ReservationDto(reservation);
+  }
 }

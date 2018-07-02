@@ -75,4 +75,20 @@ public class ReservationsRest {
     return Response.ok(reservation).build();
   }
 
+  @Path("/return/{reservationId}")
+  @PUT
+  @Produces("application/json")
+  public Response returnVehicle(@PathParam("reservationId") String reservationId) {
+    ReservationDto reservation = this.reservationService.returnVehicle(Integer.valueOf(reservationId));
+    return Response.ok(reservation).build();
+  }
+
+  @Path("/acceptreturn/{reservationId}")
+  @PUT
+  @Produces("application/json")
+  public Response acceptReturn(@PathParam("reservationId") String reservationId) {
+    ReservationDto reservation = this.reservationService.acceptReturn(Integer.valueOf(reservationId));
+    return Response.ok(reservation).build();
+  }
+
 }

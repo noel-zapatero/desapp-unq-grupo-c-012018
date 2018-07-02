@@ -149,4 +149,12 @@ public class Reservation {
     this.retireState = "RETIRED";
   }
 
+  public void returnVehicle() {
+    this.retireState = "RETURNING";
+  }
+
+  public void acceptReturn() {
+    this.retireState = "RETURNED";
+  }
+
 }
