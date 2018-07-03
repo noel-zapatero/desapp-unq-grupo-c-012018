@@ -37,7 +37,6 @@ public class PublicationService extends GenericService<Publication> {
   public List<Publication> getPublicationsFromUserEmail(String userEmail) {
     List<Publication> ret = new ArrayList<>();
     for (Publication p: retriveAll()) {
-      System.out.print(userEmail.equals(p.getOwnerEmail()));
       if (userEmail.equals(p.getOwnerEmail())) {
         ret.add(p);
       }
