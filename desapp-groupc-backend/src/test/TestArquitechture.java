@@ -25,7 +25,7 @@ public class TestArquitechture {
 
         String sCurrentLine;
         while ((sCurrentLine = br.readLine()) != null) {
-          if (sCurrentLine.contains("System.out.println")) {
+          if (sCurrentLine.contains("System.out")) {
             contains = true;
             msg = "Found in file: " + javaFile;
           }
