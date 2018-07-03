@@ -1,9 +1,6 @@
 package test;
 
-import com.sun.source.tree.AssertTree;
-import main.model.builders.IBuilder;
 import main.repositories.*;
-import main.services.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.reflections.Reflections;
