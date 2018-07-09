@@ -34,6 +34,13 @@ public class PublicationsRest {
   }
 
   @GET
+  @Path("/filter/{type}")
+  @Produces("application/json")
+  public Response filterPublications(@PathParam("type") String type) {
+    return Response.ok(publicationService.filterByVehicleType(type)).build();
+  }
+
+  @GET
   @Path("/fromuser/{userEmail}")
   @Produces("application/json")
   public Response getPublicationsFromUser(@PathParam("userEmail") String userEmail) {

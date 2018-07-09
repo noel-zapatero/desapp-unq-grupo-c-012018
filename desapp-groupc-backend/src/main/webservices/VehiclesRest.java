@@ -30,6 +30,13 @@ public class VehiclesRest {
   }
 
   @GET
+  @Path("/type/{type}")
+  @Produces("application/json")
+  public Response filterVehicles(@PathParam("type") String type) {
+    return Response.ok(vehicleService.filterByType(type)).build();
+  }
+
+  @GET
   @Path("/from/user/{email}")
   @Produces("application/json")
   @CrossOriginResourceSharing(allowAllOrigins = true)

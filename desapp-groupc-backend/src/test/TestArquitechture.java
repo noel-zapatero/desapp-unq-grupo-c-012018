@@ -22,7 +22,6 @@ public class TestArquitechture {
       try {
         fr = new FileReader(javaFile);
         br = new BufferedReader(fr);
-
         String sCurrentLine;
         while ((sCurrentLine = br.readLine()) != null) {
           if (sCurrentLine.contains("System.out")) {
@@ -38,7 +37,6 @@ public class TestArquitechture {
             br.close();
           if (fr != null)
             fr.close();
-
         } catch (IOException ex) {
           ex.printStackTrace();
         }

@@ -3,6 +3,7 @@ package main.services;
 import main.model.Vehicle;
 import main.model.builders.VehicleBuilder;
 import main.model.dtos.VehicleDto;
+import main.repositories.VehicleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,5 +83,13 @@ public class VehicleService extends GenericService<Vehicle> {
 
   public List<Vehicle> getVehiclesFromEmail(String email) {
     return getVehiclesFrom(userService.findByEmail(email).getId());
+  }
+
+  public List<VehicleDto> filterByType(String type) {
+    List<VehicleDto> ret = new ArrayList<>();
+    for (Vehicle v: ((VehicleRepository) getRepository()).filterByType(type)) {
+      ret.add(new VehicleDto(v));
+    }
+    return ret;
   }
 }

@@ -3,6 +3,7 @@ package main.services;
 import main.model.*;
 import main.model.builders.PublicationBuilder;
 import main.model.dtos.PublicationDto;
+import main.repositories.PublicationRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +33,14 @@ public class PublicationService extends GenericService<Publication> {
   public void declineReservation(Publication p, Reservation r) {
     p.declineReservation(r);
     this.update(p);
+  }
+
+  public List<PublicationDto> filterByVehicleType(String vehicleType) {
+    List<PublicationDto> ret = new ArrayList<>();
+    for (Publication p: ((PublicationRepository)this.getRepository()).filterByVehicleType(vehicleType)) {
+      ret.add(new PublicationDto(p));
+    }
+    return ret;
   }
 
   public List<Publication> getPublicationsFromUserEmail(String userEmail) {
