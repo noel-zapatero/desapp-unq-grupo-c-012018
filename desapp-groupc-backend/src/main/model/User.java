@@ -39,8 +39,10 @@ public class User {
   @OneToMany(fetch = FetchType.EAGER)
   public List<Publication> myOffers;
 
-  @Transient
-  private List<Integer> totalRatings;
+  @ElementCollection
+  @CollectionTable(name="totalRatings", joinColumns=@JoinColumn(name="userId"))
+  @Column
+  private List<Integer> totalRatings = new ArrayList<Integer>();
 
   public User() {}
 

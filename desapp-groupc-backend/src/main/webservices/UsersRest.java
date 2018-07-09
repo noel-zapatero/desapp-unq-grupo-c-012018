@@ -76,4 +76,13 @@ public class UsersRest {
     return Response.ok(new UserDto(retrievedUser)).build();
   }
 
+  @POST
+  @Path("/rate/{userEmail}/{rating}")
+  public Response rateUser(
+    @PathParam("userEmail") String userEmail,
+    @PathParam("rating") String rating)
+  {
+    return Response.ok(userService.rate(userEmail, Integer.valueOf(rating))).build();
+  }
+
 }

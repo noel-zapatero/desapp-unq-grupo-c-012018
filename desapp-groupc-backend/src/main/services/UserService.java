@@ -114,4 +114,12 @@ public class UserService extends GenericService<User> {
   public int creditsOf(String userEmail) {
     return (int)findByEmail(userEmail).getCredits();
   }
+
+  public int rate(String userEmail, int rating) {
+    User user = findByEmail(userEmail);
+    user.receiveRating(rating);
+    update(user);
+    return (int)user.getRating();
+  }
+
 }
