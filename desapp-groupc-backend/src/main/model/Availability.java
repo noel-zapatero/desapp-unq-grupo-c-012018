@@ -1,6 +1,7 @@
 package main.model;
 
 import main.model.dtos.PublicationDto;
+import main.model.exceptions.AvailabilityException;
 import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 
@@ -53,19 +54,20 @@ public class Availability {
   }
 
   public static Availability FromPublicationDto(PublicationDto pDto) {
-    return new Availability(new DateTime(
+    DateTime from = new DateTime(
       pDto.getStartYear(),
       pDto.getStartMonth(),
       pDto.getStartDayOfMonth(),
       1,
       1
-    ),
-      new DateTime(
-        pDto.getEndYear(),
-        pDto.getEndMonth(),
-        pDto.getEndDayOfMonth(),
-        1,
-        1
-      ));
+    );
+    DateTime to = new DateTime(
+      pDto.getEndYear(),
+      pDto.getEndMonth(),
+      pDto.getEndDayOfMonth(),
+      1,
+      1
+    );
+    return new Availability(from, to);
   }
 }

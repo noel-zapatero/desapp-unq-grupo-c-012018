@@ -58,7 +58,11 @@ public class PublicationsRest {
   @Consumes("application/json")
   @Produces("application/json")
   public Response createPublication(PublicationDto pDto) {
-    return Response.ok(publicationService.createPublicationFromDto(pDto)).build();
+    String err = publicationService.validate(pDto);
+    if (!err.equals(""))
+      return Response.ok(publicationService.createPublicationFromDto(pDto)).build();
+    else
+      return Response.notModified(err).build();
   }
 
   @DELETE

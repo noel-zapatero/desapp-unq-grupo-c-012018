@@ -70,20 +70,24 @@ public class PublicationService extends GenericService<Publication> {
   }
 
   public PublicationDto createPublicationFromDto(PublicationDto pDto) {
-    Vehicle vehicleOffered = vehicleService.findById(pDto.getVehicleOfferedId());
-    Publication p = new PublicationBuilder()
-      .withPublicationId(pDto.getPublicationId())
-        .withOwner(userService.findByEmail(vehicleOffered.getOwner().getEmail()))
-      .withVehicle(vehicleOffered)
-      .withAvailability(Availability.FromPublicationDto(pDto))
-      .withRentFeeHour(pDto.getRentFeeHour())
-      .withRentFeeDay(pDto.getRentFeeDay())
-      .build();
+    Publication p = createPublication(pDto);
 
     availabilityService.save(p.getAvailability());
     save(p);
 
     return new PublicationDto(p);
+  }
+
+  private Publication createPublication(PublicationDto pDto) {
+    Vehicle vehicleOffered = vehicleService.findById(pDto.getVehicleOfferedId());
+    return new PublicationBuilder()
+      .withPublicationId(pDto.getPublicationId())
+      .withOwner(userService.findByEmail(vehicleOffered.getOwner().getEmail()))
+      .withVehicle(vehicleOffered)
+      .withAvailability(Availability.FromPublicationDto(pDto))
+      .withRentFeeHour(pDto.getRentFeeHour())
+      .withRentFeeDay(pDto.getRentFeeDay())
+      .build();
   }
 
   public void deleteById(int id) {
@@ -99,4 +103,17 @@ public class PublicationService extends GenericService<Publication> {
     boolean ret = publication.getOwnerEmail().equals(userEmail);
     return ret;
   }
+
+  public String validate(PublicationDto pDto) {
+    String ret = "";
+    Publication p = createPublication(pDto);
+    if (p.getAvailability().getStart().isAfter(p.getAvailability().getEnd()))
+      ret += ", Invalid dates!";
+    if (p.getRentFeeDay() < 1)
+      ret += ", Invalid rent fee day!";
+    if (p.getRentFeeHour() < 1)
+      ret += ", Invalid rent fee hour!";
+    return ret;
+  }
+
 }
