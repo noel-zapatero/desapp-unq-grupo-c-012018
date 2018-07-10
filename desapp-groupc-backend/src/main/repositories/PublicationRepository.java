@@ -1,6 +1,7 @@
 package main.repositories;
 
 import main.model.Publication;
+import main.services.VehicleType;
 import org.apache.log4j.Logger;
 
 import java.util.List;
@@ -16,12 +17,12 @@ public class PublicationRepository
     return Publication.class;
   }
 
-  public List<Publication> filterByVehicleType(String vehicleType) {
+  public List<Publication> filterByVehicleType(VehicleType vehicleType) {
     return (List<Publication>) getHibernateTemplate()
       .find("select p " +
         "from Publication p " +
         "join p.vehicleOffered v " +
-        "where v.type='" + vehicleType + "'");
+        "where v.type='" + vehicleType.getType() + "'");
   }
 
 }

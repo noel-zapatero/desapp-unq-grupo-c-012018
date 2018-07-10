@@ -35,12 +35,15 @@ public class PublicationService extends GenericService<Publication> {
     this.update(p);
   }
 
+  public PublicationRepository getRepository() {
+    return this.getRepository();
+  }
+
   public List<PublicationDto> filterByVehicleType(String vehicleType) {
-    List<PublicationDto> ret = new ArrayList<>();
-    for (Publication p: ((PublicationRepository)this.getRepository()).filterByVehicleType(vehicleType)) {
-      ret.add(new PublicationDto(p));
-    }
-    return ret;
+    List<Publication> publications =
+      getRepository().filterByVehicleType(new VehicleType(vehicleType));
+
+    return toDtos(publications);
   }
 
   public List<Publication> getPublicationsFromUserEmail(String userEmail) {
